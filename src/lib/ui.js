@@ -89,7 +89,7 @@ export function edificio([x, y, w, h], xs = [], ys = [], lado = 49) {
 
 /** Camión visto de costado (p. 24 y 30 del PDF). */
 export const camion = (g) =>
-  `<g${dg(g)}><image href="${url('svg/camion.svg')}" x="133" y="908" width="620" height="223.2"/></g>`;
+  `<g${dg(g)}><image href="${url('svg/camion.svg')}" x="175" y="937" width="510" height="168.75"/></g>`;
 
 /**
  * Llamadas de texto (línea guía roja + cuadradito + caja). `lista` viene de
