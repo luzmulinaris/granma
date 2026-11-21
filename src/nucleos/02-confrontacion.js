@@ -12,7 +12,7 @@ export default {
       fecha: 'abril de 1984', yFecha: 340,
       sub: 'Asesinato de Rodrigo Lara Bonilla', ySub: 430,
       ps: ['Rodrigo Lara Bonilla, el ministro de Justicia de Colombia, es asesinado el 30 de abril de 1984 en Bogotá, cuando sicarios en motocicleta dispararon contra su vehículo.'],
-      yTxt: 454, w: 238,
+      yTxt: 454, w: 278,
     })}
     ${foto('lara-auto', [188.2, 492, 744.3, 420], 'El automóvil de Rodrigo Lara Bonilla con los vidrios destrozados por los disparos', 'foto')}
     ${foto('mapa-bogota', [862, 552, 690, 588], 'Mapa: cómo ocurrió el asesinato. Calle 127, cruce y entorno de la Autopista Norte. El ministro regresaba a su casa cuando fue atacado', 'mapa')}
