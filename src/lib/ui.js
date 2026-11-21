@@ -53,12 +53,12 @@ export const flecha = (puntos, punta, g, ancho = 14) =>
  * Hito de la línea de tiempo. Genera los grupos `${g}-l` (línea), `-p`
  * (punto), `-f` (fecha), `-s` (subtítulo) y `-t` (texto).
  */
-export function evento({ g, x = 827, y, desde, fecha, yFecha, fechaCls = '', sub, ySub, ps, yTxt, w = 288, xTxt }) {
+export function evento({ g, x = 827, y, desde, fecha, yFecha, sub, ySub, ps, yTxt, w = 288, xTxt }) {
   const xt = xTxt ?? x + 29;
   let h = '';
   if (desde != null) h += linea(x, Math.min(desde, y), Math.max(desde, y), `${g}-l`);
   h += punto(x, y, `${g}-p`);
-  if (fecha) h += texto(`fecha ${fechaCls}`, fecha, x + 35, yFecha ?? y - 40, null, `${g}-f`);
+  if (fecha) h += texto('fecha', fecha, x + 35, yFecha ?? y - 40, null, `${g}-f`);
   if (sub) h += texto('sub', sub, xt + 1, ySub ?? y + 30, null, `${g}-s`);
   if (ps) h += texto('txt', parrafos(...ps), xt, yTxt ?? y + 60, w, `${g}-t`);
   return h;

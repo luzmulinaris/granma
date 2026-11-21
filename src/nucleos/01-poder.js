@@ -24,7 +24,7 @@ export default {
 
     <!-- p.5 · agosto de 1983 -->
     ${punto(X, 424, 'e2-p')}
-    ${texto('fecha fecha--40', 'agosto de 1983', 1108, 401, null, 'e2-f')}
+    ${texto('fecha', 'agosto de 1983', 1108, 401, null, 'e2-f')}
     ${texto('sub', 'Denuncia pública al narcotrafico', 1103, 490, null, 'e2-s')}
     ${texto('txt', parrafos(
       'Rodrigo Lara Bonilla, el ministro de Justicia de Colombia denuncia públicamente los vínculos de Pablo Escobar y otros jefes del Cartel de Medellín con el narcotráfico y la política.',

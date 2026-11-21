@@ -304,11 +304,6 @@ html:not(.listo) .stage {
   color: var(--rojo);
   white-space: nowrap;
 }
-.fecha--40 {
-  font-size: 41px;
-  line-height: 46px;
-  letter-spacing: 0.6px;
-}
 .sub {
   font: 700 16.6px/18px var(--f-titulo);
   white-space: nowrap;

@@ -12,7 +12,7 @@ export default {
       <div class="titulo titulo--portada" data-g="titulo" style="left:57px;top:459px" aria-hidden="true"><span>y la llamada que llevó a su caída</span></div>
       ${texto(
         'bajada',
-        'De la entrega negociada en La Catedral a la fuga y la persecución: un recorrido por los acontecimientos, los protagonistas<br>y las llamadas que permitieron localizar al jefe del cartel más grande de Colombia.',
+        'De la entrega negociada en La Catedral a la fuga y la persecución: un recorrido por los acontecimientos, los protagonistas y las llamadas que permitieron localizar al jefe del cartel más grande de Colombia.',
         57, 557, null, 'bajada',
       )}
     </div>
