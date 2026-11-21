@@ -20,7 +20,7 @@ export default {
     ${foto('diarios', [1077.6, 153.6, 511.3, 986.4], 'Tapa de El Tiempo «¡Al fin cayó!» y afiches de «Se busca» con recompensas por Pablo Escobar', 'diarios', 'foto--libre z6')}
     ${foto('escobar-mug', [27.1, 501.1, 423.6, 634.1], 'Ficha policial de Pablo Escobar en Medellín, número 128482', 'mug', 'foto--libre z6')}
     ${texto(
-      'txt txt--19',
+      'txt',
       '<p>Pablo Emilio Escobar Gaviria (1949–1993) fue un narcotraficante colombiano y jefe del Cartel de Medellín. Construyó una organización que combinó el tráfico de cocaína, la corrupción y la violencia.</p>',
       464, 730, 317, 'bio',
     )}

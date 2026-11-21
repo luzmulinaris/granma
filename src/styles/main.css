@@ -283,7 +283,7 @@ html:not(.listo) .stage {
   gap: 30px;
   padding: 0;
   list-style: none;
-  font: 400 16.3px/19px var(--f-serif);
+  font: 400 19px/22.15px var(--f-serif);
 }
 .operativo-versiones__numero {
   color: var(--rojo);
@@ -322,21 +322,17 @@ html:not(.listo) .stage {
   white-space: nowrap;
 }
 .sub {
-  font: 700 16.6px/18px var(--f-titulo);
+  font: 700 20px/21.69px var(--f-titulo);
   white-space: nowrap;
 }
 .txt {
-  font: 400 16.3px/19px var(--f-serif);
+  font: 400 19px/22.15px var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
 }
 .txt p {
   margin: 0 0 20px;
-}
-.txt--19 {
-  font-size: 19px;
-  line-height: 22.6px;
 }
 .cita {
   font: italic 700 41px/53px var(--f-titulo);
