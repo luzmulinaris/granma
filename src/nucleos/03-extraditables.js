@@ -155,7 +155,7 @@ export default {
       `)}
       ${pieza('estallido', [261, 780, 252, 240], 'das-bang')}
       ${paso(1, 'Un cochebomba se posiciona frente al edificio del DAS', 730, 946, 'd1')}
-      ${paso(2, 'El cochebomba explota dejando 60 muertos y 300 heridos', 890, 322, 'd2')}
+      ${paso(2, 'El cochebomba explota dejando 60 muertos y 300 heridos', 494, 778, 'd2')}
     </div>
 
     <!-- p.32 · balance de los atentados -->
