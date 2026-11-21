@@ -59,7 +59,7 @@ Ajustes rápidos:
 
 ## Tipografías
 
-El PDF usa Amplitude, Karmina y Karmina Sans, que son comerciales. La web usa equivalentes libres de Google Fonts (Fira Sans Condensed, Faustina y Alegreya Sans) con el cuerpo ajustado para ocupar el mismo ancho. Con licencia web de las originales alcanza con cambiar las variables `--f-*` de `main.css`.
+La web carga Amplitude para los títulos, Karmina para el texto serif y Karmina Sans para el texto sans desde un proyecto de Adobe Fonts. Sus equivalentes libres sirven de respaldo y las versalitas usan Alegreya Sans SC. Las familias se configuran en las variables `--f-*` de `src/styles/main.css`.
 
 ## Regenerar los recursos
 
