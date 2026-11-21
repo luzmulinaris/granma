@@ -42,10 +42,10 @@ export default {
     ${texto('titulo titulo--rojo titulo--40', '<span>Quiénes iban detrás de Escobar</span>', 62, 204, null, 'quienes')}
     ${TRAS.map(
       ([img, nombre, objetivo, y], i) => `
-      <div class="retrato retrato--sin-borde" data-g="t${i}" style="left:262px;top:${y - 58}px;width:112px;height:114px">
+      <div class="retrato retrato--sin-borde" data-g="t${i}" style="left:238px;top:${y - 58}px;width:112px;height:114px">
         <img src="${url(`img/${img}.webp`)}" alt="" loading="lazy" decoding="async">
       </div>
-      ${texto('vers vers--rojo', nombre, 393, y - 18, null, `t${i}`)}
+      ${texto('vers vers--rojo', nombre, 369, y - 18, null, `t${i}`)}
       <div class="abs flecha-h" data-g="fl${i}" style="left:624.8px;top:${y - 26.1}px;width:285.7px;height:52.2px"><i></i></div>
       ${texto('objetivo', objetivo, 936, y - 15, null, `ob${i}`)}`,
     ).join('')}

@@ -7,7 +7,7 @@ const hab = llamadas(geo.llamadas.habitacion, 'h');
 const CAT = geo.sprites.catedral; // [x, y, ancho, alto] del plano en la página
 
 const RECLUSOS = [
-  ['recluso-1', 148, 158, 'Roberto Escobar Gaviria', 'El osito'],
+  ['recluso-1', 148, 158, 'Roberto Escobar Gaviria', 'El osito', 254],
   ['recluso-2', 415, 424, 'John Jairo Velásquez', 'Popeye'],
   ['recluso-3', 698, 707, 'Luis Carlos Aguilar', 'El mugre'],
   ['recluso-4', 988, 997, 'Otoniel González', 'Otto'],
@@ -52,11 +52,11 @@ export default {
     <!-- p.39 · otros reclusos -->
     ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 62, 317, null, 'otros')}
     ${RECLUSOS.map(
-      ([img, x, xc, nombre, alias], i) => `
+      ([img, x, xc, nombre, alias, ancho = 224], i) => `
       <div class="retrato" data-g="r${i}" style="left:${x}px;top:456px;width:232px;height:240px">
         <img src="${url(`img/${img}.webp`)}" alt="${nombre}, alias «${alias}»" loading="lazy" decoding="async">
       </div>
-      ${caja(`${nombre}<br>Alias "${alias}"`, xc, 698, 224, `r${i}-c`, 'caja--20')}`,
+      ${caja(`${nombre}<br>Alias "${alias}"`, xc, 698, ancho, `r${i}-c`, 'caja--20')}`,
     ).join('')}
 
     <div class="cabeza" data-g="cabeza">${titulo('La catedral', 57, 240)}</div>

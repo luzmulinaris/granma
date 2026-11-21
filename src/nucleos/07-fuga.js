@@ -3,6 +3,8 @@ import geo from '../data/geo.json';
 import { titulo, texto, caja, svg, url, ROJO } from '../lib/ui.js';
 
 const P = geo.sprites['catedral-p41'];
+const DESPLAZAMIENTO_X = 52;
+const centroCirculoX = 650.5 + DESPLAZAMIENTO_X;
 
 export default {
   id: 'fuga',
@@ -10,12 +12,12 @@ export default {
   pasos: 2.8,
 
   html: () => `
-    <img class="abs" data-g="plano" src="${url('img/catedral.webp')}" alt="Plano de La Catedral con el punto del cerco por donde escapó Escobar" style="left:${P[0]}px;top:${P[1]}px;width:${P[2]}px" loading="lazy" decoding="async">
+    <img class="abs" data-g="plano" src="${url('img/catedral.webp')}" alt="Plano de La Catedral con el punto del cerco por donde escapó Escobar" style="left:${P[0] + DESPLAZAMIENTO_X}px;top:${P[1]}px;width:${P[2]}px" loading="lazy" decoding="async">
     ${svg(`
-      <circle data-g="circulo" cx="650.5" cy="471.5" r="41.5" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(180 650.5 471.5)"/>
-      <line data-g="guia" x1="609" y1="468" x2="521" y2="468" stroke="${ROJO}" stroke-width="5"/>
+      <circle data-g="circulo" cx="${centroCirculoX}" cy="471.5" r="41.5" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(180 ${centroCirculoX} 471.5)"/>
+      <line data-g="guia" x1="${609 + DESPLAZAMIENTO_X}" y1="468" x2="${521 + DESPLAZAMIENTO_X}" y2="468" stroke="${ROJO}" stroke-width="5"/>
     `)}
-    ${caja('<span data-g="escrito">Escobar, su hermano y 9 cómplices patearon un muro de yeso y escaparon</span>', 310, 432, 211, 'nota')}
+    ${caja('<span data-g="escrito">Escobar, su hermano y 9 cómplices patearon un muro de yeso y escaparon</span>', 310 + DESPLAZAMIENTO_X, 432, 211, 'nota')}
     <div class="cabeza" data-g="cabeza">
       ${titulo('La fuga', 57, 240)}
       ${texto('bajada', 'Escobar escapa durante la noche del 21 a la madrugada del 22 de julio de 1992.', 63, 329, null, 'bajada')}

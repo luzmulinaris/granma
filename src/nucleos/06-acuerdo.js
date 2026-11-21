@@ -8,7 +8,7 @@ export default {
 
   html: () => `
     ${evento({
-      g: 'e1', y: 385, desde: 312, fecha: 'julio de 1992', yFecha: 340,
+      g: 'e1', y: 385, desde: 140, fecha: 'julio de 1992', yFecha: 340,
       sub: 'Socios asesinados', ySub: 406,
       ps: ['Fernando Galeano y Gerardo «Kiko» Moncada son asesinados dentro de La Catedral, en el contexto de disputas con Escobar.'],
     })}

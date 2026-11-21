@@ -33,7 +33,13 @@ const PIEZAS = [
 ];
 
 const R = geo.fotos.radio.p51;
-const radio = llamadas(geo.llamadas.radio, 'c');
+const DESPLAZAMIENTO_RADIO_X = 28;
+const radio = llamadas(geo.llamadas.radio.map((llamada) => ({
+  ...llamada,
+  box: [llamada.box[0] + DESPLAZAMIENTO_RADIO_X, ...llamada.box.slice(1)],
+  dot: [llamada.dot[0] + DESPLAZAMIENTO_RADIO_X, llamada.dot[1]],
+  line: llamada.line.map(([x, y]) => [x + DESPLAZAMIENTO_RADIO_X, y]),
+})), 'c');
 const indiceLlamada = (nombre) => geo.llamadas.radio.findIndex((c) => c.text === nombre);
 
 export default {
@@ -58,7 +64,7 @@ export default {
     <!-- p.51 -->
     ${texto('titulo titulo--rojo titulo--40', '<span>La clave: el equipo de radiolocalización</span>', 61, 194, null, 'clave')}
     ${texto('bajada', 'Gracias a la llamada de más de 2 minutos, pudieron descubir exactamente en donde se encontraba Escobar con su equipo de radiolocalización.', 63, 245, 610, 'clave-b')}
-    <div class="despiece" data-g="despiece" role="img" aria-label="Receptor radiogoniométrico en vista explotada" style="left:${R[0]}px;top:${R[1]}px;width:${R[2]}px;height:${R[3]}px">
+    <div class="despiece" data-g="despiece" role="img" aria-label="Receptor radiogoniométrico en vista explotada" style="left:${R[0] + DESPLAZAMIENTO_RADIO_X}px;top:${R[1]}px;width:${R[2]}px;height:${R[3]}px">
       ${PIEZAS.map(
         ([, pol], i) =>
           `<i data-g="pz${i}" style="background-image:url(${url('img/radio.webp')});clip-path:polygon(${pol.map((p) => `${p[0]}% ${p[1]}%`).join(',')})"></i>`,
