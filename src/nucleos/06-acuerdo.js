@@ -20,7 +20,7 @@ export default {
     })}
     <div class="cabeza" data-g="cabeza">
       ${titulo('El acuerdo se rompe', 57, 240)}
-      ${texto('bajada', 'Los delitos cometidos dentro del establecimiento fuerzan una intervención. El<br>intento de recuperar el control termina con la fuga y reactiva la búsqueda.', 63, 329, null, 'bajada')}
+      ${texto('bajada', 'Los delitos cometidos dentro del establecimiento fuerzan una intervención. El intento de recuperar el control termina con la fuga y reactiva la búsqueda.', 63, 329, 690, 'bajada')}
     </div>
   `,
 

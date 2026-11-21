@@ -35,7 +35,7 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${titulo('Formación del bloque de búsqueda', 57, 240)}
-      ${texto('bajada', 'Creado en 1992 por el gobierno de César Gaviria, con el propósito específico de capturar<br>vivo o muerto al narcotraficante y capo del Cartel de Medellín Pablo Escobar.', 63, 329, null, 'bajada')}
+      ${texto('bajada', 'Creado en 1992 por el gobierno de César Gaviria, con el propósito específico de capturar vivo o muerto al narcotraficante y capo del Cartel de Medellín Pablo Escobar.', 63, 329, 710, 'bajada')}
     </div>
 
     <!-- p.44 · quiénes iban detrás de Escobar -->

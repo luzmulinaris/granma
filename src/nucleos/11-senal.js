@@ -45,7 +45,7 @@ export default {
     <!-- p.49 -->
     <div class="cabeza" data-g="cabeza">
       ${titulo('La última señal', 57, 240)}
-      ${texto('bajada', 'Tal como lo esperaban, Escobar se comunicó nuevamente con su familia el 2<br>de diciembre, manteniendo una llamada de más de dos minutos, facilitando la<br>localización de su ubicación.', 63, 329, null, 'bajada')}
+      ${texto('bajada', 'Tal como lo esperaban, Escobar se comunicó nuevamente con su familia el 2 de diciembre, manteniendo una llamada de más de dos minutos, facilitando la localización de su ubicación.', 63, 329, 705, 'bajada')}
     </div>
     <blockquote class="abs cita cita--recta" data-g="cita-g" style="left:64px;top:430px;margin:0">
       ${CITA.map((l, i) => `<div data-g="cita" ${i === 0 ? 'style="margin-left:-12px"' : ''}>${l}</div>`).join('')}
@@ -57,7 +57,7 @@ export default {
 
     <!-- p.51 -->
     ${texto('titulo titulo--rojo titulo--40', '<span>La clave: el equipo de radiolocalización</span>', 61, 194, null, 'clave')}
-    ${texto('bajada', 'Gracias a la llamada de más de 2 minutos, pudieron descubir exactamente en<br>donde se encontraba Escobar con su equipo de radiolocalización.', 63, 245, null, 'clave-b')}
+    ${texto('bajada', 'Gracias a la llamada de más de 2 minutos, pudieron descubir exactamente en donde se encontraba Escobar con su equipo de radiolocalización.', 63, 245, 610, 'clave-b')}
     <div class="despiece" data-g="despiece" role="img" aria-label="Receptor radiogoniométrico en vista explotada" style="left:${R[0]}px;top:${R[1]}px;width:${R[2]}px;height:${R[3]}px">
       ${PIEZAS.map(
         ([, pol], i) =>
