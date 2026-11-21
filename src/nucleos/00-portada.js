@@ -1,5 +1,5 @@
 // PORTADA — p. 1, 2 y 3 del PDF
-import { parrafos, foto, texto, svg, ROJO } from '../lib/ui.js';
+import { foto, texto, svg, ROJO } from '../lib/ui.js';
 
 export default {
   id: 'portada',
@@ -21,7 +21,7 @@ export default {
     ${foto('escobar-mug', [27.1, 501.1, 423.6, 634.1], 'Ficha policial de Pablo Escobar en Medellín, número 128482', 'mug', 'foto--libre z6')}
     ${texto(
       'txt',
-      parrafos('Pablo Emilio Escobar Gaviria (1949–1993) fue un narcotraficante colombiano y jefe del Cartel de Medellín. Construyó una organización que combinó el tráfico de cocaína, la corrupción y la violencia.'),
+      '<p>Pablo Emilio Escobar Gaviria (1949–1993) fue un narcotraficante colombiano y jefe del Cartel de Medellín. Construyó una organización que combinó el tráfico de cocaína, la corrupción y la violencia.</p>',
       464, 730, null, 'bio',
     )}
 

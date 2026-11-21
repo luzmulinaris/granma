@@ -1,5 +1,5 @@
 // NÚCLEO 12 · El operativo
-import { parrafos, foto, titulo, texto } from '../lib/ui.js';
+import { foto, titulo, texto } from '../lib/ui.js';
 
 const VERSIONES = [
   'Las autoridades atribuyeron la muerte al operativo del Bloque de Búsqueda. Hugo Aguilar afirmó haber disparado contra Escobar.',
@@ -15,7 +15,7 @@ export default {
   html: () => `
     <div class="cabeza" data-g="cabeza">
       ${titulo('El operativo', 63, 169)}
-      ${texto('bajada', 'Con la ubicación exacta, comienza el operativo de búsqueda, que culmina con la muerte de Pablo Escobar en un tejado del barrio Los Olivos, en Medellín. Desde entonces, distintos testimonios se han disputado la autoría del disparo que culminó con su vida.', 64, 260, 640, 'bajada')}
+      ${texto('bajada justo', 'Con la ubicación exacta, comienza el operativo de búsqueda, que culmina con la muerte de Pablo Escobar en un tejado del barrio Los Olivos, en Medellín. Desde entonces, distintos testimonios se han disputado la autoría del disparo que culminó con su vida.', 64, 260, 640, 'bajada')}
     </div>
     ${foto('operativo', [42, 436, 656, 465], 'Integrantes del Bloque de Búsqueda posan en el tejado junto al cuerpo de Pablo Escobar', 'foto')}
     <h3 class="titulo titulo--rojo titulo--40" id="operativo-versiones" data-g="tres" style="left:798px;top:354px">
@@ -25,7 +25,7 @@ export default {
       ${VERSIONES.map((version, i) => `
         <li data-g="v${i + 1}">
           <span class="operativo-versiones__numero">0${i + 1}</span>
-          ${parrafos(version)}
+          <p>${version}</p>
         </li>
       `).join('')}
     </ol>

@@ -13,12 +13,12 @@ export default {
     <!-- p.47 -->
     <div class="cabeza" data-g="cabeza">
       ${titulo('Ubicación reducida a 8 manzanas', 105, 196, 'titulo--rojo')}
-      ${texto('bajada', 'Mientras se cumplían las labores de rastreo, la expectativa estaba centrada en el primero de diciembre, porque en esa fecha Escobar cumplía años. En efecto, la voz del jefe del cartel de Medellín se escuchó desde muy temprano. Esta llamada no fue tan larga para rastrearlo por completo pero si para reducir su ubicación.', 102, 269, 560, 'bajada')}
+      ${texto('bajada justo', 'Mientras se cumplían las labores de rastreo, la expectativa estaba centrada en el primero de diciembre, porque en esa fecha Escobar cumplía años. En efecto, la voz del jefe del cartel de Medellín se escuchó desde muy temprano. Esta llamada no fue tan larga para rastrearlo por completo pero si para reducir su ubicación.', 102, 269, 560, 'bajada')}
     </div>
 
     <!-- p.48 -->
     ${texto('titulo titulo--rojo', '<span>Ubicación reducida a 12 puntos posibles</span>', 107, 248, null, 'titulo2')}
-    ${texto('bajada', 'Luego, la familia se vuelve a comunicar con Escobar. Hubo una serie de cinco llamadas para dictar preguntas para una entrevista y la ubicación se redujo a doce sitios posibles en un radio de dos manzanas.', 102, 329, 560, 'bajada2')}
+    ${texto('bajada justo', 'Luego, la familia se vuelve a comunicar con Escobar. Hubo una serie de cinco llamadas para dictar preguntas para una entrevista y la ubicación se redujo a doce sitios posibles en un radio de dos manzanas.', 102, 329, 560, 'bajada2')}
   `,
 
   build(k) {

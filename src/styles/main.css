@@ -274,6 +274,7 @@ html:not(.listo) .stage {
 }
 .bajada {
   font: 500 23.562px/1.15 var(--f-titulo);
+  text-wrap: pretty;
 }
 .operativo-versiones {
   left: 798px;
@@ -292,6 +293,15 @@ html:not(.listo) .stage {
 .operativo-versiones p {
   margin: 14px 0 0;
 }
+.justo {
+  text-align: justify;
+  hyphens: auto;
+}
+#entrega [data-g="a3-t"],
+.justo.sin-cortes {
+  hyphens: none;
+}
+
 /* línea de tiempo */
 .linea {
   position: absolute;
@@ -320,6 +330,9 @@ html:not(.listo) .stage {
 .txt {
   width: var(--ancho-columna-texto);
   font: 400 21.42px/24.97572px var(--f-serif);
+  text-align: left;
+  hyphens: auto;
+  text-wrap: pretty;
 }
 .txt p {
   margin: 0 0 20px;
@@ -335,21 +348,7 @@ html:not(.listo) .stage {
   line-height: 56.4417px;
 }
 
-/* Composición de textos corridos */
-.bajada,
-.txt,
-.operativo-versiones p,
-.pie p,
-.caja:not(.caja--1, .caja--recluso),
-.paso > span {
-  text-align: justify;
-  text-align-last: left;
-  hyphens: none;
-  text-wrap: pretty;
-}
-.final-de-texto {
-  white-space: nowrap;
-}
+/* cajas de texto */
 .caja {
   background: var(--gris);
   border: 1px solid var(--rojo);
