@@ -25,7 +25,7 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${titulo('La familia en Tequendama', 57, 240)}
-      ${texto('bajada justo', 'La familia fue llevada por las autoridades colombianas a las Residencias Tequendama, un complejo de apartamentos propiedad del Ejército de Colombia en Bogotá, bajo custodia y protección policial/militar. La estrategia del gobierno: La presencia de la familia en ese lugar formaba parte de una estrategia del Estado para acorralar a Pablo Escobar, ya que su esposa e hijos eran su punto más vulnerable.', 63, 329, 609, 'bajada')}
+      ${texto('bajada', 'La familia fue llevada por las autoridades colombianas a las Residencias Tequendama, un complejo de apartamentos propiedad del Ejército de Colombia en Bogotá, bajo custodia y protección policial/militar. La estrategia del gobierno: La presencia de la familia en ese lugar formaba parte de una estrategia del Estado para acorralar a Pablo Escobar, ya que su esposa e hijos eran su punto más vulnerable.', 63, 329, 609, 'bajada')}
     </div>
   `,
 
