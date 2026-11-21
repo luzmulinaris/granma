@@ -56,7 +56,7 @@ export default {
       <div class="retrato" data-g="r${i}" style="left:${x}px;top:456px;width:232px;height:240px">
         <img src="${url(`img/${img}.webp`)}" alt="${nombre}, alias «${alias}»" loading="lazy" decoding="async">
       </div>
-      ${caja(`${nombre}<br>Alias "${alias}"`, xc, 698, 213, `r${i}-c`, 'caja--20')}`,
+      ${caja(`${nombre}<br>Alias "${alias}"`, xc, 698, 224, `r${i}-c`, 'caja--20')}`,
     ).join('')}
 
     <div class="cabeza" data-g="cabeza">${titulo('La catedral', 57, 240)}</div>

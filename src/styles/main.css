@@ -352,16 +352,16 @@ html:not(.listo) .stage {
   background: var(--gris);
   border: 1px solid var(--rojo);
   padding: 7px 8px 7px;
-  font: 400 17.7786px/19.278px var(--f-sans);
+  font: 400 18.66753px/20.2419px var(--f-sans);
 }
 .caja--20 {
-  font-size: 21.2058px;
+  font-size: 22.26609px;
   padding: 6px 5px 9px 8px;
 }
 .caja--1 {
-  height: 35.343px;
+  height: 37.11015px;
   padding: 0 8px;
-  line-height: 33.201px;
+  line-height: 34.86105px;
   white-space: nowrap;
 }
 .paso {

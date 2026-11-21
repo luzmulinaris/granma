@@ -98,7 +98,7 @@ export default {
       ${texto('rotulo rotulo--rojo', 'Motocicleta con dos sicarios', 818, 759, null, 'cano-rot-moto')}
       ${paso(1, 'Guillermo Cano sale del edificio del diario "El Espectador"', 654, 408, 'c1')}
       ${paso(2, 'Se sube a su auto para regresar a su casa', 828, 874, 'c2')}
-      ${paso(3, 'Aparece una moto con 2 sicarios que le disparan y lo matan', 174, 754, 'c3')}
+      ${paso(3, 'Aparece una moto con 2 sicarios que le disparan y lo matan', 144, 754, 'c3')}
     </div>
 
     <!-- p.20 a 22 · asesinato de Galán -->

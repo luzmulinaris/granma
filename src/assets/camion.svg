@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820.57 271.5">
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 818.82 269">
   <defs>
     <style>
       .cls-1 {
@@ -7,54 +7,57 @@
       }
 
       .cls-2 {
-        stroke-width: 2.5px;
+        fill: #fafaf9;
       }
 
       .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
         stroke-linecap: round;
         stroke-linejoin: round;
       }
 
-      .cls-2, .cls-4 {
-        fill: #d8dcda;
-        stroke: #7e807f;
-      }
-
-      .cls-3 {
-        fill: #444645;
-        stroke-width: 4px;
-      }
-
-      .cls-3, .cls-5 {
+      .cls-2, .cls-4, .cls-5 {
         stroke: #292929;
       }
 
+      .cls-3 {
+        stroke: #7e807f;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #d8dcda;
+      }
+
       .cls-4 {
-        stroke-width: 2px;
+        stroke-miterlimit: 10;
       }
 
       .cls-5 {
-        fill: #fafaf9;
-        stroke-width: 5px;
+        fill: #444645;
       }
     </style>
   </defs>
-  <g id="Capa_1-2" data-name="Capa 1">
-    <g>
-      <path class="cls-5" d="M3.07,16.5C3.07,7.17,7.74,2.5,17.07,2.5h584c8.67,0,13,4.67,13,14v197H3.07V16.5Z"/>
-      <path class="cls-2" d="M1.25,195.5h612.82v22H1.25v-22Z"/>
-      <path class="cls-5" d="M614.07,66.5h118c14.67,0,26.67,7,36,21l38,56c8,10.67,12,22.67,12,36v39h-204V66.5Z"/>
-      <path class="cls-2" d="M642.07,85.5h81c8,0,15,4.33,21,13l28,41h-130v-54Z"/>
-      <path class="cls-1" d="M4.07,170.5h9v21H4.07v-21Z"/>
-      <g id="ruedas">
-        <circle class="cls-3" cx="109.07" cy="221.5" r="48"/>
-        <circle class="cls-3" cx="725.07" cy="221.5" r="48"/>
-      </g>
+  <g id="Capa_2-2" data-name="Capa 2">
+    <g id="Capa_1-2" data-name="Capa 1-2">
       <g>
-        <circle class="cls-4" cx="109.07" cy="221.5" r="25"/>
-        <circle class="cls-4" cx="725.07" cy="221.5" r="25"/>
-        <circle class="cls-4" cx="109.07" cy="221.5" r="9"/>
-        <circle class="cls-4" cx="725.07" cy="221.5" r="9"/>
+        <path class="cls-2" d="M2.82,1h611v211H2.82V1Z"/>
+        <path class="cls-4" d="M1,194h612.82v22H1v-22Z"/>
+        <path class="cls-2" d="M613.82,65h118c14.67,0,26.67,7,36,21l38,56c8,10.67,12,22.67,12,36v39h-204V65Z"/>
+        <path class="cls-4" d="M641.82,84h81c8,0,15,4.33,21,13l28,41h-130v-54Z"/>
+        <path class="cls-1" d="M1,169.17h13.94v24.83H1v-24.83Z"/>
+        <g id="ruedas">
+          <circle class="cls-5" cx="108.82" cy="220" r="48"/>
+          <path class="cls-5" d="M722.32,172.06c28.48-1.44,51.88,21.95,50.43,50.43-1.24,24.39-21.05,44.2-45.44,45.44-28.48,1.44-51.88-21.95-50.43-50.43,1.24-24.39,21.05-44.2,45.44-45.44Z"/>
+        </g>
+        <g>
+          <circle class="cls-3" cx="108.82" cy="220" r="25"/>
+          <circle class="cls-3" cx="724.82" cy="220" r="25"/>
+          <circle class="cls-3" cx="108.82" cy="220" r="9"/>
+          <path class="cls-3" d="M723.3,211.13c6.16-1.01,11.41,4.24,10.4,10.4-.61,3.73-3.62,6.74-7.35,7.35-6.16,1.01-11.41-4.24-10.4-10.4.61-3.73,3.62-6.74,7.35-7.35Z"/>
+        </g>
       </g>
     </g>
   </g>
