@@ -13,7 +13,7 @@ export default {
       ${texto(
         'bajada',
         'De la entrega negociada en La Catedral a la fuga y la persecución: un recorrido por los acontecimientos, los protagonistas y las llamadas que permitieron localizar al jefe del cartel más grande de Colombia.',
-        57, 557, null, 'bajada',
+        57, 557, 860, 'bajada',
       )}
     </div>
 
