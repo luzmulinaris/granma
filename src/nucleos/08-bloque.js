@@ -20,7 +20,7 @@ const GIROS = [0, -7, 5, -4, 6, -5, 4, -6, 3];
 
 const TRAS = [
   ['tras-1', 'bloque de búsqueda', 'Recapturarlo y enfrentar su organización criminal', 429],
-  ['tras-2', 'agentes de la dea', 'Desmantelar la red de cocaína que llegaba a <span class="vers" style="font-size:22px">ee.uu</span>', 558],
+  ['tras-2', 'agentes de la dea', 'Desmantelar la red de cocaína que llegaba a <span class="vers" style="font-size:22.44px">ee.uu</span>', 558],
   ['tras-3', 'los pepes', 'Represalias, supervivencia y disputa del poder criminal', 687],
   ['tras-4', 'cartel de cali', 'Debilitar a su rival y proteger sus intereses en el narcotráfico', 816],
 ];
