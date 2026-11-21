@@ -284,7 +284,7 @@ html:not(.listo) .stage {
   gap: 30px;
   padding: 0;
   list-style: none;
-  font: 400 19px/22.15px var(--f-serif);
+  font: 400 20px/23.32px var(--f-serif);
 }
 .operativo-versiones__numero {
   color: var(--rojo);
@@ -328,7 +328,7 @@ html:not(.listo) .stage {
 }
 .txt {
   width: var(--ancho-columna-texto);
-  font: 400 19px/22.15px var(--f-serif);
+  font: 400 20px/23.32px var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
