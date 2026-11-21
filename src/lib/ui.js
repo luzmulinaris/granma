@@ -24,10 +24,15 @@ export const pieza = (nombre, r, g, cls = '') =>
 export const titulo = (t, x, y, cls = '', g = 'titulo') =>
   `<h2 class="titulo ${cls}"${dg(g)} style="${st(x, y)}"><span>${t}</span></h2>`;
 
-export const texto = (cls, html, x, y, w, g) =>
-  `<div class="abs ${cls}"${dg(g)} style="${st(x, y, w)}">${html}</div>`;
+const unirUltimasPalabras = (texto) => texto.replace(
+  /([^\s<>]+) ([^\s<>]+)$/,
+  '<span class="final-de-texto">$1 $2</span>',
+);
 
-export const parrafos = (...ps) => ps.map((p) => `<p>${p}</p>`).join('');
+export const texto = (cls, html, x, y, w, g) =>
+  `<div class="abs ${cls}"${dg(g)} style="${st(x, y, w)}">${cls === 'bajada' ? unirUltimasPalabras(html) : html}</div>`;
+
+export const parrafos = (...ps) => ps.map((p) => `<p>${unirUltimasPalabras(p)}</p>`).join('');
 
 export const linea = (x, y1, y2, g) =>
   `<i class="linea"${dg(g)} style="left:${x}px;top:${y1}px;height:${y2 - y1}px"></i>`;

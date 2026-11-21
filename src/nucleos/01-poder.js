@@ -43,7 +43,7 @@ export default {
 
     <!-- p.7 -->
     ${foto('preso-1976', [704.3, 364.7, 712.3, 614.6], 'Recorte de diario: «En 1976 Escobar estuvo preso»', 'preso')}
-    ${caja('La noticia de la captura de Escobar de 1976 vuelve a ser pública.', 1285, 927, 191, 'nota')}
+    ${caja('La noticia de la captura de Escobar de 1976 vuelve a <span class="final-de-texto">ser pública.</span>', 1285, 927, 191, 'nota')}
     ${texto('txt', parrafos(
       'La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. La visibilidad pública se convierte en una vulnerabilidad.',
     ), 531, 994, null, 'cierre')}

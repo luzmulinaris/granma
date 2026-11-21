@@ -34,9 +34,9 @@ export default {
       ${pieza('estallido', [664.3, 460.5, 90.9, 86.6], 'bang')}
       ${texto('rotulo', 'Automóvil de Lara Bonilla', 491, 765, null, 'rot-auto')}
       ${texto('rotulo rotulo--rojo', 'Motocicleta con dos ocupantes', 960, 595, null, 'rot-moto')}
-      ${paso(1, 'La motocicleta se aproxima por el lado derecho', 1239, 442, 'p1')}
-      ${paso(2, 'La motocicleta se acerca al auto y dispara', 797, 386, 'p2')}
-      ${paso(3, 'El auto pierde el control y la moto huye de la escena', 68, 465, 'p3')}
+      ${paso(1, 'La motocicleta se aproxima por el <span class="final-de-texto">lado derecho</span>', 1239, 442, 'p1')}
+      ${paso(2, 'La motocicleta se acerca al auto <span class="final-de-texto">y dispara</span>', 797, 386, 'p2')}
+      ${paso(3, 'El auto pierde el control y la moto huye de <span class="final-de-texto">la escena</span>', 68, 465, 'p3')}
     </div>
   `,
 
