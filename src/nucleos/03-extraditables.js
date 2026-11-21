@@ -112,8 +112,8 @@ export default {
       ${pieza('tarima-persona', [669.8, 457.8, 43.1, 84.2], 'orador')}
       ${pieza('tarima-persona', [738.8, 462.5, 43.1, 84.2], 'orador')}
       ${geo.disparos_p22.map((r) => pieza('estallido', r, 'galan-bang')).join('')}
-      ${paso(1, 'Luis Carlos Galán se encontraba en una tarima en un acto electoral', 856, 466, 'g1')}
-      ${paso(2, 'Entre la multitud se encontraban dos sicarios', 1326, 646, 'g2')}
+      ${paso(1, 'Luis Carlos Galán se encontraba en una tarima en un acto electoral', 856, 466, 'g1', 288)}
+      ${paso(2, 'Entre la multitud se encontraban dos sicarios', 1326, 646, 'g2', 288)}
       ${paso(3, 'Los sicarios disparan cinco veces, matando a Galán y a sus dos acompañantes', 320, 565, 'g3')}
     </div>
 
