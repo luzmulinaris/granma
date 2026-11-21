@@ -10,7 +10,7 @@ export default {
   html: () => `
     <div class="cabeza" data-g="cabeza">
       ${titulo('El operativo', 62, 240)}
-      ${texto('bajada', 'Con la ubicación exacta, comienza el operativo de búsqueda, que culmina con la muerte de Pablo Escobar en un tejado del barrio Los Olivos, en Medellín. Desde entonces, distintos testimonios se han disputado la autoría del disparo que culminó con su vida.', 63, 329, 640, 'bajada')}
+      ${texto('bajada justo', 'Con la ubicación exacta, comienza el operativo de búsqueda, que culmina con la muerte de Pablo Escobar en un tejado del barrio Los Olivos, en Medellín. Desde entonces, distintos testimonios se han disputado la autoría del disparo que culminó con su vida.', 63, 329, 640, 'bajada')}
     </div>
     ${texto('titulo titulo--rojo titulo--40', '<span>Tres versiones sobre su muerte</span>', 794, 425, null, 'tres')}
     ${foto('operativo', geo.fotos.operativo.p52, 'Integrantes del Bloque de Búsqueda posan en el tejado junto al cuerpo de Pablo Escobar', 'foto')}

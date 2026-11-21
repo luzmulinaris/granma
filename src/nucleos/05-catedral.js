@@ -61,7 +61,7 @@ export default {
 
     <div class="cabeza" data-g="cabeza">${titulo('La catedral', 57, 240)}</div>
     <div class="cabeza" data-g="cab2">
-      ${texto('bajada', 'La Catedral fue una prisión de máxima seguridad construida y diseñada por Pablo Escobar en una montaña de Envigado, Antioquia (Colombia), como parte de un acuerdo de entrega con el gobierno del presidente César Gaviria en 1991.', 63, 334, 496, 'bajada')}
+      ${texto('bajada justo', 'La Catedral fue una prisión de máxima seguridad construida y diseñada por Pablo Escobar en una montaña de Envigado, Antioquia (Colombia), como parte de un acuerdo de entrega con el gobierno del presidente César Gaviria en 1991.', 63, 334, 496, 'bajada')}
     </div>
   `,
 

@@ -279,6 +279,9 @@ html:not(.listo) .stage {
   text-align: justify;
   hyphens: auto;
 }
+.justo.sin-cortes {
+  hyphens: none;
+}
 
 /* línea de tiempo */
 .linea {
