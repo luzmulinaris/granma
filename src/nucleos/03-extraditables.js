@@ -27,10 +27,10 @@ export default {
     <!-- p.14 · noviembre 1986 -->
     ${foto('extraditables', [67.6, 432, 652.2, 489.3], 'Pablo Escobar rodeado de familiares y allegados en una reunión', 'ext')}
     ${texto('txt', '<p>Su propósito era impedir a toda costa la extradición de ciudadanos colombianos hacia los Estados Unidos, bajo el tratado bilateral existente en ese entonces.</p>', 733, 430, null, 'proposito')}
-    ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 518, null, 'cita')}
-    ${texto('cita', 'que una carcel en Estados Unidos"', 920, 571, null, 'cita')}
+    ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 575, null, 'cita')}
+    ${texto('cita', 'que una carcel en Estados Unidos"', 920, 632, null, 'cita')}
     ${evento({
-      g: 'e1', x: 828, y: 782, desde: 634, fecha: 'noviembre 1986', yFecha: 749,
+      g: 'e1', x: 828, y: 782, desde: 930, fecha: 'noviembre 1986', yFecha: 749,
       ps: [
         'Los Extraditables recurren a amenazas, secuestros y atentados para presionar al Estado y evitar su envío a Estados Unidos.',
         'La extradición se convierte en un eje de la confrontación.',
@@ -184,7 +184,7 @@ export default {
     k.barre('ext', 0.25, 'izq', { dur: 0.55 });
     k.entra('proposito', 0.95, { y: 20 }, { dur: 0.3 });
     k.entra('cita', 1.2, { x: -50, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.4, stagger: 0.18, ease: 'power3.out' });
-    k.evento('e1', 2.0);
+    k.evento('e1', 2.0, { origen: 'top' });
 
     // ---------------------------------------------- p.15 · Guillermo Cano
     k.sale('ext proposito cita cab2', 3.0, { y: -30 }, { dur: 0.25 });
