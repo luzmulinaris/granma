@@ -275,6 +275,23 @@ html:not(.listo) .stage {
   font: 500 22px/1.15 var(--f-titulo);
   text-wrap: pretty;
 }
+.operativo-versiones {
+  left: 798px;
+  top: 422px;
+  width: 252px;
+  display: grid;
+  gap: 30px;
+  padding: 0;
+  list-style: none;
+  font: 400 16.3px/19px var(--f-serif);
+}
+.operativo-versiones__numero {
+  color: var(--rojo);
+  font: 700 41px/46px var(--f-titulo);
+}
+.operativo-versiones p {
+  margin: 14px 0 0;
+}
 .justo {
   text-align: justify;
   hyphens: auto;
