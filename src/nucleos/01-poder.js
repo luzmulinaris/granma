@@ -39,7 +39,7 @@ export default {
       <circle data-g="circulo" cx="870" cy="659.5" r="136" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 870 659.5)"/>
       ${flecha([[1004.2, 656.2], [1080, 656.2]], [[1094.4, 656.2], [1077.4, 640.5], [1077.4, 672]], 'fl', 10)}
     `)}
-    ${caja('Jefe del cartel de Medellín', 1104, 637, 181, 'jefe', 'caja--1')}
+    ${caja('Jefe del cartel de Medellín', 1104, 637, null, 'jefe', 'caja--1')}
 
     <!-- p.7 -->
     ${foto('preso-1976', [704.3, 364.7, 712.3, 614.6], 'Recorte de diario: «En 1976 Escobar estuvo preso»', 'preso')}

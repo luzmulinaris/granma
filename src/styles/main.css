@@ -160,7 +160,7 @@ img {
   padding: 0.32em 0;
   color: #fff;
   text-decoration: none;
-  font: 700 clamp(20.4px, 3.672vh, 40.8px) / 1.15 var(--f-titulo);
+  font: 700 clamp(21.42px, 3.8556vh, 42.84px) / 1.15 var(--f-titulo);
   transition: color 0.2s, padding-left 0.3s;
 }
 .indice__lista a::before {
@@ -240,11 +240,11 @@ html:not(.listo) .stage {
 .titulo {
   position: absolute;
   margin: 0;
-  height: 73.44px;
+  height: 77.112px;
   padding: 0 12px 0 5px;
   background: var(--negro);
   color: #fff;
-  font: 700 73.44px/73.44px var(--f-titulo);
+  font: 700 77.112px/77.112px var(--f-titulo);
   letter-spacing: 1px;
   white-space: nowrap;
   overflow: hidden;
@@ -253,8 +253,8 @@ html:not(.listo) .stage {
   display: block;
 }
 .titulo--portada {
-  height: 81.6px;
-  line-height: 81.6px;
+  height: 85.68px;
+  line-height: 85.68px;
   color: var(--rojo);
 }
 .titulo--rojo {
@@ -262,18 +262,18 @@ html:not(.listo) .stage {
   padding: 0;
   background: none;
   color: var(--rojo);
-  font-size: 52.53px;
-  line-height: 58.14px;
+  font-size: 55.1565px;
+  line-height: 61.047px;
   letter-spacing: 0.7px;
   overflow: visible;
 }
 .titulo--rojo.titulo--40 {
-  font-size: 41.82px;
-  line-height: 46.92px;
+  font-size: 43.911px;
+  line-height: 49.266px;
   letter-spacing: 0.6px;
 }
 .bajada {
-  font: 500 22.44px/1.15 var(--f-titulo);
+  font: 500 23.562px/1.15 var(--f-titulo);
   text-wrap: pretty;
 }
 .operativo-versiones {
@@ -284,11 +284,11 @@ html:not(.listo) .stage {
   gap: 30px;
   padding: 0;
   list-style: none;
-  font: 400 20.4px/23.7864px var(--f-serif);
+  font: 400 21.42px/24.97572px var(--f-serif);
 }
 .operativo-versiones__numero {
   color: var(--rojo);
-  font: 700 41.82px/46.92px var(--f-titulo);
+  font: 700 43.911px/49.266px var(--f-titulo);
 }
 .operativo-versiones p {
   margin: 14px 0 0;
@@ -317,18 +317,18 @@ html:not(.listo) .stage {
   background: var(--rojo);
 }
 .fecha {
-  font: 700 52.53px/58.14px var(--f-titulo);
+  font: 700 55.1565px/61.047px var(--f-titulo);
   letter-spacing: 0.7px;
   color: var(--rojo);
   white-space: nowrap;
 }
 .sub {
-  font: 700 20.4px/22.1238px var(--f-titulo);
+  font: 700 21.42px/23.22999px var(--f-titulo);
   white-space: nowrap;
 }
 .txt {
   width: var(--ancho-columna-texto);
-  font: 400 20.4px/23.7864px var(--f-serif);
+  font: 400 21.42px/24.97572px var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
@@ -337,14 +337,14 @@ html:not(.listo) .stage {
   margin: 0 0 20px;
 }
 .cita {
-  font: italic 700 41.82px/54.06px var(--f-titulo);
+  font: italic 700 43.911px/56.763px var(--f-titulo);
   letter-spacing: 0.6px;
   color: var(--rojo);
   white-space: nowrap;
 }
 .cita--recta {
   font-style: normal;
-  line-height: 53.754px;
+  line-height: 56.4417px;
 }
 
 /* cajas de texto */
@@ -352,16 +352,16 @@ html:not(.listo) .stage {
   background: var(--gris);
   border: 1px solid var(--rojo);
   padding: 7px 8px 7px;
-  font: 400 16.932px/18.36px var(--f-sans);
+  font: 400 17.7786px/19.278px var(--f-sans);
 }
 .caja--20 {
-  font-size: 20.196px;
+  font-size: 21.2058px;
   padding: 6px 5px 9px 8px;
 }
 .caja--1 {
-  height: 33.66px;
+  height: 35.343px;
   padding: 0 8px;
-  line-height: 31.62px;
+  line-height: 33.201px;
   white-space: nowrap;
 }
 .paso {
@@ -376,7 +376,7 @@ html:not(.listo) .stage {
   place-items: center;
   background: var(--rojo);
   color: #fff;
-  font: 900 27.54px/1 var(--f-titulo);
+  font: 900 28.917px/1 var(--f-titulo);
 }
 .paso span {
   width: 272px;
@@ -384,15 +384,15 @@ html:not(.listo) .stage {
   background: var(--gris);
   border: 1px solid var(--rojo);
   border-left: 0;
-  font: 400 20.196px/18.36px var(--f-sans);
+  font: 400 21.2058px/19.278px var(--f-sans);
 }
 .rotulo {
-  font: 400 30.6px/35.7px var(--f-sans);
+  font: 400 32.13px/37.485px var(--f-sans);
   color: #242424;
   white-space: nowrap;
 }
 .rotulo--rojo {
-  font-size: 28.56px;
+  font-size: 29.988px;
   color: var(--rojo-vivo);
 }
 
@@ -400,7 +400,7 @@ html:not(.listo) .stage {
   z-index: 6;
 }
 .objetivo {
-  font: 400 22.44px/26.52px var(--f-sans);
+  font: 400 23.562px/27.846px var(--f-sans);
   white-space: nowrap;
 }
 .flecha-h {
@@ -439,13 +439,13 @@ html:not(.listo) .stage {
 
 /* gráficos */
 .num-grande {
-  font: 400 91.8px/106.08px var(--f-sans);
+  font: 400 96.39px/111.384px var(--f-sans);
   color: var(--rojo);
   white-space: nowrap;
   font-variant-numeric: lining-nums;
 }
 .vers {
-  font: 500 25.5px/28.56px var(--f-versalitas);
+  font: 500 26.775px/29.988px var(--f-versalitas);
   letter-spacing: 0.4px;
   color: #1b1b1b;
   white-space: nowrap;
@@ -458,12 +458,12 @@ html:not(.listo) .stage {
   color: var(--rojo);
 }
 .vers--60 {
-  font-size: 61.2px;
-  line-height: 70.38px;
+  font-size: 64.26px;
+  line-height: 73.899px;
   letter-spacing: 1px;
 }
 .eje {
-  font: 400 25.5px/29.58px var(--f-sans);
+  font: 400 26.775px/31.059px var(--f-sans);
   color: #9a9a9a;
   transform: translateX(-50%);
   font-variant-numeric: lining-nums;
@@ -477,7 +477,7 @@ html:not(.listo) .stage {
   left: 14px;
   top: 50%;
   transform: translateY(-52%);
-  font: 400 61.2px/1 var(--f-sans);
+  font: 400 64.26px/1 var(--f-sans);
   color: #fff;
   font-variant-numeric: lining-nums;
   white-space: nowrap;
@@ -545,7 +545,7 @@ html:not(.listo) .stage {
   transform: translateX(-50%);
   background: var(--negro);
   color: #fff;
-  font: 500 13.26px/1.2 var(--f-sans);
+  font: 500 13.923px/1.2 var(--f-sans);
   white-space: nowrap;
   pointer-events: none;
 }
@@ -562,7 +562,7 @@ html:not(.listo) .stage {
   background: var(--negro);
   color: rgb(255 255 255 / 0.75);
   padding: 28px clamp(20px, 5vw, 80px);
-  font: 400 14.28px/1.5 var(--f-sans);
+  font: 400 14.994px/1.5 var(--f-sans);
 }
 .pie p {
   margin: 0 auto;
