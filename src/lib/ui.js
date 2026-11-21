@@ -1,3 +1,5 @@
+import camionUrl from '../assets/camion.svg';
+
 // Pequeños generadores de HTML. Todas las medidas están en puntos de la
 // página original del PDF (1684 × 1190), que es el sistema de coordenadas
 // de `.stage`. El parámetro `g` es el nombre de grupo con el que después
@@ -89,7 +91,7 @@ export function edificio([x, y, w, h], xs = [], ys = [], lado = 49) {
 
 /** Camión visto de costado (p. 24 y 30 del PDF). */
 export const camion = (g) =>
-  `<g${dg(g)}><image href="${url('svg/camion.svg')}" x="175" y="937" width="510" height="168.75"/></g>`;
+  `<g${dg(g)}><image href="${camionUrl}" x="175" y="937" width="510" height="168.75"/></g>`;
 
 /**
  * Llamadas de texto (línea guía roja + cuadradito + caja). `lista` viene de
