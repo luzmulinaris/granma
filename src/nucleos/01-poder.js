@@ -20,7 +20,7 @@ export default {
     ${texto('txt', parrafos(
       'Escobar ejercía como Suplente de Jairo Ortega en la Cámara de Representantes.',
       'La representación política le ofrecía acceso y legitimidad pública.',
-    ), 1102, 646, 297, 'e1-t')}
+    ), 1102, 646, null, 'e1-t')}
 
     <!-- p.5 · agosto de 1983 -->
     ${punto(X, 424, 'e2-p')}
@@ -28,14 +28,14 @@ export default {
     ${texto('sub', 'Denuncia pública al narcotrafico', 1103, 490, null, 'e2-s')}
     ${texto('txt', parrafos(
       'Rodrigo Lara Bonilla, el ministro de Justicia de Colombia denuncia públicamente los vínculos de Pablo Escobar y otros jefes del Cartel de Medellín con el narcotráfico y la política.',
-    ), 1103, 515, 287, 'e2-t')}
+    ), 1103, 515, null, 'e2-t')}
     ${foto('denuncia', [761.1, 685.6, 780.3, 466.4], 'Tapa de El Espectador: «Soy un ministro peligroso para quienes están fuera de la ley»', 'denuncia')}
 
     <!-- p.6 · 1984 -->
     ${punto(X, 436, 'e3-p')}
     ${texto('fecha', '1984', 1108, 400, null, 'e3-f')}
     ${texto('sub', 'Escobar queda expuesto', 1103, 466, null, 'e3-s')}
-    ${texto('txt', parrafos('Escobar queda expuesto'), 1103, 496, 255, 'e3-t')}
+    ${texto('txt', parrafos('Escobar queda expuesto'), 1103, 496, null, 'e3-t')}
     ${svg(`
       <circle data-g="circulo" cx="870" cy="659.5" r="136" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 870 659.5)"/>
       ${flecha([[1004.2, 656.2], [1080, 656.2]], [[1094.4, 656.2], [1077.4, 640.5], [1077.4, 672]], 'fl', 10)}
@@ -47,7 +47,7 @@ export default {
     ${caja('La noticia de la captura de Escobar de 1976 vuelve a ser pública.', 1285, 927, 182, 'nota')}
     ${texto('txt', parrafos(
       'La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. La visibilidad pública se convierte en una vulnerabilidad.',
-    ), 531, 994, 297, 'cierre')}
+    ), 531, 994, null, 'cierre')}
 
     <div class="cabeza" data-g="cabeza">${titulo('El poder queda expuesto', 57, 264)}</div>
   `,

@@ -13,6 +13,7 @@
 
   /* Fuentes de Adobe Fonts con sus equivalentes libres como respaldo. */
   --f-titulo: 'amplitude', 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
+  --ancho-columna-texto: 336px;
   --f-serif: 'karmina', 'Faustina', Georgia, serif;
   --f-sans: 'karmina-sans', 'Alegreya Sans', 'Trebuchet MS', sans-serif;
   --f-versalitas: 'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
@@ -278,7 +279,7 @@ html:not(.listo) .stage {
 .operativo-versiones {
   left: 798px;
   top: 422px;
-  width: 294px;
+  width: var(--ancho-columna-texto);
   display: grid;
   gap: 30px;
   padding: 0;
@@ -326,6 +327,7 @@ html:not(.listo) .stage {
   white-space: nowrap;
 }
 .txt {
+  width: var(--ancho-columna-texto);
   font: 400 19px/22.15px var(--f-serif);
   text-align: left;
   hyphens: auto;

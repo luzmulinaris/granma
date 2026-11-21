@@ -22,7 +22,7 @@ export default {
     ${texto(
       'txt',
       '<p>Pablo Emilio Escobar Gaviria (1949–1993) fue un narcotraficante colombiano y jefe del Cartel de Medellín. Construyó una organización que combinó el tráfico de cocaína, la corrupción y la violencia.</p>',
-      464, 730, 317, 'bio',
+      464, 730, null, 'bio',
     )}
 
     ${svg(`
