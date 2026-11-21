@@ -29,7 +29,7 @@ export default {
       ${foto('torre-interior', geo.fotos['torre-interior'].p46, 'Corte del edificio: la familia de Escobar en el piso 29 y la policía, con equipos de escucha, en el piso 28', 'interior', 'foto--libre')}
       ${svg(`
         <path data-g="senal-telefonica" d="M1301 614 H1350 V806 H1250"
-          fill="none" stroke="${ROJO}" stroke-width="3" stroke-dasharray="7 6"/>
+          fill="none" stroke="${ROJO}" stroke-width="3"/>
         ${escucha.lineas}
       `)}
       ${escucha.cajas}

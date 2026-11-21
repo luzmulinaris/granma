@@ -369,6 +369,9 @@ html:not(.listo) .stage {
   line-height: 34.86105px;
   white-space: nowrap;
 }
+#tequendama [data-g="escucha0-c"] {
+  font-size: 20px;
+}
 .paso {
   display: flex;
   align-items: stretch;
