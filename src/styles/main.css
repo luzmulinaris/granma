@@ -378,8 +378,8 @@ html:not(.listo) .stage {
   color: #fff;
   font: 900 28.917px/1 var(--f-titulo);
 }
-.paso span {
-  width: 272px;
+.paso > span {
+  width: 332px;
   padding: 8px 5px 10px 9px;
   background: var(--gris);
   border: 1px solid var(--rojo);

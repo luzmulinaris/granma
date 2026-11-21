@@ -96,9 +96,9 @@ export default {
       ${pieza('estallido', [554.3, 826.5, 90.9, 86.6], 'cano-bang')}
       ${texto('rotulo', 'Automóvil de Guillermo Cano', 473, 1099, null, 'cano-rot-auto')}
       ${texto('rotulo rotulo--rojo', 'Motocicleta con dos sicarios', 818, 759, null, 'cano-rot-moto')}
-      ${paso(1, 'Guillermo Cano sale del edificio del diario "El Espectador"', 654, 408, 'c1', 306)}
-      ${paso(2, 'Se sube a su auto para regresar a su casa', 828, 874, 'c2', 306)}
-      ${paso(3, 'Aparece una moto con 2 sicarios que le disparan y lo matan', 182, 754, 'c3', 324)}
+      ${paso(1, 'Guillermo Cano sale del edificio del diario "El Espectador"', 654, 408, 'c1')}
+      ${paso(2, 'Se sube a su auto para regresar a su casa', 828, 874, 'c2')}
+      ${paso(3, 'Aparece una moto con 2 sicarios que le disparan y lo matan', 174, 754, 'c3')}
     </div>
 
     <!-- p.20 a 22 · asesinato de Galán -->
@@ -112,8 +112,8 @@ export default {
       ${pieza('tarima-persona', [669.8, 457.8, 43.1, 84.2], 'orador')}
       ${pieza('tarima-persona', [738.8, 462.5, 43.1, 84.2], 'orador')}
       ${geo.disparos_p22.map((r) => pieza('estallido', r, 'galan-bang')).join('')}
-      ${paso(1, 'Luis Carlos Galán se encontraba en una tarima en un acto electoral', 856, 466, 'g1', 310)}
-      ${paso(2, 'Entre la multitud se encontraban dos sicarios', 1318, 646, 'g2', 306)}
+      ${paso(1, 'Luis Carlos Galán se encontraba en una tarima en un acto electoral', 856, 466, 'g1')}
+      ${paso(2, 'Entre la multitud se encontraban dos sicarios', 1292, 646, 'g2')}
       ${paso(3, 'Los sicarios disparan cinco veces, matando a Galán y a sus dos acompañantes', 320, 565, 'g3')}
     </div>
 
@@ -138,7 +138,7 @@ export default {
       ${pieza('avion', [514.2, 383.8, 536.7, 328.4], 'avion')}
       ${pieza('estallido', [642, 475, 208, 197], 'avi-bang')}
       ${pieza('flecha-cae', [1024.6, 664.4, 155.4, 179.8], 'cae')}
-      ${paso(1, 'Un Boeing de Avianca despega de El Dorado hacia Cali con 101 pasajeros y 6 tripulantes', 395, 769, 'a1', 332)}
+      ${paso(1, 'Un Boeing de Avianca despega de El Dorado hacia Cali con 101 pasajeros y 6 tripulantes', 395, 769, 'a1')}
       ${paso(2, 'Minutos luego del despegue el avión explota y cae', 988, 404, 'a2')}
     </div>
 
@@ -155,7 +155,7 @@ export default {
       `)}
       ${pieza('estallido', [261, 780, 252, 240], 'das-bang')}
       ${paso(1, 'Un cochebomba se posiciona frente al edificio del DAS', 730, 946, 'd1')}
-      ${paso(2, 'El cochebomba explota dejando 60 muertos y 300 heridos', 494, 778, 'd2', 324)}
+      ${paso(2, 'El cochebomba explota dejando 60 muertos y 300 heridos', 494, 778, 'd2')}
     </div>
 
     <!-- p.32 · balance de los atentados -->

@@ -38,8 +38,8 @@ export const caja = (html, x, y, w, g, cls = '') =>
   `<div class="abs caja ${cls}"${dg(g)} style="${st(x, y, w)}">${html}</div>`;
 
 /** Caja numerada (cuadrado rojo con número + texto que "se escribe"). */
-export const paso = (n, html, x, y, g, anchoTexto) =>
-  `<div class="abs paso"${dg(g)} style="${st(x, y)}"><b>${n}</b><span${anchoTexto == null ? '' : ` style="width:${anchoTexto}px"`}>${html}</span></div>`;
+export const paso = (n, html, x, y, g) =>
+  `<div class="abs paso"${dg(g)} style="${st(x, y)}"><b>${n}</b><span>${html}</span></div>`;
 
 export const svg = (inner, g = '') =>
   `<svg class="abs capa"${dg(g)} viewBox="0 0 1684 1190" width="1684" height="1190" aria-hidden="true">${inner}</svg>`;
