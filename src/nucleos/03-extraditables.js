@@ -3,8 +3,8 @@ import geo from '../data/geo.json';
 import { foto, pieza, titulo, texto, evento, paso, svg, fondos, via, edificio, camion, miles } from '../lib/ui.js';
 
 // Los cinco hitos (p.15, 19, 23, 26 y 29) comparten la misma maqueta.
-const hito = (g, fecha, sub, ps) =>
-  evento({ g, y: 376, desde: 116, fecha, yFecha: 340, sub, ySub: 406, ps });
+const hito = (g, fecha, sub, ps, desde = 116) =>
+  evento({ g, y: 376, desde, fecha, yFecha: 340, sub, ySub: 406, ps });
 
 const VENTANAS_CH = [[205, 302, 406, 511], [314, 409, 503], 49];
 const VENTANAS_GR = [[94, 252, 422, 595], [322, 477, 632], 80];
@@ -30,7 +30,7 @@ export default {
     ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 575, null, 'cita')}
     ${texto('cita', 'que una carcel en Estados Unidos"', 920, 632, null, 'cita')}
     ${evento({
-      g: 'e1', x: 828, y: 782, desde: 930, fecha: 'noviembre 1986', yFecha: 749,
+      g: 'e1', y: 782, desde: 1190, fecha: 'noviembre 1986', yFecha: 749,
       ps: [
         'Los Extraditables recurren a amenazas, secuestros y atentados para presionar al Estado y evitar su envío a Estados Unidos.',
         'La extradición se convierte en un eje de la confrontación.',
@@ -42,7 +42,7 @@ export default {
     ${hito('e2', 'diciembre de 1986', 'Asesinato de Guillermo Cano', [
       'El 17 de diciembre es asesinado el director de El Espectador. El periodista había denunciado el narcotráfico y los antecedentes de Escobar.',
       'La violencia alcanza también a quienes investigan y publican.',
-    ])}
+    ], 0)}
     ${foto('cano', [67.6, 330.5, 745.9, 622.8], 'Tapa de El Espectador: «Asesinado el director de El Espectador»', 'cano')}
 
     <!-- p.19 · Luis Carlos Galán -->
@@ -189,7 +189,7 @@ export default {
     // ---------------------------------------------- p.15 · Guillermo Cano
     k.sale('ext proposito cita cab2', 3.0, { y: -30 }, { dur: 0.25 });
     k.saleEvento('e1', 3.0, -30);
-    k.evento('e2', 3.15);
+    k.evento('e2', 3.15, { origen: 'top' });
     k.barre('cano', 3.55, 'arriba', { dur: 0.45 });
 
     // p.16 · aparece la escena y se forma el primer cuadro
