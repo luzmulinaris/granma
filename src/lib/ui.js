@@ -89,10 +89,7 @@ export function edificio([x, y, w, h], xs = [], ys = [], lado = 49) {
 
 /** Camión visto de costado (p. 24 y 30 del PDF). */
 export const camion = (g) =>
-  `<g${dg(g)}>` +
-  `<rect x="175" y="937" width="377" height="128" fill="#fff" stroke="#1b1b1b" stroke-width="2.8"/>` +
-  `<rect x="549" y="972" width="140" height="93" fill="#cdcdcd" stroke="#1b1b1b" stroke-width="2.8"/>` +
-  `<circle cx="255" cy="1073" r="31" fill="#1b1b1b"/><circle cx="613" cy="1073" r="31" fill="#1b1b1b"/></g>`;
+  `<g${dg(g)}><image href="${url('svg/camion.svg')}" x="133" y="908" width="620" height="223.2"/></g>`;
 
 /**
  * Llamadas de texto (línea guía roja + cuadradito + caja). `lista` viene de

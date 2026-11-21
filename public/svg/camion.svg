@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" fill="none">
+<title>Camión de carga, vista lateral</title>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M68 62Q68 48 82 48H666Q679 48 679 62V259H68Z" fill="#FAFAF9" stroke="#292929" stroke-width="5"/>
+<path d="M85 69H661M88 82V235M654 83V235" stroke="#B0B2B1" stroke-width="2"/>
+<path d="M70 241H679V263H70Z" fill="#D8DCDA" stroke="#7E807F" stroke-width="2.5"/>
+<path d="M679 112H797Q819 112 833 133L871 189Q883 205 883 225V264H679Z" fill="#FAFAF9" stroke="#292929" stroke-width="5"/>
+<path d="M707 131H788Q800 131 809 144L837 185H707Z" fill="#D8DCDA" stroke="#7E807F" stroke-width="2.5"/>
+<path d="M792 134V183M699 126V236M699 199H838V237" stroke="#A0A3A1" stroke-width="2"/>
+<path d="M823 164H847V186" stroke="#7E807F" stroke-width="3"/>
+<rect x="842" y="163" width="12" height="27" rx="5" fill="#444645"/>
+<path d="M714 209H735" stroke="#7E807F" stroke-width="4"/>
+<path d="M876 213H884V235H876Z" fill="#D8DCDA"/>
+<path d="M69 216H78V237H69Z" fill="#FF1717"/>
+<path d="M883 247H901V264H883M677 249H725" fill="#D8DCDA" stroke="#7E807F" stroke-width="2.5"/>
+<path d="M114 264A60 60 0 0 1 234 264M730 264A60 60 0 0 1 850 264" fill="#444645" stroke="#292929" stroke-width="4"/>
+<path d="M236 267H721" stroke="#444645" stroke-width="12"/>
+<g id="ruedas" fill="#444645" stroke="#292929" stroke-width="4">
+<circle cx="174" cy="267" r="48"/><circle cx="790" cy="267" r="48"/>
+</g>
+<g fill="#D8DCDA" stroke="#7E807F" stroke-width="2">
+<circle cx="174" cy="267" r="25"/><circle cx="790" cy="267" r="25"/>
+<circle cx="174" cy="267" r="9"/><circle cx="790" cy="267" r="9"/>
+</g>
+<path d="M693 266V278H720" stroke="#7E807F" stroke-width="4"/>
+</g>
+</svg>
