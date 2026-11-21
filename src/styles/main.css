@@ -327,7 +327,7 @@ html:not(.listo) .stage {
 }
 .txt {
   font: 400 16.3px/19px var(--f-serif);
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   text-wrap: pretty;
 }
