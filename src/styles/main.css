@@ -297,6 +297,7 @@ html:not(.listo) .stage {
   text-align: justify;
   hyphens: auto;
 }
+#entrega [data-g="a3-t"],
 .justo.sin-cortes {
   hyphens: none;
 }
@@ -357,6 +358,10 @@ html:not(.listo) .stage {
 .caja--20 {
   font-size: 22.26609px;
   padding: 6px 5px 9px 8px;
+}
+.caja--recluso {
+  text-align: center;
+  white-space: nowrap;
 }
 .caja--1 {
   height: 37.11015px;
