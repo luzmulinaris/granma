@@ -4,7 +4,7 @@ import { foto, pieza, titulo, texto, evento, paso, svg, flecha, fondos, via } fr
 export default {
   id: 'confrontacion',
   nombre: 'Confrontación y terror',
-  pasos: 7.6,
+  pasos: 6.55,
 
   html: () => `
     ${evento({
@@ -14,7 +14,6 @@ export default {
       ps: ['Rodrigo Lara Bonilla, el ministro de Justicia de Colombia, es asesinado el 30 de abril de 1984 en Bogotá, cuando sicarios en motocicleta dispararon contra su vehículo.'],
     })}
     ${foto('lara-auto', [188.2, 492, 744.3, 420], 'El automóvil de Rodrigo Lara Bonilla con los vidrios destrozados por los disparos', 'foto')}
-    ${foto('mapa-bogota', [862, 552, 690, 588], 'Mapa: cómo ocurrió el asesinato. Calle 127, cruce y entorno de la Autopista Norte. El ministro regresaba a su casa cuando fue atacado', 'mapa')}
 
     <div class="cabeza" data-g="cabeza">${titulo('Confrontación y terror', 57, 264)}</div>
 
@@ -50,36 +49,25 @@ export default {
     // p.9 · se suma la foto por encima
     k.entra('foto', 1.3, { y: 180, rotation: 2 }, { dur: 0.5, ease: 'power3.out' });
 
-    // p.10 · se suma el mapa
-    fijarOrigen($('mapa'));
-    k.entra('mapa', 2.3, { scale: 0.8, y: 80 }, { dur: 0.5, ease: 'power3.out' });
-
-    // p.11 · el mapa hace zoom y se entra a la escena; se escribe el cuadro 1
-    tl.to($('mapa'), { scale: 9, duration: 0.7, ease: 'power2.in' }, 3.3);
-    k.sale('cabeza foto e1-l e1-p e1-f e1-s e1-t', 3.3, {}, { dur: 0.3 });
-    k.entra('escena', 3.7, {}, { dur: 0.3, ease: 'none' });
-    k.sale('mapa', 3.9, {}, { dur: 0.12 });
-    k.entra('moto', 3.95, { x: 760 }, { dur: 0.4, ease: 'power2.out' });
-    k.entra('rot-auto rot-moto', 4.25, { y: 12 }, { dur: 0.2 });
-    k.flecha('f1', 4.35, 0.22);
-    k.paso('p1', 4.4);
+    // p.11 · transición de la foto a la reconstrucción
+    k.sale('cabeza foto e1-l e1-p e1-f e1-s e1-t', 2.25, {}, { dur: 0.3 });
+    k.entra('escena', 2.65, {}, { dur: 0.3, ease: 'none' });
+    k.entra('moto', 2.90, { x: 760 }, { dur: 0.4, ease: 'power2.out' });
+    k.entra('rot-auto rot-moto', 3.20, { y: 12 }, { dur: 0.2 });
+    k.flecha('f1', 3.30, 0.22);
+    k.paso('p1', 3.35);
 
     // p.12 · la moto se mueve, dispara, cuadro 2
-    k.sale('rot-auto rot-moto f1', 5.1, {}, { dur: 0.15 });
-    tl.to($('moto'), { x: -433, y: -63, duration: 0.45, ease: 'power2.inOut' }, 5.2);
-    k.estalla('bang', 5.65, 'auto');
-    k.paso('p2', 5.72);
+    k.sale('rot-auto rot-moto f1', 4.05, {}, { dur: 0.15 });
+    tl.to($('moto'), { x: -433, y: -63, duration: 0.45, ease: 'power2.inOut' }, 4.15);
+    k.estalla('bang', 4.60, 'auto');
+    k.paso('p2', 4.67);
 
     // p.13 · el auto pierde el control, la moto huye, cuadro 3
-    k.sale('bang', 6.35, { scale: 1.8 }, { dur: 0.12 });
-    k.flecha('f3', 6.4, 0.4);
-    tl.to($('auto'), { x: -300.4, y: 217, rotation: -17.2, duration: 0.6, ease: 'power1.inOut' }, 6.45);
-    k.flecha('f2', 6.7, 0.35);
-    k.paso('p3', 6.85);
+    k.sale('bang', 5.30, { scale: 1.8 }, { dur: 0.12 });
+    k.flecha('f3', 5.35, 0.4);
+    tl.to($('auto'), { x: -300.4, y: 217, rotation: -17.2, duration: 0.6, ease: 'power1.inOut' }, 5.40);
+    k.flecha('f2', 5.65, 0.35);
+    k.paso('p3', 5.80);
   },
 };
-
-// el zoom del mapa apunta al cruce marcado con el círculo rojo
-function fijarOrigen(els) {
-  for (const el of els) el.style.transformOrigin = '51.9% 59.2%';
-}
