@@ -79,7 +79,7 @@ export default {
 
     <div class="cabeza" data-g="cabeza">${titulo('Los crímenes de los extraditables', 57, 240)}</div>
     <div class="cabeza" data-g="cab2">
-      ${texto('bajada bajada--16', 'Los Extraditables fue una organización armada y de narcoterrorismo fundada el 6 de noviembre 1986 por los principales líderes del Cártel<br>de Medellín, encabezada por Pablo Escobar Gaviria', 63, 334, null, 'bajada')}
+      ${texto('bajada', 'Los Extraditables fue una organización armada y de narcoterrorismo fundada el 6 de noviembre 1986 por los principales líderes del Cártel<br>de Medellín, encabezada por Pablo Escobar Gaviria', 63, 334, null, 'bajada')}
     </div>
 
     <!-- p.16 a 18 · asesinato de Cano -->
