@@ -1,0 +1,571 @@
+/* ------------------------------------------------------------------
+   El diseño original es una página de 1684 × 1190 pt.
+   Todo se maqueta en esas mismas unidades dentro de `.stage`, que se
+   escala entera con --s para entrar en cualquier pantalla.
+------------------------------------------------------------------- */
+:root {
+  --rojo: #d91403;
+  --rojo-vivo: #fe1003;
+  --negro: #231f20;
+  --gris: #d5d7d8;
+  --beige: #e9e9e3;
+  --claro: #f5f5f3;
+
+  /* Tipografías del PDF: Amplitude, Karmina y Karmina Sans (comerciales).
+     Acá van equivalentes libres de Google Fonts, con el cuerpo ajustado
+     para que ocupen el mismo ancho que las originales. Si se cuenta con
+     licencia web: cargar las originales, cambiar estas variables y volver
+     los cuerpos a los del PDF (70 / 50 / 40 / 21 / 20 / 16). */
+  --f-titulo: 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
+  --f-serif: 'Faustina', Georgia, serif;
+  --f-sans: 'Alegreya Sans', 'Trebuchet MS', sans-serif;
+  --f-versalitas: 'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+
+  --s: 1; /* escala de la página */
+  --oy: 0px; /* corrimiento vertical cuando sobra alto */
+  --vh-paso: 48; /* cuánto scroll (en vh) dura cada paso: más alto = más lento */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--negro);
+  font-family: var(--f-serif);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+}
+
+/* ------------------------------------------------------------ cabecera */
+.cabecera {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: calc(140px * var(--s));
+  z-index: 100;
+  background: #fff;
+  border-bottom: max(1px, calc(1.4px * var(--s))) solid var(--negro);
+}
+.cabecera__rojo {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: calc(132px * var(--s));
+  background: var(--rojo);
+  border-bottom: 0;
+  box-shadow: 0 calc(4px * var(--s)) 0 calc(-0px) transparent;
+}
+.cabecera__rojo::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 calc(-4.5px * var(--s)) 0;
+  height: calc(4px * var(--s));
+  background: var(--negro);
+}
+.cabecera__in {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1684px;
+  height: 140px;
+  margin-left: -842px;
+  transform: scale(var(--s));
+  transform-origin: 50% 0;
+}
+.logo {
+  position: absolute;
+  left: 693px;
+  top: 34px;
+  width: 292px;
+  height: auto;
+}
+.menu-btn {
+  position: absolute;
+  left: 14px;
+  top: 48px;
+  width: 68px;
+  height: 60px;
+  padding: 0 15px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10.5px;
+}
+.menu-btn i {
+  display: block;
+  height: 1.2px;
+  background: #fff;
+  transition: transform 0.35s cubic-bezier(0.7, 0, 0.2, 1), opacity 0.2s;
+  transform-origin: 50% 50%;
+}
+.menu-btn[aria-expanded='true'] i:nth-child(1) {
+  transform: translateY(11.7px) rotate(45deg);
+}
+.menu-btn[aria-expanded='true'] i:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn[aria-expanded='true'] i:nth-child(3) {
+  transform: translateY(-11.7px) rotate(-45deg);
+}
+.menu-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- índice */
+.indice {
+  position: fixed;
+  inset: calc(140px * var(--s)) 0 0 0;
+  z-index: 90;
+  background: var(--negro);
+  color: #fff;
+  overflow: auto;
+  overscroll-behavior: contain;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.55s cubic-bezier(0.7, 0, 0.2, 1), visibility 0s 0.55s;
+  visibility: hidden;
+}
+.indice[hidden] {
+  display: block;
+}
+.indice.abierto {
+  clip-path: inset(0 0 0 0);
+  visibility: visible;
+  transition: clip-path 0.55s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.indice__lista {
+  list-style: none;
+  margin: 0 auto;
+  padding: clamp(24px, 5vh, 60px) clamp(20px, 5vw, 80px);
+  max-width: 1100px;
+  counter-reset: n -1;
+}
+.indice__lista li {
+  counter-increment: n;
+  border-bottom: 1px solid rgb(255 255 255 / 0.18);
+}
+.indice__lista a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 0.32em 0;
+  color: #fff;
+  text-decoration: none;
+  font: 700 clamp(20px, 3.6vh, 40px) / 1.15 var(--f-titulo);
+  transition: color 0.2s, padding-left 0.3s;
+}
+.indice__lista a::before {
+  content: counter(n, decimal-leading-zero);
+  color: var(--rojo);
+  font-size: 0.6em;
+  min-width: 2em;
+}
+.indice__lista a:hover,
+.indice__lista a:focus-visible {
+  color: var(--rojo-vivo);
+  padding-left: 0.4em;
+  outline: none;
+}
+
+/* ---------------------------------------------------------------- núcleos */
+.nucleo {
+  position: relative;
+  height: calc(100vh + var(--pasos, 1) * var(--vh-paso) * 1vh);
+  height: calc(100svh + var(--pasos, 1) * var(--vh-paso) * 1svh);
+  background: #fff;
+}
+.pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: #fff;
+}
+.stage {
+  position: absolute;
+  left: 50%;
+  top: var(--oy);
+  width: 1684px;
+  height: 1190px;
+  margin-left: -842px;
+  transform: scale(var(--s));
+  transform-origin: 50% 0;
+}
+
+/* hasta que las animaciones están armadas no se muestra nada (evita el
+   parpadeo de ver todo junto durante la carga) */
+html:not(.listo) .stage {
+  visibility: hidden;
+}
+
+.abs {
+  position: absolute;
+  margin: 0;
+}
+.capa {
+  left: 0;
+  top: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.foto {
+  object-fit: cover;
+  background: #ddd;
+}
+.foto--libre {
+  background: none;
+  object-fit: contain;
+}
+.sombra {
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.28);
+}
+
+/* cabeza: título + bajada */
+.cabeza {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+.titulo {
+  position: absolute;
+  margin: 0;
+  height: 72px;
+  padding: 0 12px 0 5px;
+  background: var(--negro);
+  color: #fff;
+  font: 700 72px/72px var(--f-titulo);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.titulo span {
+  display: block;
+}
+.titulo--portada {
+  height: 80px;
+  line-height: 80px;
+  color: var(--rojo);
+}
+.titulo--rojo {
+  height: auto;
+  padding: 0;
+  background: none;
+  color: var(--rojo);
+  font-size: 51.5px;
+  line-height: 57px;
+  letter-spacing: 0.7px;
+  overflow: visible;
+}
+.titulo--rojo.titulo--40 {
+  font-size: 41px;
+  line-height: 46px;
+  letter-spacing: 0.6px;
+}
+.bajada {
+  font: 500 20px/23px var(--f-titulo);
+  text-wrap: pretty;
+}
+.bajada--16 {
+  font-size: 15px;
+}
+.justo {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* línea de tiempo */
+.linea {
+  position: absolute;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--rojo);
+}
+.punto {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: var(--rojo);
+}
+.fecha {
+  font: 700 51.5px/57px var(--f-titulo);
+  letter-spacing: 0.7px;
+  color: var(--rojo);
+  white-space: nowrap;
+}
+.fecha--40 {
+  font-size: 41px;
+  line-height: 46px;
+  letter-spacing: 0.6px;
+}
+.sub {
+  font: 700 16.6px/18px var(--f-titulo);
+  white-space: nowrap;
+}
+.txt {
+  font: 400 16.3px/19px var(--f-serif);
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+.txt p {
+  margin: 0 0 20px;
+}
+.txt--19 {
+  font-size: 19px;
+  line-height: 22.6px;
+}
+.cita {
+  font: italic 700 41px/53px var(--f-titulo);
+  letter-spacing: 0.6px;
+  color: var(--rojo);
+  white-space: nowrap;
+}
+.cita--recta {
+  font-style: normal;
+  line-height: 52.7px;
+}
+
+/* cajas de texto */
+.caja {
+  background: var(--gris);
+  border: 1px solid var(--rojo);
+  padding: 7px 8px 7px;
+  font: 400 16.6px/18px var(--f-sans);
+}
+.caja--20 {
+  font-size: 19.8px;
+  padding: 6px 5px 9px 8px;
+}
+.caja--1 {
+  height: 33px;
+  padding: 0 8px;
+  line-height: 31px;
+  white-space: nowrap;
+}
+.paso {
+  display: flex;
+  align-items: stretch;
+  min-height: 56px;
+}
+.paso b {
+  flex: none;
+  width: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--rojo);
+  color: #fff;
+  font: 900 27px/1 var(--f-titulo);
+}
+.paso span {
+  width: 272px;
+  padding: 8px 5px 10px 9px;
+  background: var(--gris);
+  border: 1px solid var(--rojo);
+  border-left: 0;
+  font: 400 19.8px/18px var(--f-sans);
+}
+.rotulo {
+  font: 400 30px/35px var(--f-sans);
+  color: #242424;
+  white-space: nowrap;
+}
+.rotulo--rojo {
+  font-size: 28px;
+  color: var(--rojo-vivo);
+}
+
+.z6 {
+  z-index: 6;
+}
+.objetivo {
+  font: 400 22px/26px var(--f-sans);
+  white-space: nowrap;
+}
+.flecha-h {
+  overflow: hidden;
+}
+.flecha-h i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--rojo);
+  clip-path: polygon(0 29.9%, 90.2% 29.9%, 90.2% 0, 100% 50%, 90.2% 100%, 90.2% 70.1%, 0 70.1%);
+}
+
+/* escenas (ilustraciones a página completa) */
+.escena {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+.fondo {
+  position: absolute;
+  left: -4000px;
+  width: 9684px;
+}
+.per {
+  color: #aaaaa7;
+}
+.per circle {
+  fill: currentColor;
+}
+.per path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 11.2;
+}
+
+/* gráficos */
+.num-grande {
+  font: 400 90px/104px var(--f-sans);
+  color: var(--rojo);
+  white-space: nowrap;
+  font-variant-numeric: lining-nums;
+}
+.vers {
+  font: 500 25px/28px var(--f-versalitas);
+  letter-spacing: 0.4px;
+  color: #1b1b1b;
+  white-space: nowrap;
+  text-transform: lowercase;
+}
+.vers--der {
+  text-align: right;
+}
+.vers--rojo {
+  color: var(--rojo);
+}
+.vers--60 {
+  font-size: 60px;
+  line-height: 69px;
+  letter-spacing: 1px;
+}
+.eje {
+  font: 400 25px/29px var(--f-sans);
+  color: #9a9a9a;
+  transform: translateX(-50%);
+  font-variant-numeric: lining-nums;
+}
+.barra {
+  position: absolute;
+  transform-origin: 0 50%;
+}
+.barra b {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-52%);
+  font: 400 60px/1 var(--f-sans);
+  color: #fff;
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+}
+
+/* retratos circulares */
+.retrato {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--rojo);
+  background: #ccc;
+}
+.retrato--sin-borde {
+  border: 0;
+}
+.retrato img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* radio en despiece */
+.despiece {
+  position: absolute;
+}
+.despiece i {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* plano 360 */
+.giro {
+  position: absolute;
+  inset: 0;
+  perspective: 2600px;
+  perspective-origin: 50% 45%;
+}
+
+/* flecha de scroll de la portada */
+.flecha-scroll {
+  animation: latido 1.8s ease-in-out infinite;
+}
+@keyframes latido {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+/* aviso para teléfonos en vertical: la pieza está pensada en apaisado */
+.aviso-giro {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  z-index: 80;
+  margin: 0;
+  padding: 8px 14px;
+  transform: translateX(-50%);
+  background: var(--negro);
+  color: #fff;
+  font: 500 13px/1.2 var(--f-sans);
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (orientation: portrait) and (max-width: 700px) {
+  .aviso-giro {
+    display: block;
+  }
+}
+
+/* -------------------------------------------------------------------- pie */
+.pie {
+  position: relative;
+  z-index: 1;
+  background: var(--negro);
+  color: rgb(255 255 255 / 0.75);
+  padding: 28px clamp(20px, 5vw, 80px);
+  font: 400 14px/1.5 var(--f-sans);
+}
+.pie p {
+  margin: 0 auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flecha-scroll {
+    animation: none;
+  }
+}

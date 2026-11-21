@@ -1,0 +1,235 @@
+Este trabajo es un scrollytelling. Se cuenta una historia que es muy compleja y tiene muchos núcleos que van apareciendo y narrando la historia, como si fueran capas de contenido que van apareciendo para contar la historia. Este pdf contiene los núcleos que yo diseñe, la idea sería pasarlo a una web navegable. Te adjunto también el guión para que puedas entender cómo pensé los núcleos y la aparición del contenido. Tene en cuenta que la idea es que con cada “scroll” vayan apareciendo las cosas.
+
+P. 1, 2 y 3 - PORTADA
+
+La flecha roja que indica el scroll aparece estática en toda la portada
+Aparece el titulo tipo paneo horizontal y abajo la bajada
+Con el scroll aparece las imágenes de los diarios (diarios.png)
+Despues aparece la imágen de escobar(Pablo_Escobar_Mug) y el texto que explica quién es
+
+P. 4 - 1 NUCLEO
+
+Aparece el titulo tipo paneo horizontal
+Aparece la imágen (congreso.jpg)
+Se forma la línea de tiempo tipo paneo de abajo hacia arriba y aparece la fecha 1983, el subtitulo y el texto
+
+P. 5 - 1 NUCLEO
+
+Se mantiene el tiulo y la imágen (congreso.jpg) pero baja la linea de tiempo y aparece la fecha agosto 1983, el texto, la bajada y la imágen (denuncia.jpg)
+
+P. 6 - 1 NUCLEO 
+
+Se mantiene el tiulo y la imágen (congreso.jpg) pero baja la linea de tiempo y aparece la fecha 1984, el texto, la bajada. Se genera el circulo que rodea a escobar con la flecha y el texto que dice “jefe del cartel de medellin”
+
+P. 7 - 1 NUCLEO
+Se mantiene el tiulo y la imágen (congreso.jpg), se superpone por encima la imágen (images4.jpeg) y aparece el texto
+
+P.8 - 2 NUCLEO
+
+Aparece el titulo tipo paneo horizontal. Se forma la línea de tiempo tipo paneo de abajo hacia arriba y aparece la fecha abril 1984, el subtitulo y el texto
+
+P. 9 - 2 NUCLEO
+
+Se mantiene todo lo de la p. 8 y se suma la imagen (rodrigo-lara-bonilla-700x395) por encima 
+
+P. 10 - 2 NUCLEO
+
+Se mantiene todo lo de la p. 9 y se suma el mapa de cómo ocurrio el asesinato
+
+P. 11 - 2 NUCLEO
+
+Aparece el mapa tipo zoom, y se escribe el primer cuadro de texto
+
+P. 12 - 2 NUCLEO
+
+Se mantiene lo mismo de la p. 11, la moto se mueve y se genera el disparo  y aparece el segundo cuadro de texto
+
+P. 13 - 2 NUCLEO
+
+El auto pierde el control y se mueve y aparece el tercer cuadro de texto
+
+P. 14 - 3 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y abajo la bajada
+Con el scroll aparece la imagen (extraditables.png)
+Despues aparece el texto con el texto en comillas. Se forma la línea de tiempo tipo paneo de abajo hacia arriba y aparece la fecha noviembre 1986 y el texto
+
+P. 15 - 3 NUCLEO
+
+Se mantiene el titulo de la p. 15 
+Se forma la línea de tiempo tipo paneo de abajo hacia arriba y aparece la fecha diciembre 1986 y el texto
+Aparece la foto (images3.jpeg)
+
+P. 16 - 3 NUCLEO
+
+Aparece la escena del asesinato y se forma el primer cuadro de texto
+
+P. 17 - 3 NUCLEO
+
+Aparece el auto y el segundo cuadro de texto
+
+P. 18 - 3 NUCLEO
+
+Aparece la moto que dispara y el tercer cuadro de texto
+
+P. 19 - 3 NUCLEO
+
+Se forma la línea de tiempo y aparece la fecha agosto 1989 y el texto
+Aparece la foto (5945f3226efa1.jpg)
+
+P. 20 - 3 NUCLEO
+
+Aparece la escena del asesinato y se forma el primer cuadro de texto
+
+P. 21 - 3 NUCLEO
+
+Aparece el segundo cuadro de texto y se colorea a dos personas de la multitud
+
+P. 22 - 3 NUCLEO
+
+Se producen los disparos y aparece el tercer cuadro de texto 
+
+P. 23 - 3 NUCLEO
+
+Se forma la línea de tiempo y aparece la fecha septiembre 1989 y el texto
+Aparece la primer foto (75.webp) y luego la otra foto (images5.jpeg)
+
+P. 24 - 3 NUCLEO
+
+Aparece la escena del asesinato y se forma el primer cuadro de texto
+
+P. 25 - 3 NUCLEO
+
+Se produce el estallido y aparece el segundo cuadro de texto
+ 
+P. 26 - 3 NUCLEO
+
+Se forma la línea de tiempo y aparece la fecha noviembre 1989 y el texto
+Aparece la primer foto (BKR6IXPGGRBKFOOMQS3WKLSRUE.jpg) y luego la otra foto (otd-in-1989-avianca-flight-203-hk-1803-a-boeing-727-100-v0-r40syco26h3e1.jpg.webp)
+
+P. 27 - 3 NUCLEO
+
+Aparece la escena del atentado y el primer cuado de texto, se forma la linea que marca hacia arriba que despegó
+
+P. 28 - 3 NUCLEO
+
+El avión estalla, aparece el segundo cuadro de texto y la flecha indica que el avión cae
+
+P. 29 - 3 NUCLEO
+
+Se forma la línea de tiempo y aparece la fecha diciembre 1989 y el texto
+Aparece la primer foto (Edificio_Das_1989.jpg), luego la otra foto (sddefault.jpg) y luego la otra foto (UC-126-1991-4.jpg)
+
+P. 30 - NUCLEO
+
+Aparece la escena del atentado y el primer cuado de texto
+
+P. 31 - NUCLEO
+
+Se produce el estallido y aparece el segundo cuadro de texto
+
+P. 32 - 3 NUCLEO
+
+Aparecen los resultados de los atentados producidos por escobar, se forman las barras del grafico estadístico
+
+P. 33 - 4 NUCLEO
+
+Aparece el titulo tipo paneo horizontal 
+Con el scroll se forma la linea de tiempo y aparece la fecha 1990, y van apareciendo los hechos
+Con el ultimo scroll aparece la imagen (49a3bd56-2e9b-4a55-9a9d-418e208798e4.jpg.webp)
+
+P. 34 - 4 NUCLEO
+
+Se mantiene el titulo anterior estatico 
+Con el scroll se forma la linea de tiempo y aparece la fecha junio 1991
+con el primer hecho aparece la imagen (images7.jpeg) y con el segundo hecho aparece la otra imagen (BFAH3U6NOZD55GSBA7C26TFYV4.png)
+
+P. 35 - 5 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Se forma el mapa y se va marcando el camino
+Se hace un zoom para pasar a la siguiente pag
+
+P. 36 - 5 NUCLEO
+
+Aparece el plano de la catedral tipo 360º
+
+P. 37 - 5 NUCLEO
+
+Se mantiene el plano de la catedral y se marca en rojo la habitación de Escobar
+Se hace un zoom al interior
+
+P. 38 - 5 NUCLEO
+
+Con el zoom aparece el interior de la habitación y se van marcando de a uno las caracteristicas
+
+P. 39 - 5 NUCLEO
+
+Aparece el titulo tipo paneo horizontal 
+Van apareciendo de a uno los otros reclusos. El orden es: 1.(02_Roberto_Escobar. png), 2.(60A25F59-ABBB-4989-9648-E490DC4954A6_w250_r0_s.png), 3.(04_Mugre.png), 4. (05_Otto.png) 5. (06_Gustavo_Gonzalez_Florez_Tavo.png)
+
+P. 40 - 6 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Se forma la línea de tiempo tipo paneo de abajo hacia arriba y aparece la fecha 1992 y los textos 
+
+P. 41 - 7 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Aparece el plano de la catedral, se genera el circulo que marca y aparece el cuadro de texto
+
+P. 42, 43 - 8 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada. Las imagenes van apareciendo de a una hasta cubrir toda la pantalla
+
+P. 44 - 8 NUCLEO
+
+Aparece el texto y las imágenes de quienes estan detras de escobar (Retrato de hombre uniformado.png) (Dos hombres frente a una avioneta.png) (Retrato archivístico en blanco y negro.png) (Dos hombres con camisas a cuadros.png), despues se forman las flechas e indican el texto
+
+P. 45 - 9 NUCLEO 
+ 
+Aparece el titulo tipo paneo horizontal y la bajada
+Aparece el edificio y se marcan los pisos
+Se hace un zoom
+
+P. 46 - 9 NUCLEO 
+
+Aparece el interior del edificio con un zoom
+
+P. 47 - 10 NUCLEO 
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Aparece el plano de todas las manzanas y se marcan 8
+
+P. 48 - 10 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Se mantiene el plano de todas las manzanas y se marcan los 12 puntos
+
+P. 49 - 11 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Aparece el texto rojo en comillas
+
+P. 50 - 11 NUCLEO
+
+Aparece el titulo y se marca un solo punto en las manzanas
+
+P. 51 - 11 NUCLEO
+
+Aparece el titulo y la bajada. Aparece el despiece de la radio, se va formando y apareciendo las piezas de a una
+
+P. 52 - 12 NUCLEO
+
+Aparece el titulo tipo paneo horizontal y la bajada
+Aparece el subtitulo y la imagen 
+Luego aparece el primer cuadro de textp
+
+P. 53 - 12 NUCLEO
+
+Se mantiene todo lo de la pagina anterior y se suma el segundo cuadro de texto
+Aparece el tercer cuadro de texto
+
+P. 54 - 13 NUCLEO
+
+Aparecen los graficos, se van formando las barras
