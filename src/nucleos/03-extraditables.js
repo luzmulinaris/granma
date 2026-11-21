@@ -4,7 +4,7 @@ import { foto, pieza, titulo, texto, evento, paso, svg, fondos, via, edificio, c
 
 // Los cinco hitos (p.15, 19, 23, 26 y 29) comparten la misma maqueta.
 const hito = (g, fecha, sub, ps) =>
-  evento({ g, y: 376, desde: 116, fecha, yFecha: 340, sub, ySub: 406, ps, yTxt: 436 });
+  evento({ g, y: 376, desde: 116, fecha, yFecha: 340, sub, ySub: 406, ps });
 
 const VENTANAS_CH = [[205, 302, 406, 511], [314, 409, 503], 49];
 const VENTANAS_GR = [[94, 252, 422, 595], [322, 477, 632], 80];

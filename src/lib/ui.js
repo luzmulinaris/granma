@@ -57,12 +57,13 @@ export const flecha = (puntos, punta, g, ancho = 14) =>
  */
 export function evento({ g, x = 827, y, desde, fecha, yFecha, sub, ySub, ps, yTxt, xTxt }) {
   const xt = xTxt ?? x + 29;
+  const ySubtitulo = ySub ?? y + 30;
   let h = '';
   if (desde != null) h += linea(x, Math.min(desde, y), Math.max(desde, y), `${g}-l`);
   h += punto(x, y, `${g}-p`);
   if (fecha) h += texto('fecha', fecha, x + 35, yFecha ?? y - 40, null, `${g}-f`);
-  if (sub) h += texto('sub', sub, xt + 1, ySub ?? y + 30, null, `${g}-s`);
-  if (ps) h += texto('txt', parrafos(...ps), xt, yTxt ?? y + 60, null, `${g}-t`);
+  if (sub) h += texto('sub', sub, xt + 1, ySubtitulo, null, `${g}-s`);
+  if (ps) h += texto('txt', parrafos(...ps), xt, sub ? ySubtitulo + 30 : (yTxt ?? y + 60), null, `${g}-t`);
   return h;
 }
 

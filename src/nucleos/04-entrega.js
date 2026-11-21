@@ -12,12 +12,11 @@ export default {
       g: 'a1', y: 385, desde: 312, fecha: '1990', yFecha: 340,
       sub: 'La posibilidad de entregarse', ySub: 406,
       ps: ['El gobierno de César Gaviria impulsa una política de sometimiento a la justicia con beneficios por comparecencia y confesión.'],
-      yTxt: 436,
     })}
     ${evento({
       g: 'a2', y: 592, desde: 385, sub: 'Los intermediarios', ySub: 586,
       ps: ['El sacerdote Rafael García Herreros facilita los contactos para concretar la entrega de Pablo Escobar.'],
-      yTxt: 611, xTxt: 849,
+      xTxt: 849,
     })}
     ${evento({
       g: 'a3', y: 796, desde: 592,
@@ -31,7 +30,6 @@ export default {
       g: 'b1', y: 385, desde: 312, fecha: 'junio de 1991', yFecha: 340,
       sub: 'La decisión sobre la extradición', ySub: 406,
       ps: ['La Asamblea Constituyente vota por la prohibición de extraditar a los colombianos por nacimiento.'],
-      yTxt: 436,
     })}
     ${evento({ g: 'b2', y: 640, desde: 385, sub: 'Entrega de Pablo Escobar', ySub: 634 })}
     ${foto('gaceta', [227.8, 358.8, 463.9, 689.1], 'Gaceta Constitucional: Constitución Política de Colombia 1991', 'gaceta')}

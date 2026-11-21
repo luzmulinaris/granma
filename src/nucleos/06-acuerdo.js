@@ -11,12 +11,10 @@ export default {
       g: 'e1', y: 385, desde: 312, fecha: 'julio de 1992', yFecha: 340,
       sub: 'Socios asesinados', ySub: 406,
       ps: ['Fernando Galeano y Gerardo «Kiko» Moncada son asesinados dentro de La Catedral, en el contexto de disputas con Escobar.'],
-      yTxt: 436,
     })}
     ${evento({
       g: 'e2', y: 628, desde: 385, sub: 'Intervenir y trasladar', ySub: 622,
       ps: ['El gobierno ordena retomar el control y trasladar a Escobar. Eduardo Mendoza, viceministro de Justicia, y Hernando Navas Rubio, director de Prisiones, ingresan y son retenidos por los reclusos.'],
-      yTxt: 652,
     })}
     <div class="cabeza" data-g="cabeza">
       ${titulo('El acuerdo se rompe', 57, 240)}
