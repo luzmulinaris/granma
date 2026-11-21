@@ -27,8 +27,8 @@ export default {
     <!-- p.14 · noviembre 1986 -->
     ${foto('extraditables', [67.6, 432, 652.2, 489.3], 'Pablo Escobar rodeado de familiares y allegados en una reunión', 'ext')}
     ${texto('txt', '<p>Su propósito era impedir a toda costa la extradición de ciudadanos colombianos hacia los Estados Unidos, bajo el tratado bilateral existente en ese entonces.</p>', 733, 430, 284, 'proposito')}
-    ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 494, null, 'cita')}
-    ${texto('cita', 'que una carcel en Estados Unidos"', 920, 547, null, 'cita')}
+    ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 518, null, 'cita')}
+    ${texto('cita', 'que una carcel en Estados Unidos"', 920, 571, null, 'cita')}
     ${evento({
       g: 'e1', x: 828, y: 782, desde: 634, fecha: 'noviembre 1986', yFecha: 749,
       ps: [
