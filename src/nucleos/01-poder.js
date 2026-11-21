@@ -35,7 +35,6 @@ export default {
     ${punto(X, 436, 'e3-p')}
     ${texto('fecha', '1984', 1108, 400, null, 'e3-f')}
     ${texto('sub', 'Escobar queda expuesto', 1103, 466, null, 'e3-s')}
-    ${texto('txt', parrafos('Escobar queda expuesto'), 1103, 496, null, 'e3-t')}
     ${svg(`
       <circle data-g="circulo" cx="870" cy="659.5" r="136" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 870 659.5)"/>
       ${flecha([[1004.2, 656.2], [1080, 656.2]], [[1094.4, 656.2], [1077.4, 640.5], [1077.4, 672]], 'fl', 10)}
