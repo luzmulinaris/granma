@@ -63,6 +63,8 @@ export default {
       ${hab.cajas}
     </div>
 
+    ${texto('titulo titulo--rojo titulo--40', '<span>Los lujos de su prisión</span>', 62, 220, null, 'lujos')}
+
     <!-- p.39 · otros reclusos -->
     ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 62, 317, null, 'otros')}
     ${RECLUSOS.map(
@@ -114,11 +116,13 @@ export default {
     tl.to($('plano-g'), { scale: 4.2, duration: 0.7, ease: 'power2.in' }, 6.5);
     k.sale('plano-g', 6.9, {}, { dur: 0.3 });
     k.entra('hab-g', 6.95, { scale: 1.9 }, { dur: 0.6, ease: 'power2.out' });
+    k.barre('lujos', 7.4, 'izq', { dur: 0.35, desde: { x: -60 }, ease: 'power3.out' });
     // se van marcando de a una las características
     geo.llamadas.habitacion.forEach((_, i) => k.llamada(`h${i}`, 7.75 + i * 0.5));
 
     // p.39 · otros reclusos, de a uno
     k.sale('hab-g', 10.5, { scale: 0.92 }, { dur: 0.3 });
+    k.sale('lujos', 10.5, {}, { dur: 0.3 });
     k.vuelve('cabeza', 10.65, {}, { dur: 0.25 });
     k.entra('otros', 10.75, { x: -60, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.35, ease: 'power3.out' });
     RECLUSOS.forEach((_, i) => {
