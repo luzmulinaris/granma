@@ -33,7 +33,7 @@ export default {
 
   html: () => `
     <!-- p.35 · mapa y camino -->
-    <div class="abs" data-g="mapa-g" style="left:0;top:0;width:1684px;height:1190px;transform-origin:1044.6px 855.9px">
+    <div class="abs" data-g="mapa-g" style="left:0;top:0;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.1)">
       ${foto('mapa-envigado', [719.7, 346.8, 777.4, 571.9], 'Mapa del sur del valle de Aburrá: de Envigado a La Catedral', 'mapa')}
       ${svg(`
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
