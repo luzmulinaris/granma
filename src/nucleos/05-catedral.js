@@ -4,6 +4,12 @@ import { foto, pieza, titulo, texto, caja, svg, llamadas, url, ROJO } from '../l
 
 const ruta = geo.ruta.map((p) => p.join(',')).join(' ');
 const hab = llamadas(geo.llamadas.habitacion, 'h');
+const habitacionPlano = llamadas([{
+  text: 'Habitación de Pablo Escobar',
+  box: [1110, 210],
+  dot: [790, 278],
+  line: [[1110, 228], [900, 228], [790, 278]],
+}], 'habitacion-plano');
 const CAT = geo.sprites.catedral; // [x, y, ancho, alto] del plano en la página
 
 const RECLUSOS = [
@@ -46,6 +52,8 @@ export default {
     <div class="giro" data-g="plano-g" style="transform-origin:790px 300px">
       <img class="abs" data-g="plano" src="${url('img/catedral.webp')}" alt="Plano isométrico de La Catedral: tres pabellones, cancha de fútbol y cerco perimetral" style="left:${CAT[0]}px;top:${CAT[1]}px;width:${CAT[2]}px">
       <img class="abs" data-g="roja" src="${url('img/catedral-roja.webp')}" alt="" style="left:${CAT[0]}px;top:${CAT[1]}px;width:${CAT[2]}px">
+      ${svg(habitacionPlano.lineas)}
+      ${habitacionPlano.cajas}
     </div>
 
     <!-- p.38 · la habitación de Escobar -->
@@ -99,6 +107,8 @@ export default {
 
     // p.37 · se marca en rojo la habitación de Escobar
     k.entra('roja', 5.7, {}, { dur: 0.3, ease: 'power1.inOut' });
+    k.llamada('habitacion-plano0', 5.7);
+    k.sale('habitacion-plano0-d habitacion-plano0-l habitacion-plano0-c', 6.5, {}, { dur: 0.2 });
 
     // zoom al interior → p.38
     tl.to($('plano-g'), { scale: 4.2, duration: 0.7, ease: 'power2.in' }, 6.5);
