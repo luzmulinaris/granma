@@ -1,6 +1,6 @@
 // NÚCLEO 3 · Los crímenes de los extraditables — p. 14 a 32 del PDF
 import { foto, titulo, texto, evento, svg, miles } from '../lib/ui.js';
-import { escenaV02, animaEscenaV02 } from '../lib/escenas-v02.js';
+import { botonReconstruccion } from '../lib/escenas-v02.js';
 
 const hito = (g, fecha, sub, ps) =>
   evento({ g, x: 851, y: 500, desde: 140, fecha, yFecha: 469, sub, ySub: 526, ps });
@@ -9,7 +9,7 @@ export default {
   id: 'extraditables',
   nombre: 'Violencia para frenar la extradición',
   enIndice: false,
-  pasos: 26,
+  pasos: 14,
 
   html: () => `
     <!-- p.15 · Guillermo Cano -->
@@ -42,11 +42,11 @@ export default {
       ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 590, 'bajada')}
     </div>
 
-    ${escenaV02('cano', 'esc-cano')}
-    ${escenaV02('galan', 'esc-galan')}
-    ${escenaV02('espectador', 'esc-esp')}
-    ${escenaV02('avianca', 'esc-avi')}
-    ${escenaV02('das', 'esc-das')}
+    ${botonReconstruccion('cano', 'ver-cano')}
+    ${botonReconstruccion('galan', 'ver-galan')}
+    ${botonReconstruccion('espectador', 'ver-espectador', true)}
+    ${botonReconstruccion('avianca', 'ver-avianca', true)}
+    ${botonReconstruccion('das', 'ver-das', true)}
 
     <!-- p.32 · balance de los atentados -->
     <div data-g="grafico">
@@ -66,74 +66,48 @@ export default {
   `,
 
   build(k) {
-    const vuelveCabeza = (t) => k.vuelve('cabeza', t, {}, { dur: 0.25 });
-    const hitoFuera = (g, fotos, t) => {
-      k.sale(`cabeza ${fotos}`, t, {}, { dur: 0.25 });
-      k.sale(`${g}-l ${g}-p ${g}-f ${g}-s ${g}-t`, t, {}, { dur: 0.25 });
+    const salir = (g, fotos, boton, tiempo) => {
+      k.sale(`${fotos} ${boton} ${g}-l ${g}-p ${g}-f ${g}-s ${g}-t`, tiempo, {}, { dur: 0.25 });
     };
 
-    // Antecedentes y primer hito de este tramo
     k.cabeza();
     k.evento('e2', 0.7, { origen: 'top' });
     k.barre('cano', 1.45, 'arriba', { dur: 0.45 });
+    k.entra('ver-cano', 1.55, { y: 12 }, { dur: 0.25 });
+    salir('e2', 'cano', 'ver-cano', 3.15);
 
-    // p.16 · aparece la escena y se forma el primer cuadro
-    hitoFuera('e2', 'cano', 4.3);
-    animaEscenaV02(k, 'cano', 'esc-cano');
+    k.evento('e3', 3.4);
+    k.barre('galan', 3.8, 'izq', { dur: 0.45 });
+    k.entra('ver-galan', 3.9, { y: 12 }, { dur: 0.25 });
+    salir('e3', 'galan', 'ver-galan', 5.25);
 
-    // ---------------------------------------------- p.19 · Luis Carlos Galán
-    k.sale('esc-cano', 7.8, {}, { dur: 0.25 });
-    vuelveCabeza(7.9);
-    k.evento('e3', 7.95);
-    k.barre('galan', 8.35, 'izq', { dur: 0.45 });
+    k.evento('e4', 5.5);
+    k.entra('esp1', 5.9, { y: 120 }, { dur: 0.35 });
+    k.entra('esp2', 6.1, { y: 160, rotation: 2 }, { dur: 0.35 });
+    k.entra('ver-espectador', 6.2, { y: 12 }, { dur: 0.25 });
+    salir('e4', 'esp1 esp2', 'ver-espectador', 7.5);
 
-    // p.20 · la tarima, la multitud y el primer cuadro
-    hitoFuera('e3', 'galan', 9.1);
-    animaEscenaV02(k, 'galan', 'esc-galan');
+    k.evento('e5', 7.75);
+    k.entra('av1', 8.15, { y: 120 }, { dur: 0.35 });
+    k.entra('ver-avianca', 8.25, { y: 12 }, { dur: 0.25 });
+    salir('e5', 'av1', 'ver-avianca', 9.55);
 
-    // ---------------------------------------------- p.23 · El Espectador
-    k.sale('esc-galan', 12.2, {}, { dur: 0.25 });
-    vuelveCabeza(12.3);
-    k.evento('e4', 12.35);
-    k.entra('esp1', 12.75, { y: 120 }, { dur: 0.35 });
-    k.entra('esp2', 13.05, { y: 160, rotation: 2 }, { dur: 0.35 });
+    k.evento('e6', 9.8);
+    k.entra('das1', 10.15, { y: 120 }, { dur: 0.3 });
+    k.entra('das2', 10.37, { y: 140, rotation: -2 }, { dur: 0.3 });
+    k.entra('ver-das', 10.45, { y: 12 }, { dur: 0.25 });
+    salir('e6', 'das1 das2', 'ver-das', 11.75);
+    k.sale('cabeza', 11.75, {}, { dur: 0.25 });
 
-    // p.24 · el camión se posiciona
-    hitoFuera('e4', 'esp1 esp2', 13.7);
-    animaEscenaV02(k, 'espectador', 'esc-esp');
-
-    // ---------------------------------------------- p.26 · Avianca
-    k.sale('esc-esp', 16.0, {}, { dur: 0.25 });
-    vuelveCabeza(16.1);
-    k.evento('e5', 16.15);
-    k.entra('av1', 16.55, { y: 120 }, { dur: 0.35 });
-
-    // p.27 · despega y se forma la flecha hacia arriba
-    hitoFuera('e5', 'av1', 17.5);
-    animaEscenaV02(k, 'avianca', 'esc-avi');
-
-    // ---------------------------------------------- p.29 · DAS
-    k.sale('esc-avi', 20.1, {}, { dur: 0.25 });
-    vuelveCabeza(20.2);
-    k.evento('e6', 20.25);
-    k.entra('das1', 20.6, { y: 120 }, { dur: 0.3 });
-    k.entra('das2', 20.82, { y: 140, rotation: -2 }, { dur: 0.3 });
-
-    // p.30 · el cochebomba
-    hitoFuera('e6', 'das1 das2', 21.7);
-    animaEscenaV02(k, 'das', 'esc-das');
-
-    // ---------------------------------------------- p.32 · gráfico
-    k.sale('esc-das', 24.0, {}, { dur: 0.25 });
-    k.entra('datos-titulo datos-tema datos-bajada', 24.15, { y: 16 }, { dur: 0.25 });
-    k.entra('n550', 24.2, { y: 30 }, { dur: 0.25 });
-    k.cuenta('n550', 24.2, 550, { dur: 0.5 });
-    k.entra('cap', 24.4, { y: 16 }, { dur: 0.2 });
-    k.entra('eje', 24.45, {}, { dur: 0.2, stagger: 0.02 });
-    k.entra('rot1 rot2', 24.5, { x: -20 }, { dur: 0.2, stagger: 0.12 });
-    k.barre('b1', 24.6, 'izq', { dur: 0.3, ease: 'power2.out' });
-    k.cuenta('v1', 24.6, 410, { dur: 0.3 });
-    k.barre('b2', 24.75, 'izq', { dur: 0.55, ease: 'power2.out' });
-    k.cuenta('v2', 24.75, 1710, { dur: 0.55, fmt: miles });
+    k.entra('datos-titulo datos-tema datos-bajada', 12.00, { y: 16 }, { dur: 0.25 });
+    k.entra('n550', 12.05, { y: 30 }, { dur: 0.25 });
+    k.cuenta('n550', 12.05, 550, { dur: 0.5 });
+    k.entra('cap', 12.25, { y: 16 }, { dur: 0.2 });
+    k.entra('eje', 12.30, {}, { dur: 0.2, stagger: 0.02 });
+    k.entra('rot1 rot2', 12.35, { x: -20 }, { dur: 0.2, stagger: 0.12 });
+    k.barre('b1', 12.45, 'izq', { dur: 0.3, ease: 'power2.out' });
+    k.cuenta('v1', 12.45, 410, { dur: 0.3 });
+    k.barre('b2', 12.60, 'izq', { dur: 0.55, ease: 'power2.out' });
+    k.cuenta('v2', 12.60, 1710, { dur: 0.55, fmt: miles });
   },
 };

@@ -194,6 +194,16 @@ function animaVueloAvianca(k) {
   k.tl.to(avion, { offsetDistance: '100%', duration: 0.62, ease: 'sine.inOut' }, 19.39);
 }
 
+export function botonReconstruccion(nombre, grupo, atentado = false) {
+  return `<button type="button" class="boton-reconstruccion" data-g="${grupo}" data-reconstruccion="${nombre}" aria-haspopup="dialog">
+    Ver cómo ocurrió el ${atentado ? 'atentado' : 'asesinato'}
+  </button>`;
+}
+
+export function inicioEscenaV02(nombre) {
+  return fotogramas[nombre][0][1];
+}
+
 export function escenaV02(nombre, grupo) {
   return `<div class="escena" data-g="${grupo}">
     ${fotogramas[nombre].map(([pagina, , descripcion]) => {

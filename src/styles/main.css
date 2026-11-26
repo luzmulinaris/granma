@@ -947,3 +947,49 @@ html:not(.listo) .stage {
   padding-block: 5px;
   line-height: 1.1;
 }
+
+
+.boton-reconstruccion {
+  position: absolute;
+  left: 104px;
+  top: 765px;
+  padding: 10px 16px;
+  border: 1px solid var(--rojo);
+  background: var(--rojo);
+  color: #fff;
+  font: 700 22px/1.2 var(--f-titulo);
+  cursor: pointer;
+}
+.visor-reconstruccion {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: #d8dade;
+}
+html:has(.visor-reconstruccion[open]) {
+  overflow: hidden;
+}
+.visor-reconstruccion__controles {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.visor-reconstruccion__controles button {
+  padding: 8px 12px;
+  border: 1px solid var(--negro);
+  background: #fff;
+  color: var(--negro);
+  font: 600 16px/1.2 var(--f-titulo);
+  cursor: pointer;
+}

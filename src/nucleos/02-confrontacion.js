@@ -1,11 +1,11 @@
 // NÚCLEO 2 · Confrontación y terror — p. 8 a 13 del PDF
 import { foto, titulo, texto, evento } from '../lib/ui.js';
-import { escenaV02, animaEscenaV02 } from '../lib/escenas-v02.js';
+import { botonReconstruccion } from '../lib/escenas-v02.js';
 
 export default {
   id: 'confrontacion',
   nombre: "Violencia para frenar la extradición",
-  pasos: 6.55,
+  pasos: 3.25,
 
   html: () => `
     ${evento({
@@ -24,7 +24,7 @@ export default {
       ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 585, 'bajada')}
     </div>
 
-    ${escenaV02('lara', 'escena')}
+    ${botonReconstruccion('lara', 'ver-lara')}
   `,
 
   build(k) {
@@ -35,8 +35,6 @@ export default {
     // p.9 · se suma la foto por encima
     k.entra('foto', 1.3, { y: 180, rotation: 2 }, { dur: 0.5, ease: 'power3.out' });
 
-    // p.11 · transición de la foto a la reconstrucción
-    k.sale('cabeza foto e1-l e1-p e1-f e1-s e1-t', 2.25, {}, { dur: 0.3 });
-    animaEscenaV02(k, 'lara', 'escena');
+    k.entra('ver-lara', 1.55, { y: 12 }, { dur: 0.25 });
   },
 };

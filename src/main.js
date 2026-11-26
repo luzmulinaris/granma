@@ -7,6 +7,7 @@ import { SplitText } from 'gsap/SplitText';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import Lenis from 'lenis';
 
+import { animaEscenaV02, escenaV02, inicioEscenaV02 } from './lib/escenas-v02.js';
 import { crearKit } from './lib/anim.js';
 import { NUCLEOS } from './nucleos/index.js';
 
@@ -53,6 +54,50 @@ if (!ver && !reducido) {
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
 }
+
+// Reconstrucciones optativas, independientes de la línea de tiempo del relato.
+const visor = document.createElement('dialog');
+visor.className = 'visor-reconstruccion';
+visor.setAttribute('aria-label', 'Reconstrucción ilustrada');
+visor.innerHTML = `<div class="stage"></div>
+  <div class="visor-reconstruccion__controles">
+    <button type="button" data-repetir>Volver a reproducir</button>
+    <form method="dialog"><button autofocus>Cerrar</button></form>
+  </div>`;
+document.body.append(visor);
+const escenaVisor = visor.querySelector('.stage');
+let animacionVisor;
+let reproduccionVisor;
+let inicioVisor;
+
+function reproducirReconstruccion() {
+  reproduccionVisor?.kill();
+  if (reducido) {
+    animacionVisor.progress(1);
+    return;
+  }
+  reproduccionVisor = animacionVisor.tweenFromTo(inicioVisor, animacionVisor.duration(), { ease: 'none' });
+}
+
+historia.addEventListener('click', (e) => {
+  const boton = e.target.closest('[data-reconstruccion]');
+  if (!boton || visor.open) return;
+  const nombre = boton.dataset.reconstruccion;
+  escenaVisor.innerHTML = escenaV02(nombre, 'detalle');
+  animacionVisor = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } });
+  inicioVisor = inicioEscenaV02(nombre);
+  animaEscenaV02(crearKit(animacionVisor, escenaVisor), nombre, 'detalle');
+  lenis?.stop();
+  visor.showModal();
+  reproducirReconstruccion();
+});
+visor.querySelector('[data-repetir]').addEventListener('click', reproducirReconstruccion);
+visor.addEventListener('close', () => {
+  reproduccionVisor?.kill();
+  animacionVisor?.kill();
+  escenaVisor.replaceChildren();
+  lenis?.start();
+});
 
 // ------------------------------------------------------------ animaciones
 function animar() {
