@@ -4,7 +4,7 @@ import { foto, texto, svg, ROJO } from '../lib/ui.js';
 export default {
   id: 'portada',
   nombre: 'Portada',
-  pasos: 3,
+  pasos: 3.3,
 
   html: () => `
     <div class="abs fondo-portada" data-g="fondo-portada"></div>
@@ -33,9 +33,12 @@ export default {
     // 1 · título en paneo horizontal + bajada (al cargar)
     k.cabeza();
     k.entra('diarios', 0.3, { y: 32 }, { dur: 0.55 });
-    k.sale('fondo-portada cabeza diarios flecha-portada', 1.35, {}, { dur: 0.25 });
-    k.entra('introduccion', 1.55, {}, { dur: 0.25 });
-    k.entra('mug', 1.65, { x: 30 }, { dur: 0.45 });
-    k.entra('bio', 1.8, { y: 18 }, { dur: 0.3, stagger: 0.14 });
+    k.sale('flecha-portada', 1.12, {}, { dur: 0.36, ease: 'sine.inOut' });
+    k.sale('cabeza', 1.22, {}, { dur: 0.55, ease: 'sine.inOut' });
+    k.sale('diarios', 1.33, {}, { dur: 0.68, ease: 'sine.inOut' });
+    k.sale('fondo-portada', 1.33, {}, { dur: 0.82, ease: 'sine.inOut' });
+    k.entra('introduccion', 1.65, {}, { dur: 0.52, ease: 'sine.inOut' });
+    k.entra('mug', 1.76, { y: 12 }, { dur: 0.58, ease: 'sine.out' });
+    k.entra('bio', 1.86, { y: 10 }, { dur: 0.55, stagger: 0.12, ease: 'sine.out' });
   },
 };

@@ -65,7 +65,6 @@ visor.innerHTML = `<div class="stage"></div>
   </div>
   <div class="visor-reconstruccion__controles">
     <span>Hacé scroll para avanzar</span>
-    <button type="button" data-repetir>Volver al inicio</button>
     <form method="dialog"><button>Cerrar</button></form>
   </div>`;
 document.body.append(visor);
@@ -95,11 +94,6 @@ historia.addEventListener('click', (e) => {
   visor.showModal();
   scrollVisor.scrollTop = 0;
   actualizarReconstruccion();
-});
-visor.querySelector('[data-repetir]').addEventListener('click', () => {
-  scrollVisor.scrollTop = 0;
-  actualizarReconstruccion();
-  scrollVisor.focus();
 });
 visor.addEventListener('close', () => {
   animacionVisor?.kill();

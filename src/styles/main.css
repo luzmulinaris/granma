@@ -971,6 +971,9 @@ html:not(.listo) .stage {
   overflow: hidden;
   background: #d8dade;
 }
+.visor-reconstruccion .stage {
+  top: calc(var(--oy) - 105px * var(--s));
+}
 html:has(.visor-reconstruccion[open]) {
   overflow: hidden;
 }
