@@ -60,24 +60,28 @@ const visor = document.createElement('dialog');
 visor.className = 'visor-reconstruccion';
 visor.setAttribute('aria-label', 'Reconstrucción ilustrada');
 visor.innerHTML = `<div class="stage"></div>
+  <div class="visor-reconstruccion__scroll" tabindex="0" autofocus aria-label="Desplazá para avanzar en la reconstrucción" data-lenis-prevent>
+    <div class="visor-reconstruccion__recorrido" aria-hidden="true"></div>
+  </div>
   <div class="visor-reconstruccion__controles">
-    <button type="button" data-repetir>Volver a reproducir</button>
-    <form method="dialog"><button autofocus>Cerrar</button></form>
+    <span>Hacé scroll para avanzar</span>
+    <button type="button" data-repetir>Volver al inicio</button>
+    <form method="dialog"><button>Cerrar</button></form>
   </div>`;
 document.body.append(visor);
 const escenaVisor = visor.querySelector('.stage');
+const scrollVisor = visor.querySelector('.visor-reconstruccion__scroll');
 let animacionVisor;
-let reproduccionVisor;
 let inicioVisor;
 
-function reproducirReconstruccion() {
-  reproduccionVisor?.kill();
-  if (reducido) {
-    animacionVisor.progress(1);
-    return;
-  }
-  reproduccionVisor = animacionVisor.tweenFromTo(inicioVisor, animacionVisor.duration(), { ease: 'none' });
+function actualizarReconstruccion() {
+  if (!animacionVisor || !visor.open) return;
+  const recorrido = scrollVisor.scrollHeight - scrollVisor.clientHeight;
+  const progreso = recorrido > 0 ? scrollVisor.scrollTop / recorrido : 0;
+  animacionVisor.time(inicioVisor + progreso * (animacionVisor.duration() - inicioVisor));
 }
+
+scrollVisor.addEventListener('scroll', actualizarReconstruccion, { passive: true });
 
 historia.addEventListener('click', (e) => {
   const boton = e.target.closest('[data-reconstruccion]');
@@ -85,16 +89,21 @@ historia.addEventListener('click', (e) => {
   const nombre = boton.dataset.reconstruccion;
   escenaVisor.innerHTML = escenaV02(nombre, 'detalle');
   animacionVisor = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } });
-  inicioVisor = inicioEscenaV02(nombre);
+  inicioVisor = inicioEscenaV02(nombre) + 0.2;
   animaEscenaV02(crearKit(animacionVisor, escenaVisor), nombre, 'detalle');
   lenis?.stop();
   visor.showModal();
-  reproducirReconstruccion();
+  scrollVisor.scrollTop = 0;
+  actualizarReconstruccion();
 });
-visor.querySelector('[data-repetir]').addEventListener('click', reproducirReconstruccion);
+visor.querySelector('[data-repetir]').addEventListener('click', () => {
+  scrollVisor.scrollTop = 0;
+  actualizarReconstruccion();
+  scrollVisor.focus();
+});
 visor.addEventListener('close', () => {
-  reproduccionVisor?.kill();
   animacionVisor?.kill();
+  animacionVisor = null;
   escenaVisor.replaceChildren();
   lenis?.start();
 });
@@ -139,7 +148,10 @@ function armar() {
   ScrollTrigger.refresh();
 
   if (ver) {
-    const [i, t = 0] = ver.split(':').map(Number);
+    // Conserva las referencias de revisión anteriores a la unión de los hitos.
+    const [indiceOriginal, paso = 0] = ver.split(':').map(Number);
+    const i = indiceOriginal >= 3 ? indiceOriginal - 1 : indiceOriginal;
+    const t = indiceOriginal === 3 ? paso + 2.75 : paso;
     const sec = secciones[i];
     const tramo = sec.offsetHeight - window.innerHeight;
     window.scrollTo(0, sec.offsetTop + (t / NUCLEOS[i].pasos) * tramo);

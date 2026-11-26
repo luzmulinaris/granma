@@ -5,13 +5,7 @@ import { botonReconstruccion } from '../lib/escenas-v02.js';
 const hito = (g, fecha, sub, ps) =>
   evento({ g, x: 851, y: 500, desde: 140, fecha, yFecha: 469, sub, ySub: 526, ps });
 
-export default {
-  id: 'extraditables',
-  nombre: 'Violencia para frenar la extradición',
-  enIndice: false,
-  pasos: 14,
-
-  html: () => `
+export const htmlOtrosCrimenes = () => `
     <!-- p.15 · Guillermo Cano -->
     ${hito('e2', "Diciembre de 1986", "Segundo crimen: Asesinato de Guillermo Cano", ["El 17 de diciembre es asesinado el director de El Espectador. El periodista había denunciado el narcotráfico y los antecedentes de Escobar."])}
     ${foto('cano-v02', [879, 659, 506, 422], 'Tapa de El Espectador: «Asesinado el director de El Espectador»', 'cano')}
@@ -34,19 +28,11 @@ export default {
     ${foto('das-1-v02', [872, 719, 419, 278], 'Edificio del DAS tras la explosión', 'das1')}
     ${foto('das-2-v02', [1276, 720, 315, 276], 'Autos y edificios destruidos frente al DAS', 'das2')}
 
-    <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "Antecedentes", 104, 185, null, 'tema')}
-      ${titulo("Violencia para frenar", 104, 242, 'titulo--editorial')}
-      ${titulo("la extradición", 104, 326, 'titulo--editorial')}
-      ${texto('bajada texto-editorial', "Tras quedar expuestos sus antecedentes, Escobar pasó a la clandestinidad. Aunque era perseguido por las autoridades, mantuvo el control de su organización y desde sus refugios continuó ordenando acciones violentas.", 103, 414, 590, 'bajada')}
-      ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 590, 'bajada')}
-    </div>
-
-    ${botonReconstruccion('cano', 'ver-cano')}
-    ${botonReconstruccion('galan', 'ver-galan')}
-    ${botonReconstruccion('espectador', 'ver-espectador', true)}
-    ${botonReconstruccion('avianca', 'ver-avianca', true)}
-    ${botonReconstruccion('das', 'ver-das', true)}
+    ${botonReconstruccion('cano', 'ver-cano', [879, 1095])}
+    ${botonReconstruccion('galan', 'ver-galan', [878, 1094])}
+    ${botonReconstruccion('espectador', 'ver-espectador', [878, 1011], true)}
+    ${botonReconstruccion('avianca', 'ver-avianca', [880, 1111], true)}
+    ${botonReconstruccion('das', 'ver-das', [872, 1011], true)}
 
     <!-- p.32 · balance de los atentados -->
     <div data-g="grafico">
@@ -63,51 +49,49 @@ export default {
       <div class="barra" data-g="b1" style="left:885px;top:625px;width:124px;height:60px;background:#ee2c35"><b data-g="v1">410</b></div>
       <div class="barra" data-g="b2" style="left:885px;top:723px;width:547px;height:60px;background:#221a22"><b data-g="v2">1.710</b></div>
     </div>
-  `,
+  `;
 
-  build(k) {
-    const salir = (g, fotos, boton, tiempo) => {
-      k.sale(`${fotos} ${boton} ${g}-l ${g}-p ${g}-f ${g}-s ${g}-t`, tiempo, {}, { dur: 0.25 });
-    };
+export function animaOtrosCrimenes(k) {
+  const salir = (g, fotos, boton, tiempo) => {
+    k.sale(`${fotos} ${boton} ${g}-l ${g}-p ${g}-f ${g}-s ${g}-t`, tiempo, {}, { dur: 0.25 });
+  };
 
-    k.cabeza();
-    k.evento('e2', 0.7, { origen: 'top' });
-    k.barre('cano', 1.45, 'arriba', { dur: 0.45 });
-    k.entra('ver-cano', 1.55, { y: 12 }, { dur: 0.25 });
-    salir('e2', 'cano', 'ver-cano', 3.15);
+  k.evento('e2', 3.45, { origen: 'top' });
+  k.barre('cano', 4.20, 'arriba', { dur: 0.45 });
+  k.entra('ver-cano', 4.30, { y: 12 }, { dur: 0.25 });
+  salir('e2', 'cano', 'ver-cano', 5.90);
 
-    k.evento('e3', 3.4);
-    k.barre('galan', 3.8, 'izq', { dur: 0.45 });
-    k.entra('ver-galan', 3.9, { y: 12 }, { dur: 0.25 });
-    salir('e3', 'galan', 'ver-galan', 5.25);
+  k.evento('e3', 6.15);
+  k.barre('galan', 6.55, 'izq', { dur: 0.45 });
+  k.entra('ver-galan', 6.65, { y: 12 }, { dur: 0.25 });
+  salir('e3', 'galan', 'ver-galan', 8.00);
 
-    k.evento('e4', 5.5);
-    k.entra('esp1', 5.9, { y: 120 }, { dur: 0.35 });
-    k.entra('esp2', 6.1, { y: 160, rotation: 2 }, { dur: 0.35 });
-    k.entra('ver-espectador', 6.2, { y: 12 }, { dur: 0.25 });
-    salir('e4', 'esp1 esp2', 'ver-espectador', 7.5);
+  k.evento('e4', 8.25);
+  k.entra('esp1', 8.65, { y: 120 }, { dur: 0.35 });
+  k.entra('esp2', 8.85, { y: 160, rotation: 2 }, { dur: 0.35 });
+  k.entra('ver-espectador', 8.95, { y: 12 }, { dur: 0.25 });
+  salir('e4', 'esp1 esp2', 'ver-espectador', 10.25);
 
-    k.evento('e5', 7.75);
-    k.entra('av1', 8.15, { y: 120 }, { dur: 0.35 });
-    k.entra('ver-avianca', 8.25, { y: 12 }, { dur: 0.25 });
-    salir('e5', 'av1', 'ver-avianca', 9.55);
+  k.evento('e5', 10.50);
+  k.entra('av1', 10.90, { y: 120 }, { dur: 0.35 });
+  k.entra('ver-avianca', 11.00, { y: 12 }, { dur: 0.25 });
+  salir('e5', 'av1', 'ver-avianca', 12.30);
 
-    k.evento('e6', 9.8);
-    k.entra('das1', 10.15, { y: 120 }, { dur: 0.3 });
-    k.entra('das2', 10.37, { y: 140, rotation: -2 }, { dur: 0.3 });
-    k.entra('ver-das', 10.45, { y: 12 }, { dur: 0.25 });
-    salir('e6', 'das1 das2', 'ver-das', 11.75);
-    k.sale('cabeza', 11.75, {}, { dur: 0.25 });
+  k.evento('e6', 12.55);
+  k.entra('das1', 12.90, { y: 120 }, { dur: 0.3 });
+  k.entra('das2', 13.12, { y: 140, rotation: -2 }, { dur: 0.3 });
+  k.entra('ver-das', 13.20, { y: 12 }, { dur: 0.25 });
+  salir('e6', 'das1 das2', 'ver-das', 14.50);
+  k.sale('cabeza', 14.50, {}, { dur: 0.25 });
 
-    k.entra('datos-titulo datos-tema datos-bajada', 12.00, { y: 16 }, { dur: 0.25 });
-    k.entra('n550', 12.05, { y: 30 }, { dur: 0.25 });
-    k.cuenta('n550', 12.05, 550, { dur: 0.5 });
-    k.entra('cap', 12.25, { y: 16 }, { dur: 0.2 });
-    k.entra('eje', 12.30, {}, { dur: 0.2, stagger: 0.02 });
-    k.entra('rot1 rot2', 12.35, { x: -20 }, { dur: 0.2, stagger: 0.12 });
-    k.barre('b1', 12.45, 'izq', { dur: 0.3, ease: 'power2.out' });
-    k.cuenta('v1', 12.45, 410, { dur: 0.3 });
-    k.barre('b2', 12.60, 'izq', { dur: 0.55, ease: 'power2.out' });
-    k.cuenta('v2', 12.60, 1710, { dur: 0.55, fmt: miles });
-  },
-};
+  k.entra('datos-titulo datos-tema datos-bajada', 14.75, { y: 16 }, { dur: 0.25 });
+  k.entra('n550', 14.80, { y: 30 }, { dur: 0.25 });
+  k.cuenta('n550', 14.80, 550, { dur: 0.5 });
+  k.entra('cap', 15.00, { y: 16 }, { dur: 0.2 });
+  k.entra('eje', 15.05, {}, { dur: 0.2, stagger: 0.02 });
+  k.entra('rot1 rot2', 15.10, { x: -20 }, { dur: 0.2, stagger: 0.12 });
+  k.barre('b1', 15.20, 'izq', { dur: 0.3, ease: 'power2.out' });
+  k.cuenta('v1', 15.20, 410, { dur: 0.3 });
+  k.barre('b2', 15.35, 'izq', { dur: 0.55, ease: 'power2.out' });
+  k.cuenta('v2', 15.35, 1710, { dur: 0.55, fmt: miles });
+}

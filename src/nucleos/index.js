@@ -2,7 +2,6 @@
 import portada from './00-portada.js';
 import poder from './01-poder.js';
 import confrontacion from './02-confrontacion.js';
-import extraditables from './03-extraditables.js';
 import entrega from './04-entrega.js';
 import catedral from './05-catedral.js';
 import acuerdo from './06-acuerdo.js';
@@ -15,6 +14,6 @@ import operativo from './12-operativo.js';
 import balance from './13-balance.js';
 
 export const NUCLEOS = [
-  portada, poder, confrontacion, extraditables, entrega, catedral, acuerdo,
+  portada, poder, confrontacion, entrega, catedral, acuerdo,
   fuga, bloque, tequendama, ubicacion, senal, operativo, balance,
 ];

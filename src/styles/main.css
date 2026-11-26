@@ -951,8 +951,6 @@ html:not(.listo) .stage {
 
 .boton-reconstruccion {
   position: absolute;
-  left: 104px;
-  top: 765px;
   padding: 10px 16px;
   border: 1px solid var(--rojo);
   background: var(--rojo);
@@ -976,6 +974,15 @@ html:not(.listo) .stage {
 html:has(.visor-reconstruccion[open]) {
   overflow: hidden;
 }
+.visor-reconstruccion__scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.visor-reconstruccion__recorrido {
+  height: 250%;
+}
 .visor-reconstruccion__controles {
   position: absolute;
   top: 16px;
@@ -984,6 +991,10 @@ html:has(.visor-reconstruccion[open]) {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+.visor-reconstruccion__controles span {
+  align-self: center;
+  font: 600 16px/1.2 var(--f-titulo);
 }
 .visor-reconstruccion__controles button {
   padding: 8px 12px;
