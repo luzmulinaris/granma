@@ -671,11 +671,11 @@ html:not(.listo) .stage {
 .lara-linea {
   position: absolute;
   left: 860px;
-  top: 787px;
-  width: 138px;
+  top: 758px;
+  width: 158px;
   height: 2px;
   background: repeating-linear-gradient(to right, var(--rojo) 0 9px, transparent 9px 18px);
-  rotate: 28deg;
+  rotate: 39deg;
   transform-origin: left center;
 }
 .lara-impacto {

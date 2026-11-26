@@ -71,9 +71,8 @@ function animaLara(k) {
   k.entra('lara-flecha-entrada', 3.53, {}, { dur: 0.24 });
   k.tl.to(k.$('lara-moto'), {
     keyframes: [
-      { x: -182, y: -12, duration: 0.28, ease: 'sine.in' },
-      { x: -374, y: -53, rotation: 8, duration: 0.31, ease: 'none' },
-      { x: -542, y: -70, rotation: 0, duration: 0.33, ease: 'sine.out' },
+      { x: -122, y: -116, duration: 0.34, ease: 'sine.inOut' },
+      { x: -542, y: -116, duration: 0.58, ease: 'sine.inOut' },
     ],
   }, 3.65);
   k.entra('lara-moto-disparo', 4.86, {}, { dur: 0.06 });
@@ -88,7 +87,7 @@ function animaLara(k) {
   k.entra('lara-cuadro-tres lara-flecha-salida', 5.55, {}, { dur: 0.16 });
   k.tl.to(k.$('lara-moto'), {
     keyframes: [
-      { x: -760, y: -54, duration: 0.27, ease: 'sine.in' },
+      { x: -760, y: -116, duration: 0.27, ease: 'sine.in' },
       { x: -910, y: -14, duration: 0.29, ease: 'sine.inOut' },
     ],
   }, 5.73);
