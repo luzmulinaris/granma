@@ -33,8 +33,8 @@ export default {
     <div class="abs" data-g="torre-g" style="left:0;top:0;width:1684px;height:1190px;${ORIGEN}">
       ${foto('torre-v02', [924.9, 152.7, 760, 1038.8], 'Torre de las Residencias Tequendama, en Bogotá', 'torre', 'foto--libre')}
       ${svg(pisos.lineas)}
-      ${texto('vers vers--rojo tequendama-piso', 'piso 29', 1131, 599, null, 'p0-n')}
-      ${texto('vers vers--rojo tequendama-piso', 'piso 28', 1123, 767, null, 'p1-n')}
+      ${texto('vers vers--rojo tequendama-piso', 'piso 29', 1131, 595, null, 'p0-n')}
+      ${texto('vers vers--rojo tequendama-piso', 'piso 28', 1123, 763, null, 'p1-n')}
       ${pisos.cajas}
     </div>
     <div class="abs" data-g="interior-g" style="left:0;top:0;width:1684px;height:1190px;${ORIGEN}">
@@ -45,8 +45,8 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "Primeras pistas", 104, 185, null, 'tema')}
-      ${titulo("La familia en el", 104, 235)}
-      ${titulo("hotel Tequendama", 104, 314)}
+      ${titulo("La familia en el", 104, 242, 'titulo--editorial')}
+      ${titulo("hotel Tequendama", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "La familia quiso escapar a Alemania, pero su entrada fue prohibida. De regreso en Colombia fue llevada por las autoridades colombianas a las Residencias Tequendama, un complejo de apartamentos propiedad del Ejército de Colombia en Bogotá, que tenía custodia y protección policial/militar.", 112, 417, 595, 'bajada')}
       ${texto('bajada texto-editorial', "La estrategia del gobierno: La presencia de la familia en ese lugar formaba parte de una estrategia del Estado para acorralar a Pablo Escobar, ya que su esposa e hijos eran su punto más vulnerable.", 113, 576, 595, 'bajada')}
     </div>

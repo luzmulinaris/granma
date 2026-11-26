@@ -1,7 +1,10 @@
 // NÚCLEO 1 · El poder queda expuesto — p. 4 a 7 del PDF
 import { foto, titulo, texto, parrafos, linea, punto, caja, svg, flecha, ROJO } from '../lib/ui.js';
 
-const X = 850; // eje de la línea de tiempo
+const X = 862.2; // eje de la línea de tiempo
+const INICIO_LINEA = 140;
+const AGOSTO_1983 = 521.4;
+const HITO_1984 = 498.2;
 
 export default {
   id: 'poder',
@@ -11,10 +14,10 @@ export default {
   html: () => `
     ${foto('congreso-v02', [103, 455, 672, 409], 'Pablo Escobar sonríe en su banca de la Cámara de Representantes', 'congreso')}
 
-    ${linea(X, 140, 535, 'l-a')}
+    ${linea(X, INICIO_LINEA, AGOSTO_1983, 'l-a')}
 
     <!-- p.5 · agosto de 1983 -->
-    ${punto(X, 535, 'e2-p')}
+    ${punto(X, AGOSTO_1983, 'e2-p')}
     ${texto('fecha', 'Agosto de 1983', 885, 504, null, 'e2-f')}
     ${texto('sub', 'Denuncia pública al narcotráfico', 883, 569, null, 'e2-s')}
     ${texto('txt', parrafos(
@@ -22,20 +25,20 @@ export default {
     ), 880, 600, null, 'e2-t')}
 
     <!-- p.6 · 1984 -->
-    ${punto(X, 500, 'e3-p')}
+    ${punto(X, HITO_1984, 'e3-p')}
     ${texto('fecha', '1984', 885, 469, null, 'e3-f')}
     ${svg(`
-      <circle data-g="circulo" cx="539" cy="730" r="120" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 539 730)"/>
-      ${flecha([[658, 718], [849, 718]], [[866, 718], [845, 703], [845, 733]], 'fl', 10)}
+      <circle data-g="circulo" cx="630.35" cy="686.7" r="135.5" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 630.35 686.7)"/>
+      ${flecha([[764, 692.2], [843.9, 692.2]], [[854.2, 692.2], [837.3, 676.5], [837.3, 708]], 'fl', 10)}
     `)}
-    ${caja('Jefe del cartel de Medellín', 874, 700, null, 'jefe', 'caja--1')}
+    ${caja('Jefe del cartel de Medellín', 866, 674.5, null, 'jefe', 'caja--1')}
 
     <!-- p.7 -->
-    ${texto('txt', parrafos("La noticia de la captura de Escobar en 1976 vuelve a ser pública. La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. Finalmente queda expuesto como jefe del cartel de Medellín y visibilidad pública se convierte en una vulnerabilidad."), 879, 526, 420, 'cierre')}
+    ${texto('txt', parrafos("La noticia de la captura de Escobar en 1976 vuelve a ser pública. La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. Finalmente queda expuesto como jefe del cartel de Medellín y visibilidad pública se convierte en una vulnerabilidad."), 879, 526, null, 'cierre')}
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "Antecedentes", 104, 185, null, 'tema')}
-      ${titulo("Escobar queda expuesto", 104, 235)}
+      ${titulo("Escobar queda expuesto", 104, 242, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Durante sus primeros años, Escobar ejercía como Suplente de Jairo Ortega en la Cámara de Representantes. La representación política le ofrecía acceso y legitimidad pública.", 107, 341, 650, 'bajada')}
     </div>
   `,
@@ -51,6 +54,7 @@ export default {
 
     // p.6 · 1984 + círculo que rodea a Escobar + flecha + «jefe del cartel»
     k.saleEvento('e2', 3.1, -90);
+    k.tl.to(k.$('l-a'), { height: HITO_1984 - INICIO_LINEA, duration: 0.2 }, 3.15);
     k.evento('e3', 3.15);
     k.traza('circulo', 3.6, { dur: 0.4, ease: 'power1.inOut' });
     k.flecha('fl', 3.98, 0.12);

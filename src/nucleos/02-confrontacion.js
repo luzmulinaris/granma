@@ -18,8 +18,8 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "Antecedentes", 104, 185, null, 'tema')}
-      ${titulo("Violencia para frenar", 104, 235)}
-      ${titulo("la extradición", 104, 314)}
+      ${titulo("Violencia para frenar", 104, 242, 'titulo--editorial')}
+      ${titulo("la extradición", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Tras quedar expuestos sus antecedentes, Escobar pasó a la clandestinidad. Aunque era perseguido por las autoridades, mantuvo el control de su organización y desde sus refugios continuó ordenando acciones violentas.", 103, 414, 585, 'bajada')}
       ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 585, 'bajada')}
     </div>

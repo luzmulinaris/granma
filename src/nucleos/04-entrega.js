@@ -30,8 +30,8 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "La entrega", 104, 185, null, 'tema')}
-      ${titulo("Acuerdo de entrega", 104, 235)}
-      ${titulo("con el gobierno", 104, 314)}
+      ${titulo("Acuerdo de entrega", 104, 242, 'titulo--editorial')}
+      ${titulo("con el gobierno", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "La escalada de asesinatos, atentados y secuestros convirtió la lucha contra la extradición en una crisis nacional. Mientras continuaba la persecución a los narcotraficantes, el gobierno de César Gaviria abrió otra vía: una política de sometimiento a la justicia que ofrecía rebajas de penas y garantías de no extradición a quienes se entregaran y confesaran delitos. En ese contexto, Escobar negoció las condiciones de su reclusión.", 105, 414, 595, 'bajada')}
       ${texto('bajada texto-editorial', "Así, se entregó e ingresó a La Catedral, en Envigado. Ese mismo día, la Asamblea Constituyente aprobó prohibir la extradición de colombianos por nacimiento, eliminando su principal temor: ser enviado a una cárcel de Estados Unidos.", 104, 625, 595, 'bajada')}
     </div>

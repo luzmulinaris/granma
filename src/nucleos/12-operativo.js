@@ -15,8 +15,8 @@ export default {
   html: () => `
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "El operativo", 104, 185, null, 'tema')}
-      ${titulo("La búsqueda llega", 104, 235)}
-      ${titulo("a su fin", 104, 314)}
+      ${titulo("La búsqueda llega", 104, 242, 'titulo--editorial')}
+      ${titulo("a su fin", 104, 324, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Con la ubicación exacta, comienza el operativo de búsqueda, que culmina con la muerte de Pablo Escobar en un tejado del barrio Los Olivos, en Medellín. Desde entonces, distintos testimonios se han disputado la autoría del disparo que culminó con su vida.", 105, 417, 590, 'bajada')}
     </div>
     ${linea(851, 140, 415, 'tramo-fecha')}

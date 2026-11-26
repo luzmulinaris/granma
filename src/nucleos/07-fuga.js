@@ -21,7 +21,7 @@ export default {
     ${caja('<span data-g="escrito">Escobar, su hermano y 9 cómplices patearon un muro de yeso y escaparon</span>', 310 + DESPLAZAMIENTO_X, 432 + DESPLAZAMIENTO_Y, 211, 'nota')}
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "De vuelta a la clandestinidad", 104, 185, null, 'tema')}
-      ${titulo("La fuga", 104, 235)}
+      ${titulo("La fuga", 104, 242, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Entre la noche del 21 y la madrugada del 22 de julio de 1992, Pablo Escobar escapó de La Catedral junto con varios de sus hombres, mientras las autoridades intentaban concretar su traslado.", 105, 326, 595, 'bajada')}
       ${texto('bajada texto-editorial', "La vigilancia del penal no logró impedir la salida y el operativo terminó sin su captura. La fuga puso fin a trece meses de reclusión y lo devolvió a la clandestinidad: desde entonces, tendría que ocultarse mientras el Estado reorganizaba su búsqueda", 105, 432, 595, 'bajada')}
     </div>

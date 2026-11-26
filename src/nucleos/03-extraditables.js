@@ -35,8 +35,8 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "Antecedentes", 104, 185, null, 'tema')}
-      ${titulo("Violencia para frenar", 104, 235)}
-      ${titulo("la extradición", 104, 314)}
+      ${titulo("Violencia para frenar", 104, 242, 'titulo--editorial')}
+      ${titulo("la extradición", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Tras quedar expuestos sus antecedentes, Escobar pasó a la clandestinidad. Aunque era perseguido por las autoridades, mantuvo el control de su organización y desde sus refugios continuó ordenando acciones violentas.", 103, 414, 590, 'bajada')}
       ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 590, 'bajada')}
     </div>
@@ -50,7 +50,7 @@ export default {
     <!-- p.32 · balance de los atentados -->
     <div data-g="grafico">
       ${texto('tema-editorial', "Consecuencias", 104, 185, null, 'datos-tema')}
-      ${texto('titulo', '<span>Los atentados en datos</span>', 104, 235, null, 'datos-titulo')}
+      ${texto('titulo titulo--editorial', '<span>Los atentados en datos</span>', 104, 242, null, 'datos-titulo')}
       ${texto('bajada texto-editorial', "Los asesinatos y atentados golpearon a funcionarios, dirigentes políticos, periodistas y civiles. Escobar y sus aliados recurrieron a la violencia para silenciar denuncias, atacar a sus adversarios y presionar al Estado contra la extradición.", 105, 321, 610, 'datos-bajada')}
       ${texto('bajada texto-editorial', "Los siguientes gráficos reconstruyen algunos de esos crímenes, cada uno con sus responsables y circunstancias particulares.", 105, 453, 610, 'datos-bajada')}
       ${texto('num-grande', '550', 159, 524, null, 'n550')}

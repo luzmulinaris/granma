@@ -44,7 +44,7 @@ export default {
     <!-- p.49 -->
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "La última señal", 104, 185, null, 'tema')}
-      ${titulo("Ubicación exacta", 104, 235)}
+      ${titulo("Ubicación exacta", 104, 242, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Tal como lo esperaban, Escobar se comunicó nuevamente con su familia el 2 de diciembre, manteniendo una llamada de más de dos minutos, facilitando la localización de su ubicación.", 111, 321, 595, 'bajada')}
     </div>
     <blockquote class="abs cita-editorial" data-g="cita" style="left:125px;top:426px;width:565px">${CITA}</blockquote>

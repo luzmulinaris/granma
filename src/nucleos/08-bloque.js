@@ -20,8 +20,8 @@ export default {
 
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "La búsqueda", 104, 185, null, 'tema')}
-      ${titulo("Formación del bloque", 104, 235)}
-      ${titulo("de búsqueda", 104, 314)}
+      ${titulo("Formación del bloque", 104, 242, 'titulo--editorial')}
+      ${titulo("de búsqueda", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Tras la fuga de La Catedral, el Gobierno reorganizó el Bloque de Búsqueda, una unidad especial encargada de localizar y capturar a Pablo Escobar. La Policía Nacional encabezó la persecución, con apoyo de otras instituciones colombianas y asistencia estadounidense en inteligencia y tecnología.", 111, 417, 580, 'bajada')}
       ${texto('bajada texto-editorial', "La búsqueda combinó allanamientos, seguimiento de sus colaboradores, información de testigos e interceptación de comunicaciones. El objetivo era debilitar su red de protección y reducir los lugares donde podía esconderse. Sus contactos, desplazamientos y llamadas se convirtieron en pistas para encontrarlo.", 113, 576, 580, 'bajada')}
     </div>

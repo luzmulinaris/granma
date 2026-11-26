@@ -1,4 +1,5 @@
 import { foto } from './ui.js';
+import fondoBordes from '../assets/bordes-escenas-v02.png';
 
 const fotogramas = {
   lara: [
@@ -37,11 +38,29 @@ const fotogramas = {
   ],
 };
 
+const movimientos = {
+  13: { rect: [748, 691, 185, 99], desde: { x: 585, y: 82, rotation: 12 }, dur: 0.44 },
+  19: { rect: [554, 1028, 302, 142], desde: { x: -16, y: -162, rotation: 180 }, dur: 0.52 },
+  31: { rect: [602, 824, 416, 179], desde: { x: 850 }, dur: 0.55 },
+  36: { rect: [763, 449, 579, 375], desde: { x: -516, y: 324, rotation: 20 }, dur: 0.62 },
+  41: { rect: [874, 848, 350, 161], desde: { x: 850 }, dur: 0.55 },
+};
+
+const paginas = Object.values(fotogramas).flat().map(([pagina]) => pagina);
+const columnasBordes = paginas.length * 2;
+
 export function escenaV02(nombre, grupo) {
   return `<div class="escena" data-g="${grupo}">
-    ${fotogramas[nombre].map(([pagina, , descripcion]) =>
-      foto(`escena-v02-${pagina}`, [0, 140, 1684, 1050], descripcion.replaceAll('&', '&amp;').replaceAll('"', '&quot;'), `v02-${pagina}`)
-    ).join('')}
+    ${fotogramas[nombre].map(([pagina, , descripcion]) => {
+      const movimiento = movimientos[pagina];
+      const columna = paginas.indexOf(pagina) * 2;
+      const alt = descripcion.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+      return `<div class="fotograma-v02" data-g="v02-${pagina}">
+        <div class="fondo-v02" style="--bordes:url('${fondoBordes}');--ancho-bordes:${columnasBordes * 100}%;--borde-izq:${columna / (columnasBordes - 1) * 100}%;--borde-der:${(columna + 1) / (columnasBordes - 1) * 100}%" aria-hidden="true"></div>
+        ${foto(`escena-v02-${pagina}`, [0, 140, 1684, 1050], alt, null, 'imagen-fotograma-v02')}
+        ${movimiento ? foto(`movimiento-v02-${pagina}`, movimiento.rect, '', `movimiento-${pagina}`, 'foto--libre') : ''}
+      </div>`;
+    }).join('')}
   </div>`;
 }
 
@@ -51,7 +70,16 @@ export function animaEscenaV02(k, nombre, grupo) {
   for (let i = 1; i < frames.length; i++) {
     const [pagina, t] = frames[i];
     const anterior = frames[i - 1][0];
-    k.entra(`v02-${pagina}`, t, {}, { dur: 0.14, ease: 'none' });
-    k.sale(`v02-${anterior}`, t + 0.14, {}, { dur: 0.08, ease: 'none' });
+    const movimiento = movimientos[pagina];
+    const dur = movimiento ? 0.06 : 0.22;
+    k.entra(`v02-${pagina}`, t, {}, { dur, ease: 'none' });
+    k.sale(`v02-${anterior}`, t + dur, {}, { dur: 0.05, ease: 'none' });
+    if (movimiento) {
+      const selector = `movimiento-${pagina}`;
+      const pieza = k.$(selector);
+      k.oculta(selector);
+      k.tl.set(pieza, { ...movimiento.desde, autoAlpha: 1 }, t + dur);
+      k.tl.to(pieza, { x: 0, y: 0, rotation: 0, duration: movimiento.dur, ease: 'power2.inOut' }, t + dur);
+    }
   }
 }

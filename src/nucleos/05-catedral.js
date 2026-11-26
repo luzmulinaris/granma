@@ -48,7 +48,7 @@ export default {
   html: () => `
     <!-- p.35 · mapa y camino -->
     <div class="abs" data-g="mapa-g" style="left:66px;top:13px;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.01)">
-      <div class="abs mapa-esquematico" data-g="mapa" role="img" aria-label="Esquema del recorrido de Envigado a La Catedral" style="left:719.7px;top:346.8px;width:777.4px;height:571.9px"></div>
+      <img class="abs" data-g="mapa" src="${url('svg/mapa-envigado-v02.svg')}" alt="Mapa del recorrido de Envigado a La Catedral" style="left:719.7px;top:346.8px;width:777.4px;height:571.9px">
       ${svg(`
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fe1003" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
@@ -79,7 +79,7 @@ export default {
 
 
     <!-- p.39 · otros reclusos -->
-    ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 104, 397, null, 'otros')}
+    ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 104, 405, null, 'otros')}
     ${RECLUSOS.map(
       ([img, nombre, alias], i) => {
         const xNombre = inicioFila + i * (ANCHO_NOMBRE + SEPARACION_RECLUSOS);
@@ -93,8 +93,8 @@ export default {
     ).join('')}
 
     <div class="cabeza" data-g="cabeza">${texto('tema-editorial', "La reclusión", 104, 185, null, 'tema')}
-      ${titulo("Prisión a medida:", 104, 235)}
-      ${titulo("La Catedral", 104, 314)}</div>
+      ${titulo("Prisión a medida:", 104, 242, 'titulo--editorial')}
+      ${titulo("La Catedral", 104, 326, 'titulo--editorial')}</div>
     <div class="cabeza" data-g="cab2">
       ${texto('bajada texto-editorial', "La Catedral fue una prisión construida en las montañas de Envigado, Antioquia, para recluir a Pablo Escobar y a varios de sus hombres de confianza, como parte de su sometimiento a la justicia en 1991. Escobar intervino en las condiciones de su encarcelamiento e incluso pudo elegir a algunos de los guardianes. Aunque contaba con vigilancia del Ejército y guardias penitenciarios, dentro del recinto impuso sus propias reglas.", 104, 414, 560, 'bajada')}
       ${texto('bajada texto-editorial', "El complejo tenía habitaciones privadas, zonas de descanso, mesas de billar y una cancha de fútbol, comodidades que contrastaban con su condición de cárcel de máxima seguridad. Durante su reclusión, Escobar recibió visitas y conservó el contacto con el exterior. Su ingreso a prisión no desarticuló al Cartel de Medellín: desde La Catedral continuó dirigiendo actividades criminales y ordenando asesinatos y secuestros", 105, 625, 560, 'bajada')}

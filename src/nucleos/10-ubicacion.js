@@ -13,8 +13,8 @@ export default {
     <!-- p.47 -->
     <div class="cabeza" data-g="cabeza">
       ${texto('tema-editorial', "Primeras pistas", 104, 185, null, 'tema')}
-      ${titulo("Acercamiento a", 104, 235)}
-      ${titulo("la ubicación", 104, 314)}
+      ${titulo("Acercamiento a", 104, 242, 'titulo--editorial')}
+      ${titulo("la ubicación", 104, 326, 'titulo--editorial')}
       ${texto('bajada texto-editorial', "Mientras se cumplían las labores de rastreo, la expectativa estaba centrada en el primero de diciembre, porque en esa fecha Escobar cumplía años. En efecto, la voz del jefe del cartel de Medellín se escuchó desde muy temprano. Esta llamada no fue tan larga para rastrearlo por completo pero sí para reducir su ubicación. Luego, la familia se vuelve a comunicar con Escobar. Hubo una serie de cinco llamadas para dictar preguntas para una entrevista y la ubicación se redujo a doce sitios posibles en un radio de dos manzanas.", 112, 417, 595, 'bajada')}
     </div>
 

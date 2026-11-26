@@ -13,7 +13,7 @@
 
   /* Fuentes de Adobe Fonts con sus equivalentes libres como respaldo. */
   --f-titulo: 'amplitude', 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
-  --ancho-columna-texto: 336px;
+  --ancho-columna-texto: 365px;
   --f-serif: 'karmina', 'Faustina', Georgia, serif;
   --f-sans: 'karmina-sans', 'Alegreya Sans', 'Trebuchet MS', sans-serif;
   --f-versalitas: 'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
@@ -252,6 +252,10 @@ html:not(.listo) .stage {
 .titulo span {
   display: block;
 }
+.titulo--editorial {
+  height: 70.11px;
+  line-height: 70.11px;
+}
 .titulo--portada {
   height: 85.68px;
   line-height: 85.68px;
@@ -329,7 +333,7 @@ html:not(.listo) .stage {
 }
 .txt {
   width: var(--ancho-columna-texto);
-  font: 400 18px/1.2 var(--f-serif);
+  font: 400 20px/1.2 var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
@@ -373,10 +377,6 @@ html:not(.listo) .stage {
   height: auto;
   padding-block: 5px;
   line-height: 1.1;
-}
-.tequendama-piso {
-  font-size: 36px;
-  line-height: 1;
 }
 .paso {
   display: flex;
@@ -434,6 +434,39 @@ html:not(.listo) .stage {
   inset: 0;
   z-index: 10;
 }
+.fotograma-v02 {
+  position: absolute;
+  inset: 0;
+}
+.fondo-v02 {
+  position: absolute;
+  inset: calc(-100vh / var(--s)) calc(-100vw / var(--s));
+  background: #d8dade;
+}
+.fondo-v02::before,
+.fondo-v02::after {
+  content: "";
+  position: absolute;
+  top: calc(100vh / var(--s) + 140px);
+  width: calc(100vw / var(--s) + 4px);
+  height: 1050px;
+  background-image: var(--bordes);
+  background-size: var(--ancho-bordes) 100%;
+  background-position: var(--posicion-borde) top;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.imagen-fotograma-v02 {
+  clip-path: inset(0 3px);
+}
+.fondo-v02::before {
+  --posicion-borde: var(--borde-izq);
+  left: 0;
+}
+.fondo-v02::after {
+  --posicion-borde: var(--borde-der);
+  right: 0;
+}
 .fondo {
   position: absolute;
   left: -4000px;
@@ -470,6 +503,10 @@ html:not(.listo) .stage {
 }
 .vers--rojo {
   color: var(--rojo);
+}
+.tequendama-piso {
+  font-size: 60px;
+  line-height: 1.15;
 }
 .vers--60 {
   font-size: 64.26px;
@@ -578,6 +615,9 @@ html:not(.listo) .stage {
   padding: 28px clamp(20px, 5vw, 80px);
   font: 400 14.994px/1.5 var(--f-sans);
 }
+.pie a {
+  color: inherit;
+}
 .pie p {
   margin: 0 auto;
   max-width: 900px;
@@ -602,6 +642,15 @@ html:not(.listo) .stage {
 }
 .texto-editorial {
   font: 400 22px/1.22 var(--f-titulo);
+}
+.intro-texto {
+  font: 400 22px/1.19 var(--f-serif);
+}
+.intro-cierre::after {
+  content: "";
+  display: block;
+  margin-top: 28px;
+  border-top: 2px solid var(--rojo);
 }
 .fondo-portada,
 .introduccion {
@@ -635,10 +684,6 @@ html:not(.listo) .stage {
   text-align: center;
   font: 700 22px/1.2 var(--f-titulo);
 }
-#confrontacion .txt,
-#extraditables .txt {
-  width: 420px;
-}
 
 .ubicacion-escena {
   font: 700 22px/1.2 var(--f-titulo);
@@ -653,8 +698,4 @@ html:not(.listo) .stage {
   height: auto;
   padding-block: 5px;
   line-height: 1.1;
-}
-
-.mapa-esquematico {
-  background: #eeefeb;
 }
