@@ -684,6 +684,29 @@ html:not(.listo) .stage {
   width: 100px;
   height: 100px;
 }
+.avianca-fondo-mapa {
+  position: absolute;
+  left: 100px;
+  top: 168px;
+  width: 336px;
+  height: 507px;
+  background: #d8dade;
+}
+.avianca-lugar {
+  position: absolute;
+  left: 104px;
+  top: 184px;
+  font: 700 22px/1.35 var(--f-titulo);
+  text-transform: uppercase;
+  color: var(--negro);
+}
+.avianca-lugar strong,
+.avianca-lugar span {
+  display: block;
+}
+.avianca-lugar strong {
+  color: var(--rojo);
+}
 .avianca-avion {
   position: absolute;
   inset: 0 auto auto 0;

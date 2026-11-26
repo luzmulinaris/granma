@@ -18,7 +18,7 @@ const fotogramas = {
     [31, 14.45, "2 de septiembre - bogotá calle 22 | avenida 68 sede del espectador Un camión con 170 kg de dinamita se posiciona frente al edificio de \"El Espectador\" 1"],
   ],
   avianca: [
-    [35, 17.65, "27 de noviembre - bogotá aeropuerto \"el dorado\" Un Boeing de Avianca despega de El Dorado hacia Cali con 101 pasajeros y 6 tripulantes 1"],
+    [35, 17.65, "27 de noviembre - Bogotá. Municipio de Soacha. Un Boeing de Avianca despega de El Dorado hacia Cali con 101 pasajeros y 6 tripulantes 1"],
   ],
   das: [
     [40, 21.85, "6 de diciembre - bogotá carrera 27| calle 18 departamento de seguridad Edificio del \"DAS\""],
@@ -168,6 +168,12 @@ const caidaAvianca = 'C 1260 545 1350 688 1510 824';
 
 function vueloAvianca() {
   return `
+    <div class="avianca-fondo-mapa" aria-hidden="true"></div>
+    <div class="avianca-lugar">
+      <strong>27 de noviembre - Bogotá</strong>
+      <span>Municipio de Soacha</span>
+    </div>
+    ${pieza('mapa-avianca', [104, 265, 395, 287], null, 'vehiculo-svg')}
     <svg class="abs" width="0" height="0" aria-hidden="true">
       <path data-g="avianca-ascenso" d="${ascensoAvianca}" />
       <path data-g="avianca-caida" d="M 1135 545 ${caidaAvianca}" />
