@@ -54,7 +54,9 @@ function capasLara() {
       ${pieza('moto-recorrido', [0, 0, 172, 88], 'lara-moto-recorrido', 'vehiculo-svg')}
       ${pieza('moto-disparo', [0, 0, 172, 88], 'lara-moto-disparo', 'vehiculo-svg')}
     </div>
-    <div class="lara-fondo-cuadro" data-g="lara-fondo-cuadro" aria-hidden="true"></div>
+    <div class="lara-fondo-cuadro" aria-hidden="true"></div>
+    ${recorte(12, 'lara-cuadro-uno', '1. La motocicleta se aproxima por el lado derecho')}
+    <span class="lara-flecha-entrada" data-g="lara-flecha-entrada" aria-hidden="true"></span>
     ${recorte(13, 'lara-cuadro-dos', '2. La motocicleta se acerca al auto y dispara')}
     <span class="lara-linea" data-g="lara-linea" aria-hidden="true"></span>
     <span class="escena-impacto lara-impacto" data-g="lara-impacto" aria-hidden="true"></span>
@@ -64,12 +66,13 @@ function capasLara() {
 }
 
 function animaLara(k) {
-  k.sale('lara-etiquetas lara-fondo-cuadro', 3.25, {}, { dur: 0.18 });
-  k.sale('lara-fondo-flecha', 3.53, {}, { dur: 0.15 });
+  k.sale('lara-etiquetas', 3.25, {}, { dur: 0.28 });
+  k.entra('lara-cuadro-uno', 3.28, {}, { dur: 0.25 });
+  k.entra('lara-flecha-entrada', 3.53, {}, { dur: 0.24 });
   k.tl.to(k.$('lara-moto'), {
     keyframes: [
-      { x: -182, y: -8, duration: 0.28, ease: 'sine.in' },
-      { x: -374, y: -60, rotation: 12, duration: 0.31, ease: 'sine.inOut' },
+      { x: -182, y: -12, duration: 0.28, ease: 'sine.in' },
+      { x: -374, y: -53, rotation: 8, duration: 0.31, ease: 'none' },
       { x: -542, y: -70, rotation: 0, duration: 0.33, ease: 'sine.out' },
     ],
   }, 3.65);
@@ -81,7 +84,7 @@ function animaLara(k) {
   k.entra('lara-linea', 4.86, { scaleX: 0 }, { dur: 0.17 });
   animaImpacto(k, 'lara-impacto', 5.03);
   k.sale('lara-linea lara-impacto', 5.45, {}, { dur: 0.16 });
-  k.tl.to(k.$('lara-fondo-flecha'), { autoAlpha: 1, duration: 0.16 }, 5.55);
+  k.sale('lara-flecha-entrada', 5.45, {}, { dur: 0.24 });
   k.entra('lara-cuadro-tres lara-flecha-salida', 5.55, {}, { dur: 0.16 });
   k.tl.to(k.$('lara-moto'), {
     keyframes: [
@@ -269,9 +272,9 @@ export function animaEscenaV02(k, nombre, grupo) {
     const [pagina, t] = frames[i];
     const anterior = frames[i - 1][0];
     const movimiento = movimientos[pagina];
-    const dur = movimiento ? 0.06 : 0.22;
-    k.entra(`v02-${pagina}`, t, {}, { dur, ease: 'none' });
-    k.sale(`v02-${anterior}`, t + dur, {}, { dur: 0.05, ease: 'none' });
+    const dur = movimiento ? 0.12 : 0.32;
+    k.entra(`v02-${pagina}`, t, {}, { dur, ease: 'sine.inOut' });
+    k.sale(`v02-${anterior}`, t + dur, {}, { dur: 0.1, ease: 'sine.out' });
     const explosion = explosiones[pagina];
     if (explosion) {
       k.entra(`cuadro-explosion-${pagina}`, explosion.tiempo, {}, { dur: 0.14 });
