@@ -29,9 +29,9 @@ export default {
     ${texto('fecha', '1984', 885, 469, null, 'e3-f')}
     ${svg(`
       <circle data-g="circulo" cx="630.35" cy="686.7" r="135.5" fill="none" stroke="${ROJO}" stroke-width="5" transform="rotate(-90 630.35 686.7)"/>
-      ${flecha([[764, 692.2], [843.9, 692.2]], [[854.2, 692.2], [837.3, 676.5], [837.3, 708]], 'fl', 10)}
+      ${flecha([[750, 750], [843.9, 750]], [[854.2, 750], [837.3, 734.3], [837.3, 765.8]], 'fl', 10)}
     `)}
-    ${caja('Jefe del cartel de Medellín', 866, 674.5, null, 'jefe', 'caja--1')}
+    ${caja('Jefe del cartel de Medellín', 866, 732.3, null, 'jefe', 'caja--1')}
 
     <!-- p.7 -->
     ${texto('txt', parrafos("La noticia de la captura de Escobar en 1976 vuelve a ser pública. La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. Finalmente queda expuesto como jefe del cartel de Medellín y visibilidad pública se convierte en una vulnerabilidad."), 879, 526, null, 'cierre')}

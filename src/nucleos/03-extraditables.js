@@ -8,6 +8,7 @@ const hito = (g, fecha, sub, ps) =>
 export default {
   id: 'extraditables',
   nombre: 'Violencia para frenar la extradición',
+  enIndice: false,
   pasos: 26,
 
   html: () => `

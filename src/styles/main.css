@@ -288,7 +288,6 @@ html:not(.listo) .stage {
   gap: 30px;
   padding: 0;
   list-style: none;
-  font: 400 16px/19px var(--f-serif);
 }
 .operativo-versiones__numero {
   color: var(--rojo);
@@ -331,9 +330,12 @@ html:not(.listo) .stage {
   font: 700 21px/23px var(--f-titulo);
   white-space: nowrap;
 }
+.txt,
+.operativo-versiones p {
+  font: 400 20px/1.2 var(--f-serif);
+}
 .txt {
   width: var(--ancho-columna-texto);
-  font: 400 20px/1.2 var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
@@ -458,6 +460,92 @@ html:not(.listo) .stage {
 }
 .imagen-fotograma-v02 {
   clip-path: inset(0 3px);
+}
+/* Continúa las marcas de la calzada sobre la posición anterior del auto. */
+.calzada-final-cano {
+  position: absolute;
+  left: 706px;
+  top: 969px;
+  width: 302px;
+  height: 139px;
+  background:
+    repeating-linear-gradient(to right, #fff 0 25px, transparent 25px 42.9px)
+      -8px 42.6px / calc(100% + 8px) 5px no-repeat,
+    linear-gradient(#bebcbb, #bebcbb) right 115.1px / 175.6px 21.7px no-repeat,
+    #9c9a9b;
+}
+/* Capas de la secuencia de Galán, en coordenadas de la maqueta. */
+.galan-fondo-mano {
+  position: absolute;
+  left: 1022px;
+  top: 384px;
+  width: 23px;
+  height: 30px;
+  background: #d8dade;
+}
+.galan-mano {
+  clip-path: inset(244px 639px 776px 1022px);
+  transform-origin: 1033px 274px;
+}
+.galan-cuadro {
+  clip-path: inset(492px 741px 482px 620px);
+}
+.galan-lineas {
+  position: absolute;
+  inset: 0;
+}
+.galan-lineas::before,
+.galan-lineas::after {
+  content: "";
+  position: absolute;
+  width: 467px;
+  height: 2px;
+  background: repeating-linear-gradient(to right, #d91403 0 10px, transparent 10px 24px);
+  transform: rotate(35deg);
+  transform-origin: left center;
+}
+.galan-lineas::before {
+  left: 1036px;
+  top: 515px;
+}
+.galan-lineas::after {
+  left: 1088px;
+  top: 517px;
+}
+.galan-impacto {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  background: #d91403;
+  clip-path: polygon(50% 24%, 66% 0, 65% 31%, 92% 21%, 74% 42%, 100% 50%, 74% 58%, 92% 79%, 65% 69%, 66% 100%, 50% 76%, 34% 100%, 35% 69%, 8% 79%, 26% 58%, 0 50%, 26% 42%, 8% 21%, 35% 31%, 34% 0);
+}
+.avianca-recorrido {
+  position: absolute;
+  inset: 0;
+  width: 1684px;
+  height: 1190px;
+  fill: none;
+  stroke: var(--rojo);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.avianca-avion {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 500px;
+  height: 324px;
+  offset-rotate: auto 18deg;
+}
+.avianca-impacto {
+  left: 1050px;
+  top: 475px;
+  width: 170px;
+  height: 170px;
+}
+.avianca-cuadro {
+  clip-path: inset(349px 163px 639px 1166px);
 }
 .fondo-v02::before {
   --posicion-borde: var(--borde-izq);
@@ -642,6 +730,12 @@ html:not(.listo) .stage {
 }
 .texto-editorial {
   font: 400 22px/1.22 var(--f-titulo);
+}
+.bajada-catedral p {
+  margin: 0;
+}
+.bajada-catedral p + p {
+  margin-top: 0.85em;
 }
 .intro-texto {
   font: 400 22px/1.19 var(--f-serif);

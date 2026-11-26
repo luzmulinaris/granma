@@ -17,12 +17,12 @@ const pisos = llamadas([
 ], 'p');
 const escucha = llamadas([{
   text: 'La policía intervino<br>sus líneas telefónicas',
-  box: [718, 898],
-  dot: [1046, 882],
-  line: [[883, 898], [896, 882], [1046, 882]],
+  box: [718, 936],
+  dot: [1114, 923],
+  line: [[883, 936], [896, 923], [1114, 923]],
 }], 'escucha');
 // el zoom apunta a los pisos 28 y 29
-const ORIGEN = 'transform-origin:1250px 520px';
+const ORIGEN = 'transform-origin:1200px 690px';
 
 export default {
   id: 'tequendama',
@@ -30,17 +30,19 @@ export default {
   pasos: 4.4,
 
   html: () => `
-    <div class="abs" data-g="torre-g" style="left:0;top:0;width:1684px;height:1190px;${ORIGEN}">
-      ${foto('torre-v02', [924.9, 152.7, 760, 1038.8], 'Torre de las Residencias Tequendama, en Bogotá', 'torre', 'foto--libre')}
-      ${svg(pisos.lineas)}
-      ${texto('vers vers--rojo tequendama-piso', 'piso 29', 1131, 595, null, 'p0-n')}
-      ${texto('vers vers--rojo tequendama-piso', 'piso 28', 1123, 763, null, 'p1-n')}
-      ${pisos.cajas}
-    </div>
-    <div class="abs" data-g="interior-g" style="left:0;top:0;width:1684px;height:1190px;${ORIGEN}">
-      ${foto('torre-interior-v02', [869.1, 158.2, 760.8, 1033.4], 'Corte del edificio: la familia de Escobar en el piso 29 y la policía, con equipos de escucha, en el piso 28', 'interior', 'foto--libre')}
-      ${svg(escucha.lineas)}
-      ${escucha.cajas}
+    <div class="abs" data-g="hotel-zoom" style="inset:0;${ORIGEN}">
+      <div class="abs" data-g="torre-g" style="inset:0">
+        ${foto('torre-v02', [924.9, 152.7, 760, 1038.8], 'Torre de las Residencias Tequendama, en Bogotá', 'torre', 'foto--libre')}
+        ${svg(pisos.lineas)}
+        ${texto('vers vers--rojo tequendama-piso', 'piso 29', 1131, 595, null, 'p0-n')}
+        ${texto('vers vers--rojo tequendama-piso', 'piso 28', 1123, 763, null, 'p1-n')}
+        ${pisos.cajas}
+      </div>
+      <div class="abs" data-g="interior-g" style="inset:0">
+        ${foto('torre-interior-v02', [920, 137, 828, 1125], 'Corte del edificio: la familia de Escobar en el piso 29 y la policía, con equipos de escucha, en el piso 28', 'interior', 'foto--libre')}
+        ${svg(escucha.lineas)}
+        ${escucha.cajas}
+      </div>
     </div>
 
     <div class="cabeza" data-g="cabeza">
@@ -65,10 +67,11 @@ export default {
       k.llamada(`p${i}`, t + 0.12);
     });
 
-    // zoom → p.56 · interior del edificio
-    tl.to($('torre-g'), { scale: 2.4, duration: 0.6, ease: 'power2.in' }, 2.7);
-    k.sale('torre-g', 3.0, {}, { dur: 0.3 });
-    k.entra('interior-g', 3.0, { scale: 0.55 }, { dur: 0.6, ease: 'power2.out' });
-    k.llamada('escucha0', 3.68);
+    // Las dos vistas comparten el mismo movimiento de cámara.
+    tl.to($('hotel-zoom'), { x: -285, y: -30, scale: 1.38, duration: 1.23, ease: 'sine.inOut' }, 2.6);
+    k.sale('cabeza', 2.86, {}, { dur: 0.42, ease: 'sine.inOut' });
+    k.entra('interior-g', 2.95, {}, { dur: 0.62, ease: 'sine.inOut' });
+    k.sale('torre-g', 3.37, {}, { dur: 0.20, ease: 'sine.inOut' });
+    k.llamada('escucha0', 3.58);
   },
 };

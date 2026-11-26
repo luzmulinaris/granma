@@ -110,7 +110,10 @@ Promise.race([fuentes, new Promise((r) => setTimeout(r, 2500))]).then(animar);
 const boton = document.querySelector('.menu-btn');
 const indice = document.getElementById('indice');
 const lista = indice.querySelector('.indice__lista');
-lista.innerHTML = NUCLEOS.map((n) => `<li><a href="#${n.id}">${n.nombre}</a></li>`).join('');
+lista.innerHTML = NUCLEOS
+  .filter((n) => n.enIndice !== false)
+  .map((n) => `<li><a href="#${n.id}">${n.nombre}</a></li>`)
+  .join('');
 indice.hidden = false;
 indice.inert = true;
 

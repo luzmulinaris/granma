@@ -85,10 +85,10 @@ export default {
         const xNombre = inicioFila + i * (ANCHO_NOMBRE + SEPARACION_RECLUSOS);
         const xRetrato = xNombre + (ANCHO_NOMBRE - ANCHO_RETRATO) / 2;
         return `
-      <div class="retrato" data-g="r${i}" style="left:${xRetrato}px;top:456px;width:${ANCHO_RETRATO}px;height:240px">
+      <div class="retrato" data-g="r${i}" style="left:${xRetrato}px;top:518px;width:${ANCHO_RETRATO}px;height:240px">
         <img src="${url(`img/${img}.webp`)}" alt="${nombre}, alias «${alias}»" loading="lazy" decoding="async">
       </div>
-      ${caja(`${nombre}<br>Alias "${alias}"`, xNombre, 698, ANCHO_NOMBRE, `r${i}-c`, 'caja--20 caja--recluso')}`;
+      ${caja(`${nombre}<br>Alias "${alias}"`, xNombre, 760, ANCHO_NOMBRE, `r${i}-c`, 'caja--20 caja--recluso')}`;
       },
     ).join('')}
 
@@ -96,8 +96,8 @@ export default {
       ${titulo("Prisión a medida:", 104, 242, 'titulo--editorial')}
       ${titulo("La Catedral", 104, 326, 'titulo--editorial')}</div>
     <div class="cabeza" data-g="cab2">
-      ${texto('bajada texto-editorial', "La Catedral fue una prisión construida en las montañas de Envigado, Antioquia, para recluir a Pablo Escobar y a varios de sus hombres de confianza, como parte de su sometimiento a la justicia en 1991. Escobar intervino en las condiciones de su encarcelamiento e incluso pudo elegir a algunos de los guardianes. Aunque contaba con vigilancia del Ejército y guardias penitenciarios, dentro del recinto impuso sus propias reglas.", 104, 414, 560, 'bajada')}
-      ${texto('bajada texto-editorial', "El complejo tenía habitaciones privadas, zonas de descanso, mesas de billar y una cancha de fútbol, comodidades que contrastaban con su condición de cárcel de máxima seguridad. Durante su reclusión, Escobar recibió visitas y conservó el contacto con el exterior. Su ingreso a prisión no desarticuló al Cartel de Medellín: desde La Catedral continuó dirigiendo actividades criminales y ordenando asesinatos y secuestros", 105, 625, 560, 'bajada')}
+      ${texto('bajada texto-editorial bajada-catedral', `<p>La Catedral fue una prisión construida en las montañas de Envigado, Antioquia, para recluir a Pablo Escobar y a varios de sus hombres de confianza, como parte de su sometimiento a la justicia en 1991. Escobar intervino en las condiciones de su encarcelamiento e incluso pudo elegir a algunos de los guardianes. Aunque contaba con vigilancia del Ejército y guardias penitenciarios, dentro del recinto impuso sus propias reglas.</p>
+        <p>El complejo tenía habitaciones privadas, zonas de descanso, mesas de billar y una cancha de fútbol, comodidades que contrastaban con su condición de cárcel de máxima seguridad. Durante su reclusión, Escobar recibió visitas y conservó el contacto con el exterior. Su ingreso a prisión no desarticuló al Cartel de Medellín: desde La Catedral continuó dirigiendo actividades criminales y ordenando asesinatos y secuestros</p>`, 104, 414, 560, 'bajada')}
     </div>
   `,
 
