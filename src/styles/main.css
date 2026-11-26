@@ -484,9 +484,6 @@ html:not(.listo) .stage {
   inset: 0;
   overflow: hidden;
 }
-.cano-moto {
-  scale: -1 1;
-}
 .cano-cuadro-tres {
   clip-path: inset(87% 77% 6.8% 3.4%);
 }
@@ -616,6 +613,10 @@ html:not(.listo) .stage {
 .lara-auto-svg {
   z-index: 1;
 }
+.lara-auto-svg,
+.lara-moto img {
+  rotate: 180deg;
+}
 .lara-linea,
 .lara-impacto {
   z-index: 2;
@@ -678,10 +679,10 @@ html:not(.listo) .stage {
   offset-rotate: auto 18deg;
 }
 .avianca-impacto {
-  left: 1050px;
-  top: 460px;
-  width: 170px;
-  height: 170px;
+  left: 1015px;
+  top: 425px;
+  width: 240px;
+  height: 240px;
 }
 .avianca-cuadro {
   translate: 24px -162px;

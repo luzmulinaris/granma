@@ -103,8 +103,8 @@ function capasCano() {
       ${pieza('cano-auto-chocado', [1510, 851, 167, 149], 'cano-chocado', 'vehiculo-svg')}
     </div>
     <div class="abs" data-g="cano-moto" style="left:245px;top:1112px">
-      ${pieza('moto-recorrido', [0, 0, 150, 77], 'cano-moto-recorrido', 'vehiculo-svg cano-moto')}
-      ${pieza('moto-disparo', [0, 0, 150, 77], 'cano-moto-disparo', 'vehiculo-svg cano-moto')}
+      ${pieza('moto-recorrido', [0, 0, 150, 77], 'cano-moto-recorrido', 'vehiculo-svg')}
+      ${pieza('moto-disparo', [0, 0, 150, 77], 'cano-moto-disparo', 'vehiculo-svg')}
     </div>
     ${recorte(20, 'cano-cuadro-tres', '3. Del otro lado lo esperaba una moto con dos sicarios')}
     ${recorte(21, 'cano-cuadro-cuatro', '4. La moto se acerca por la derecha y le dispara')}
