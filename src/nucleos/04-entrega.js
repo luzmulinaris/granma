@@ -29,7 +29,7 @@ export default {
     ${foto('rejas-v02', [880, 733, 518, 275], 'Pablo Escobar detrás de las rejas de La Catedral', 'rejas')}
 
     <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "| La entrega", 104, 185, null, 'tema')}
+      ${texto('tema-editorial', "La entrega", 104, 185, null, 'tema')}
       ${titulo("Acuerdo de entrega", 104, 235)}
       ${titulo("con el gobierno", 104, 314)}
       ${texto('bajada texto-editorial', "La escalada de asesinatos, atentados y secuestros convirtió la lucha contra la extradición en una crisis nacional. Mientras continuaba la persecución a los narcotraficantes, el gobierno de César Gaviria abrió otra vía: una política de sometimiento a la justicia que ofrecía rebajas de penas y garantías de no extradición a quienes se entregaran y confesaran delitos. En ese contexto, Escobar negoció las condiciones de su reclusión.", 105, 414, 595, 'bajada')}

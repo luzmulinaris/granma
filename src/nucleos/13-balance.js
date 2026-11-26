@@ -15,7 +15,7 @@ export default {
 
   html: () => `
     <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "| El fin de la búsqueda", 104, 185, null, 'tema')}
+      ${texto('tema-editorial', "El fin de la búsqueda", 104, 185, null, 'tema')}
       ${titulo("El fin de meses", 104, 235)}
       ${titulo("de búsqueda", 104, 314)}
     </div>

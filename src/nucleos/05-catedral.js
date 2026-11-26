@@ -48,8 +48,7 @@ export default {
   html: () => `
     <!-- p.35 · mapa y camino -->
     <div class="abs" data-g="mapa-g" style="left:66px;top:13px;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.01)">
-      <img class="abs" data-g="mapa" src="${url('svg/mapa-envigado-v02.svg')}" alt="Mapa del sur del valle de Aburrá: de Envigado a La Catedral" style="left:719.7px;top:346.8px;width:777.4px;height:571.9px">
-      <a class="abs credito-mapa" data-g="credito-mapa" href="https://www.openstreetmap.org/copyright" style="right:187px;top:919px">© OpenStreetMap</a>
+      <div class="abs mapa-esquematico" data-g="mapa" role="img" aria-label="Esquema del recorrido de Envigado a La Catedral" style="left:719.7px;top:346.8px;width:777.4px;height:571.9px"></div>
       ${svg(`
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fe1003" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
@@ -72,7 +71,7 @@ export default {
     </div>
 
     <!-- p.38 · la habitación de Escobar -->
-    <div class="abs" data-g="hab-g" style="left:0;top:0;width:1684px;height:1190px;transform-origin:668px 648px">
+    <div class="abs" data-g="hab-g" style="left:193.5px;top:32.7px;width:1684px;height:1190px;transform-origin:668px 648px">
       ${foto('habitacion', geo.sprites.habitacion, 'Interior de la habitación de Escobar en La Catedral', 'hab', 'foto--libre')}
       ${svg(hab.lineas)}
       ${hab.cajas}
@@ -93,7 +92,7 @@ export default {
       },
     ).join('')}
 
-    <div class="cabeza" data-g="cabeza">${texto('tema-editorial', "| La reclusión", 104, 185, null, 'tema')}
+    <div class="cabeza" data-g="cabeza">${texto('tema-editorial', "La reclusión", 104, 185, null, 'tema')}
       ${titulo("Prisión a medida:", 104, 235)}
       ${titulo("La Catedral", 104, 314)}</div>
     <div class="cabeza" data-g="cab2">
@@ -109,7 +108,6 @@ export default {
     // p.35 · título + bajada; se forma el mapa y se va marcando el camino
     k.cabeza();
     k.barre('mapa', 0.2, 'izq', { dur: 0.6 });
-    k.entra('credito-mapa', 0.65, {}, { dur: 0.15 });
     k.entra('brujula', 0.6, { scale: 0, rotation: -200 }, { dur: 0.4, ease: 'back.out(1.6)' });
     k.entra('pin1', 0.95, cae, { dur: 0.25, ease: 'bounce.out' });
     k.entra('env', 1.15, { x: 16 }, { dur: 0.18 });

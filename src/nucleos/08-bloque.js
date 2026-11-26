@@ -19,7 +19,7 @@ export default {
     ${AFICHES.map((rect, i) => foto(`afiche-v02-${i + 1}`, rect, 'Afiche de búsqueda de Pablo Escobar', `af af${i + 1}`)).join('')}
 
     <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "| La búsqueda", 104, 185, null, 'tema')}
+      ${texto('tema-editorial', "La búsqueda", 104, 185, null, 'tema')}
       ${titulo("Formación del bloque", 104, 235)}
       ${titulo("de búsqueda", 104, 314)}
       ${texto('bajada texto-editorial', "Tras la fuga de La Catedral, el Gobierno reorganizó el Bloque de Búsqueda, una unidad especial encargada de localizar y capturar a Pablo Escobar. La Policía Nacional encabezó la persecución, con apoyo de otras instituciones colombianas y asistencia estadounidense en inteligencia y tecnología.", 111, 417, 580, 'bajada')}
@@ -30,7 +30,7 @@ export default {
     ${texto('titulo titulo--rojo titulo--40', '<span>Quiénes iban detrás de Escobar</span>', 104, 402, null, 'quienes')}
     ${TRAS.map(
       ([img, nombre, objetivo, y], i) => `
-      <div class="retrato retrato--sin-borde" data-g="t${i}" style="left:262px;top:${y - 58}px;width:112px;height:114px">
+      <div class="retrato retrato--sin-borde" data-g="t${i}" style="left:238px;top:${y - 58}px;width:112px;height:114px">
         <img src="${url(`img/${img}.webp`)}" alt="" loading="lazy" decoding="async">
       </div>
       ${texto('vers vers--rojo', nombre, 369, y - 18, null, `t${i}`)}

@@ -34,7 +34,7 @@ export default {
     ${texto('txt', parrafos("La noticia de la captura de Escobar en 1976 vuelve a ser pública. La exposición de sus antecedentes y las actuaciones judiciales alteran su posición. Finalmente queda expuesto como jefe del cartel de Medellín y visibilidad pública se convierte en una vulnerabilidad."), 879, 526, 420, 'cierre')}
 
     <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "| Antecedentes", 104, 185, null, 'tema')}
+      ${texto('tema-editorial', "Antecedentes", 104, 185, null, 'tema')}
       ${titulo("Escobar queda expuesto", 104, 235)}
       ${texto('bajada texto-editorial', "Durante sus primeros años, Escobar ejercía como Suplente de Jairo Ortega en la Cámara de Representantes. La representación política le ofrecía acceso y legitimidad pública.", 107, 341, 650, 'bajada')}
     </div>

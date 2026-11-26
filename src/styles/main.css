@@ -318,18 +318,18 @@ html:not(.listo) .stage {
   background: var(--rojo);
 }
 .fecha {
-  font: 700 55.1565px/61.047px var(--f-titulo);
+  font: 700 40px/46px var(--f-titulo);
   letter-spacing: 0.7px;
   color: var(--rojo);
   white-space: nowrap;
 }
 .sub {
-  font: 700 21.42px/23.22999px var(--f-titulo);
+  font: 700 21px/23px var(--f-titulo);
   white-space: nowrap;
 }
 .txt {
   width: var(--ancho-columna-texto);
-  font: 400 21.42px/24.97572px var(--f-serif);
+  font: 400 18px/1.2 var(--f-serif);
   text-align: left;
   hyphens: auto;
   text-wrap: pretty;
@@ -370,7 +370,13 @@ html:not(.listo) .stage {
   white-space: nowrap;
 }
 #tequendama [data-g="escucha0-c"] {
-  font-size: 20px;
+  height: auto;
+  padding-block: 5px;
+  line-height: 1.1;
+}
+.tequendama-piso {
+  font-size: 36px;
+  line-height: 1;
 }
 .paso {
   display: flex;
@@ -586,7 +592,13 @@ html:not(.listo) .stage {
 
 /* Maquetación editorial de la V02 */
 .tema-editorial {
+  color: var(--negro);
   font: 700 36px/1.1 var(--f-titulo);
+}
+.tema-editorial::before {
+  content: "|";
+  margin-right: 0.3em;
+  color: var(--rojo);
 }
 .texto-editorial {
   font: 400 22px/1.22 var(--f-titulo);
@@ -596,12 +608,13 @@ html:not(.listo) .stage {
   inset: 0;
 }
 .fondo-portada {
-  background: #221913;
+  background: #000;
+  box-shadow: 0 0 0 calc(100vmax / var(--s)) #000;
 }
 .portada-v02 {
   height: auto;
-  padding: 0;
-  background: transparent;
+  padding: 0 10px 10px 0;
+  background: #000;
   font-size: 90px;
   line-height: 1.05;
 }
@@ -622,22 +635,9 @@ html:not(.listo) .stage {
   text-align: center;
   font: 700 22px/1.2 var(--f-titulo);
 }
-#confrontacion .fecha,
-#extraditables .fecha,
-#poder .fecha,
-#entrega .fecha,
-#acuerdo .fecha,
-#ubicacion .fecha,
-#senal .fecha,
-#operativo .fecha {
-  font-size: 40px;
-  line-height: 1.15;
-}
 #confrontacion .txt,
 #extraditables .txt {
   width: 420px;
-  font-size: 18px;
-  line-height: 1.2;
 }
 
 .ubicacion-escena {
@@ -655,7 +655,6 @@ html:not(.listo) .stage {
   line-height: 1.1;
 }
 
-.credito-mapa {
-  color: var(--negro);
-  font: 400 12px/1.2 var(--f-sans);
+.mapa-esquematico {
+  background: #eeefeb;
 }

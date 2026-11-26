@@ -16,7 +16,7 @@ export default {
     </div>
 
     <div class="abs introduccion" data-g="introduccion">
-      ${texto('tema-editorial', '| Introducción', 104, 333, null, 'intro-tema')}
+      ${texto('tema-editorial', 'Introducción', 104, 333, null, 'intro-tema')}
       ${texto('bajada texto-editorial', "Pablo Emilio Escobar Gaviria (1949–1993) fue un narcotraficante colombiano y uno de los principales líderes del Cartel de Medellín. Su organización acumuló poder mediante el tráfico de cocaína, la corrupción y la violencia. Mientras buscaba reconocimiento público e incursionaba en la política, impulsó una confrontación contra el Estado para evitar su extradición a Estados Unidos.", 113, 405, 595, 'bio')}
       ${texto('bajada texto-editorial', "Sus últimos años estuvieron marcados por los asesinatos y atentados vinculados a esa confrontación, su entrega negociada en 1991 y la fuga de La Catedral en 1992. La persecución posterior terminó con su localización y muerte durante un operativo policial en Medellín, el 2 de diciembre de 1993.", 112, 590, 595, 'bio')}
       ${foto('introduccion-v02', [775, 405, 838, 471], 'Retrato de Pablo Escobar', 'mug', 'foto--libre')}

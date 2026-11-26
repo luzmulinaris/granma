@@ -17,7 +17,7 @@ export default {
       ps: ['El gobierno ordena retomar el control y trasladar a Escobar. Eduardo Mendoza, viceministro de Justicia, y Hernando Navas Rubio, director de Prisiones, ingresan y son retenidos por los reclusos.'],
     })}
     <div class="cabeza" data-g="cabeza">
-      ${texto('tema-editorial', "| La reclusión", 104, 185, null, 'tema')}
+      ${texto('tema-editorial', "La reclusión", 104, 185, null, 'tema')}
       ${titulo("Las condiciones", 104, 235)}
       ${titulo("no se cumplen", 104, 314)}
       ${texto('bajada texto-editorial', "El asesinato de sus socios dentro de La Catedral evidenció que Escobar seguía ejerciendo su poder criminal desde la prisión. Ante la gravedad de los hechos, el gobierno de César Gaviria decidió intervenir el establecimiento y trasladarlo para poner fin a esas condiciones de reclusión.", 105, 414, 595, 'bajada')}
