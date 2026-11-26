@@ -461,6 +461,9 @@ html:not(.listo) .stage {
 .imagen-fotograma-v02 {
   clip-path: inset(0 3px);
 }
+.vehiculo-svg {
+  object-fit: contain;
+}
 .cano-rotulo-sede {
   clip-path: inset(21.3% 12% 64% 74%);
 }
@@ -531,8 +534,13 @@ html:not(.listo) .stage {
   background: #d8dade;
 }
 .galan-mano {
-  clip-path: inset(244px 639px 776px 1022px);
-  transform-origin: 1033px 274px;
+  position: absolute;
+  left: 1022px;
+  top: 384px;
+  width: 24px;
+  height: 32px;
+  overflow: hidden;
+  transform-origin: 11px 30px;
 }
 .galan-cuadro {
   clip-path: inset(492px 741px 482px 620px);
@@ -596,6 +604,21 @@ html:not(.listo) .stage {
 }
 .lara-fondo-flecha {
   clip-path: inset(58.5% 23% 34% 64.2%);
+}
+.lara-fondo-auto {
+  position: absolute;
+  left: 852px;
+  top: 788px;
+  width: 301px;
+  height: 135px;
+  background: #9c9a9b;
+}
+.lara-auto-svg {
+  z-index: 1;
+}
+.lara-linea,
+.lara-impacto {
+  z-index: 2;
 }
 .lara-fondo-moto,
 .lara-fondo-cuadro {

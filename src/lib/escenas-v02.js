@@ -1,4 +1,4 @@
-import { foto } from './ui.js';
+import { foto, pieza } from './ui.js';
 import fondoBordes from '../assets/bordes-escenas-v02.png';
 
 const fotogramas = {
@@ -46,10 +46,13 @@ function capasLara() {
     foto(`escena-v02-${pagina}`, [0, 140, 1684, 1050], alt, grupo, grupo);
   return `
     ${recorte(11, 'lara-fondo-flecha')}
+    <div class="lara-fondo-auto" aria-hidden="true"></div>
+    ${pieza('lara-auto', [855, 790, 295, 131], null, 'vehiculo-svg lara-auto-svg')}
     <div class="lara-fondo-moto" aria-hidden="true"></div>
     ${recorte(11, 'lara-etiquetas')}
     <div class="lara-moto" data-g="lara-moto">
-      ${foto('movimiento-v02-13', [0, 0, 172, 88], '', null, 'foto--libre')}
+      ${pieza('moto-recorrido', [0, 0, 172, 88], 'lara-moto-recorrido', 'vehiculo-svg')}
+      ${pieza('moto-disparo', [0, 0, 172, 88], 'lara-moto-disparo', 'vehiculo-svg')}
     </div>
     <div class="lara-fondo-cuadro" data-g="lara-fondo-cuadro" aria-hidden="true"></div>
     ${recorte(13, 'lara-cuadro-dos', '2. La motocicleta se acerca al auto y dispara')}
@@ -70,6 +73,10 @@ function animaLara(k) {
       { x: -542, y: -70, rotation: 0, duration: 0.33, ease: 'sine.out' },
     ],
   }, 3.65);
+  k.entra('lara-moto-disparo', 4.86, {}, { dur: 0.06 });
+  k.sale('lara-moto-recorrido', 4.86, {}, { dur: 0.06 });
+  k.tl.to(k.$('lara-moto-recorrido'), { autoAlpha: 1, duration: 0.06 }, 5.55);
+  k.sale('lara-moto-disparo', 5.55, {}, { dur: 0.06 });
   k.entra('lara-cuadro-dos', 4.63, {}, { dur: 0.16 });
   k.entra('lara-linea', 4.86, { scaleX: 0 }, { dur: 0.17 });
   animaImpacto(k, 'lara-impacto', 5.03);
@@ -92,9 +99,13 @@ function capasCano() {
     ${recorte(21, 'cano-fondo-giro')}
     <div class="cano-fondo-cuadro" data-g="cano-fondo-cuadro" aria-hidden="true"></div>
     <div class="cano-calzada">
-      ${foto('movimiento-v02-19', [542, 857, 302, 142], 'Automóvil de Guillermo Cano', 'cano-auto', 'foto--libre')}
+      ${pieza('lara-auto', [542, 857, 302, 142], 'cano-auto', 'vehiculo-svg')}
+      ${pieza('cano-auto-chocado', [1510, 851, 167, 149], 'cano-chocado', 'vehiculo-svg')}
     </div>
-    ${foto('movimiento-v02-13', [245, 1112, 150, 77], 'Motocicleta', 'cano-moto', 'foto--libre cano-moto')}
+    <div class="abs" data-g="cano-moto" style="left:245px;top:1112px">
+      ${pieza('moto-recorrido', [0, 0, 150, 77], 'cano-moto-recorrido', 'vehiculo-svg cano-moto')}
+      ${pieza('moto-disparo', [0, 0, 150, 77], 'cano-moto-disparo', 'vehiculo-svg cano-moto')}
+    </div>
     ${recorte(20, 'cano-cuadro-tres', '3. Del otro lado lo esperaba una moto con dos sicarios')}
     ${recorte(21, 'cano-cuadro-cuatro', '4. La moto se acerca por la derecha y le dispara')}
     <span class="lara-linea cano-linea" data-g="cano-linea" aria-hidden="true"></span>
@@ -111,28 +122,43 @@ function animaCano(k) {
   k.entra('cano-auto', 4.83, { x: 84 }, { dur: 0.28 });
   k.sale('cano-fondo-cuadro', 5.08, {}, { dur: 0.14 });
   k.sale('cano-fondo-giro', 5.22, {}, { dur: 0.15 });
-  k.tl.to(k.$('cano-auto'), {
-    keyframes: [
-      { x: -193, y: 60, rotation: 270, duration: 0.28, ease: 'sine.in' },
-      { x: 18, y: 165, rotation: 360, duration: 0.36, ease: 'sine.out' },
-    ],
-  }, 5.34);
+  const [auto] = k.$('cano-auto');
+  const centroGiro = -164;
+  const radioGiro = 82;
+  k.tl.to(auto, { x: centroGiro, duration: 0.21, ease: 'sine.in' }, 5.32);
+  k.tl.to(auto, {
+    keyframes: [30, 60, 90, 120, 150, 180].map(grados => {
+      const angulo = grados * Math.PI / 180;
+      return {
+        x: centroGiro - radioGiro * Math.sin(angulo),
+        y: radioGiro * (1 - Math.cos(angulo)),
+        rotation: 180 - grados,
+        duration: 0.067,
+        ease: 'none',
+      };
+    }),
+  }, 5.53);
+  k.tl.to(auto, { x: 18, duration: 0.2, ease: 'sine.out' }, 5.932);
   k.tl.to(k.$('cano-fondo-giro'), { autoAlpha: 1, duration: 0.15 }, 5.98);
   k.entra('cano-cuadro-tres cano-moto', 6.0, {}, { dur: 0.15 });
   k.tl.to(k.$('cano-moto'), { x: 468, y: 0, duration: 0.38, ease: 'sine.inOut' }, 6.15);
   k.tl.to(k.$('cano-auto'), { x: 164, y: 114, duration: 0.38, ease: 'sine.inOut' }, 6.15);
   k.entra('cano-cuadro-cuatro', 6.55, {}, { dur: 0.14 });
+  k.entra('cano-moto-disparo', 6.71, {}, { dur: 0.06 });
+  k.sale('cano-moto-recorrido', 6.71, {}, { dur: 0.06 });
   k.entra('cano-linea', 6.71, { scaleX: 0 }, { dur: 0.15 });
   animaImpacto(k, 'cano-impacto', 6.86);
   k.sale('cano-linea cano-impacto', 7.13, {}, { dur: 0.13 });
   k.entra('cano-cuadro-cinco cano-flecha-final cano-poste', 7.18, {}, { dur: 0.13 });
   k.tl.to(k.$('cano-auto'), {
     keyframes: [
-      { x: 465, y: 76, rotation: 347, duration: 0.19, ease: 'sine.in' },
-      { x: 837, y: 14, rotation: 343, duration: 0.22, ease: 'sine.in' },
-      { x: 816, y: 22, rotation: 337, duration: 0.09, ease: 'sine.out' },
+      { x: 465, y: 76, rotation: -13, duration: 0.19, ease: 'sine.in' },
+      { x: 837, y: 14, rotation: -17, duration: 0.22, ease: 'sine.in' },
+      { x: 816, y: 22, rotation: -23, duration: 0.09, ease: 'sine.out' },
     ],
   }, 7.3);
+  k.sale('cano-auto', 7.71, {}, { dur: 0.05 });
+  k.entra('cano-chocado', 7.71, {}, { dur: 0.05 });
 }
 
 const ascensoAvianca = 'M 440 1005 C 610 1005 690 835 810 702 S 1060 545 1135 545';
@@ -176,7 +202,8 @@ export function escenaV02(nombre, grupo) {
       return `<div class="fotograma-v02" data-g="v02-${pagina}">
         <div class="fondo-v02" style="--bordes:url('${fondoBordes}');--ancho-bordes:${columnasBordes * 100}%;--borde-izq:${columna / (columnasBordes - 1) * 100}%;--borde-der:${bordeDerecho / (columnasBordes - 1) * 100}%" aria-hidden="true"></div>
         ${foto(`escena-v02-${pagina === 27 ? 26 : pagina === 35 ? 36 : pagina === 11 ? 12 : pagina === 17 ? 19 : pagina}`, [0, 140, 1684, 1050], alt, null, 'imagen-fotograma-v02')}
-        ${movimiento ? foto(`movimiento-v02-${pagina}`, movimiento.rect, '', `movimiento-${pagina}`, 'foto--libre') : ''}
+        ${pagina === 31 ? pieza('espectador-camion', movimiento.rect, 'movimiento-31', 'vehiculo-svg') :
+          pagina === 41 ? pieza('das-auto', movimiento.rect, 'movimiento-41', 'vehiculo-svg') : ''}
         ${explosiones[pagina] ? `
           ${foto(`escena-v02-${explosiones[pagina].pagina}`, [0, 140, 1684, 1050], explosiones[pagina].cuadro, `cuadro-explosion-${pagina}`, `cuadro-explosion-${pagina}`)}
           <span class="escena-impacto explosion-${pagina}" data-g="explosion-${pagina}" aria-hidden="true"></span>
@@ -185,7 +212,9 @@ export function escenaV02(nombre, grupo) {
         ${pagina === 35 ? vueloAvianca() : ''}
         ${pagina === 25 ? `
           <div class="galan-fondo-mano" aria-hidden="true"></div>
-          ${foto('escena-v02-25', [0, 140, 1684, 1050], '', 'galan-mano', 'galan-mano')}
+          <div class="galan-mano" data-g="galan-mano">
+            ${pieza('galan-saludo', [-80, 0, 103, 242], null, 'vehiculo-svg')}
+          </div>
         ` : ''}
         ${pagina === 27 ? `
           <div class="galan-lineas" data-g="galan-lineas" aria-hidden="true"></div>
