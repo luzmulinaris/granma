@@ -654,3 +654,8 @@ html:not(.listo) .stage {
   padding-block: 5px;
   line-height: 1.1;
 }
+
+.credito-mapa {
+  color: var(--negro);
+  font: 400 12px/1.2 var(--f-sans);
+}

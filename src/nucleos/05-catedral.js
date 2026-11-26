@@ -48,7 +48,8 @@ export default {
   html: () => `
     <!-- p.35 · mapa y camino -->
     <div class="abs" data-g="mapa-g" style="left:66px;top:13px;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.01)">
-      ${foto('mapa-envigado', [719.7, 346.8, 777.4, 571.9], 'Mapa del sur del valle de Aburrá: de Envigado a La Catedral', 'mapa')}
+      <img class="abs" data-g="mapa" src="${url('svg/mapa-envigado-v02.svg')}" alt="Mapa del sur del valle de Aburrá: de Envigado a La Catedral" style="left:719.7px;top:346.8px;width:777.4px;height:571.9px">
+      <a class="abs credito-mapa" data-g="credito-mapa" href="https://www.openstreetmap.org/copyright" style="right:187px;top:919px">© OpenStreetMap</a>
       ${svg(`
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fe1003" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
@@ -108,6 +109,7 @@ export default {
     // p.35 · título + bajada; se forma el mapa y se va marcando el camino
     k.cabeza();
     k.barre('mapa', 0.2, 'izq', { dur: 0.6 });
+    k.entra('credito-mapa', 0.65, {}, { dur: 0.15 });
     k.entra('brujula', 0.6, { scale: 0, rotation: -200 }, { dur: 0.4, ease: 'back.out(1.6)' });
     k.entra('pin1', 0.95, cae, { dur: 0.25, ease: 'bounce.out' });
     k.entra('env', 1.15, { x: 16 }, { dur: 0.18 });

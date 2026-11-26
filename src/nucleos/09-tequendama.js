@@ -6,8 +6,8 @@ const pisos = llamadas(geo.llamadas.torre, 'p');
 const escucha = llamadas([{
   text: 'La policía intervino sus líneas telefónicas',
   box: [545, 766],
-  dot: [1250, 806],
-  line: [[840, 784], [1000, 784], [1030, 806], [1250, 806]],
+  dot: [1245, 711],
+  line: [[840, 784], [946, 784], [1030, 711], [1245, 711]],
 }], 'escucha');
 // el zoom apunta a los pisos 28 y 29
 const ORIGEN = 'transform-origin:1250px 520px';
@@ -26,9 +26,9 @@ export default {
       ${pisos.cajas}
     </div>
     <div class="abs" data-g="interior-g" style="left:0;top:0;width:1684px;height:1190px;${ORIGEN}">
-      ${foto('torre-interior', geo.fotos['torre-interior'].p46, 'Corte del edificio: la familia de Escobar en el piso 29 y la policía, con equipos de escucha, en el piso 28', 'interior', 'foto--libre')}
+      ${foto('torre-interior-v02', [869, 158, 761, 1032], 'Corte del edificio: la familia de Escobar en el piso 29 y la policía, con equipos de escucha, en el piso 28', 'interior', 'foto--libre')}
       ${svg(`
-        <path data-g="senal-telefonica" d="M1301 614 H1350 V806 H1250"
+        <path data-g="senal-telefonica" d="M1275 537 H1325 V711 H1245"
           fill="none" stroke="${ROJO}" stroke-width="3"/>
         ${escucha.lineas}
       `)}
