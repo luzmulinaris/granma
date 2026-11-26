@@ -461,6 +461,9 @@ html:not(.listo) .stage {
 .imagen-fotograma-v02 {
   clip-path: inset(0 3px);
 }
+.cano-rotulo-sede {
+  clip-path: inset(21.3% 12% 64% 74%);
+}
 .cano-fondo-giro {
   clip-path: inset(72.4% 68.5% 5.3% 24%);
 }
@@ -474,6 +477,7 @@ html:not(.listo) .stage {
 }
 .cano-calzada {
   position: absolute;
+  z-index: 1;
   inset: 0;
   overflow: hidden;
 }
@@ -497,6 +501,19 @@ html:not(.listo) .stage {
   top: 1150px;
   width: 157px;
   rotate: -39deg;
+}
+.cano-poste {
+  position: absolute;
+  left: 1665px;
+  top: 889px;
+  width: 10px;
+  height: 65px;
+  background: #514e4e;
+  border-radius: 3px;
+}
+.lara-linea.cano-linea,
+.escena-impacto.cano-impacto {
+  z-index: 2;
 }
 .escena-impacto.cano-impacto {
   left: 893px;
@@ -560,6 +577,12 @@ html:not(.listo) .stage {
   width: 282px;
   height: 282px;
 }
+.escena-impacto.explosion-31,
+.escena-impacto.explosion-41,
+.escena-impacto.avianca-impacto {
+  background: url('../assets/explosion.svg') center / contain no-repeat;
+  clip-path: none;
+}
 .explosion-31 {
   left: 795px;
   top: 670px;
@@ -593,6 +616,7 @@ html:not(.listo) .stage {
 }
 .lara-moto {
   position: absolute;
+  z-index: 1;
   left: 1302px;
   top: 806px;
   width: 172px;
@@ -637,6 +661,7 @@ html:not(.listo) .stage {
   height: 170px;
 }
 .avianca-cuadro {
+  translate: 24px -162px;
   clip-path: inset(349px 163px 639px 1166px);
 }
 .fondo-v02::before {

@@ -88,6 +88,7 @@ function capasCano() {
   const recorte = (pagina, grupo, alt = '') =>
     foto(`escena-v02-${pagina}`, [0, 140, 1684, 1050], alt, grupo, grupo);
   return `
+    ${recorte(17, 'cano-rotulo-sede', 'Sede de El Espectador')}
     ${recorte(21, 'cano-fondo-giro')}
     <div class="cano-fondo-cuadro" data-g="cano-fondo-cuadro" aria-hidden="true"></div>
     <div class="cano-calzada">
@@ -99,11 +100,13 @@ function capasCano() {
     <span class="lara-linea cano-linea" data-g="cano-linea" aria-hidden="true"></span>
     <span class="escena-impacto cano-impacto" data-g="cano-impacto" aria-hidden="true"></span>
     ${recorte(22, 'cano-flecha-final')}
+    <span class="cano-poste" data-g="cano-poste" aria-hidden="true"></span>
     ${recorte(22, 'cano-cuadro-cinco', '5. Guillermo Cano pierde el control del auto y choca contra un poste')}
   `;
 }
 
 function animaCano(k) {
+  k.sale('cano-rotulo-sede', 4.83, {}, { dur: 0.22 });
   k.tl.set(k.$('cano-auto'), { rotation: 180 }, 4.83);
   k.entra('cano-auto', 4.83, { x: 84 }, { dur: 0.28 });
   k.sale('cano-fondo-cuadro', 5.08, {}, { dur: 0.14 });
@@ -122,17 +125,18 @@ function animaCano(k) {
   k.entra('cano-linea', 6.71, { scaleX: 0 }, { dur: 0.15 });
   animaImpacto(k, 'cano-impacto', 6.86);
   k.sale('cano-linea cano-impacto', 7.13, {}, { dur: 0.13 });
-  k.entra('cano-cuadro-cinco cano-flecha-final', 7.18, {}, { dur: 0.13 });
+  k.entra('cano-cuadro-cinco cano-flecha-final cano-poste', 7.18, {}, { dur: 0.13 });
   k.tl.to(k.$('cano-auto'), {
     keyframes: [
       { x: 465, y: 76, rotation: 347, duration: 0.19, ease: 'sine.in' },
-      { x: 920, y: 14, rotation: 343, duration: 0.27, ease: 'sine.out' },
+      { x: 837, y: 14, rotation: 343, duration: 0.22, ease: 'sine.in' },
+      { x: 816, y: 22, rotation: 337, duration: 0.09, ease: 'sine.out' },
     ],
   }, 7.3);
 }
 
 const ascensoAvianca = 'M 440 1005 C 610 1005 690 835 810 702 S 1060 545 1135 545';
-const caidaAvianca = 'C 1225 545 1320 700 1390 925';
+const caidaAvianca = 'C 1260 545 1350 688 1510 824';
 
 function vueloAvianca() {
   return `
@@ -159,7 +163,7 @@ function animaVueloAvianca(k) {
   k.entra('avianca-cuadro', 18.88, {}, { dur: 0.16 });
   animaImpacto(k, 'avianca-impacto', 19.08);
   k.sale('avianca-impacto', 19.34, { scale: 0.8 }, { dur: 0.14 });
-  k.tl.to(avion, { offsetDistance: '100%', scale: 0.72, duration: 0.62, ease: 'power1.in' }, 19.39);
+  k.tl.to(avion, { offsetDistance: '100%', duration: 0.62, ease: 'sine.inOut' }, 19.39);
 }
 
 export function escenaV02(nombre, grupo) {
