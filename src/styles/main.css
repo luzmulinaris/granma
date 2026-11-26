@@ -461,18 +461,48 @@ html:not(.listo) .stage {
 .imagen-fotograma-v02 {
   clip-path: inset(0 3px);
 }
-/* Continúa las marcas de la calzada sobre la posición anterior del auto. */
-.calzada-final-cano {
+.cano-fondo-giro {
+  clip-path: inset(72.4% 68.5% 5.3% 24%);
+}
+.cano-fondo-cuadro {
   position: absolute;
-  left: 706px;
-  top: 969px;
-  width: 302px;
-  height: 139px;
-  background:
-    repeating-linear-gradient(to right, #fff 0 25px, transparent 25px 42.9px)
-      -8px 42.6px / calc(100% + 8px) 5px no-repeat,
-    linear-gradient(#bebcbb, #bebcbb) right 115.1px / 175.6px 21.7px no-repeat,
-    #9c9a9b;
+  left: 316px;
+  top: 797px;
+  width: 330px;
+  height: 63px;
+  background: linear-gradient(#b5d1c0 0 45px, #9c9a9b 45px);
+}
+.cano-calzada {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.cano-moto {
+  scale: -1 1;
+}
+.cano-cuadro-tres {
+  clip-path: inset(87% 77% 6.8% 3.4%);
+}
+.cano-cuadro-cuatro {
+  clip-path: inset(92.3% 25% 1.7% 55.8%);
+}
+.cano-cuadro-cinco {
+  clip-path: inset(85.7% 2.8% 8% 77.8%);
+}
+.cano-flecha-final {
+  clip-path: inset(76.7% 10.2% 13% 62.9%);
+}
+.lara-linea.cano-linea {
+  left: 790px;
+  top: 1150px;
+  width: 157px;
+  rotate: -39deg;
+}
+.escena-impacto.cano-impacto {
+  left: 893px;
+  top: 981px;
+  width: 88px;
+  height: 88px;
 }
 /* Capas de la secuencia de Galán, en coordenadas de la maqueta. */
 .galan-fondo-mano {
@@ -512,24 +542,86 @@ html:not(.listo) .stage {
   left: 1088px;
   top: 517px;
 }
-.galan-impacto {
+.escena-impacto {
   position: absolute;
   width: 82px;
   height: 82px;
   background: #d91403;
   clip-path: polygon(50% 24%, 66% 0, 65% 31%, 92% 21%, 74% 42%, 100% 50%, 74% 58%, 92% 79%, 65% 69%, 66% 100%, 50% 76%, 34% 100%, 35% 69%, 8% 79%, 26% 58%, 0 50%, 26% 42%, 8% 21%, 35% 31%, 34% 0);
 }
-.avianca-recorrido {
+.cuadro-explosion-31 {
+  clip-path: inset(68.2% 65.5% 22.5% 15%);
+}
+.cuadro-explosion-41 {
+  clip-path: inset(54.7% 42.8% 39.3% 37.6%);
+}
+.escena-impacto.explosion-31,
+.escena-impacto.explosion-41 {
+  width: 282px;
+  height: 282px;
+}
+.explosion-31 {
+  left: 795px;
+  top: 670px;
+}
+.explosion-41 {
+  left: 939px;
+  top: 692px;
+}
+.lara-etiquetas {
+  clip-path: inset(43% 8% 39% 53%);
+}
+.lara-fondo-flecha {
+  clip-path: inset(58.5% 23% 34% 64.2%);
+}
+.lara-fondo-moto,
+.lara-fondo-cuadro {
   position: absolute;
-  inset: 0;
-  width: 1684px;
-  height: 1190px;
-  fill: none;
-  stroke: var(--rojo);
-  stroke-width: 5px;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
+  background: #9c9a9b;
+}
+.lara-fondo-moto {
+  left: 1300px;
+  top: 777px;
+  width: 184px;
+  height: 72px;
+}
+.lara-fondo-cuadro {
+  left: 1247px;
+  top: 857px;
+  width: 329px;
+  height: 67px;
+}
+.lara-moto {
+  position: absolute;
+  left: 1302px;
+  top: 806px;
+  width: 172px;
+  height: 88px;
+}
+.lara-cuadro-dos {
+  clip-path: inset(53.6% 24% 40.6% 56.2%);
+}
+.lara-cuadro-tres {
+  clip-path: inset(62.5% 78.5% 29% 2%);
+}
+.lara-flecha-salida {
+  clip-path: inset(59.5% 50.5% 33.5% 34.4%);
+}
+.lara-linea {
+  position: absolute;
+  left: 860px;
+  top: 787px;
+  width: 138px;
+  height: 2px;
+  background: repeating-linear-gradient(to right, var(--rojo) 0 9px, transparent 9px 18px);
+  rotate: 28deg;
+  transform-origin: left center;
+}
+.lara-impacto {
+  left: 925px;
+  top: 808px;
+  width: 100px;
+  height: 100px;
 }
 .avianca-avion {
   position: absolute;
@@ -540,7 +632,7 @@ html:not(.listo) .stage {
 }
 .avianca-impacto {
   left: 1050px;
-  top: 475px;
+  top: 460px;
   width: 170px;
   height: 170px;
 }
