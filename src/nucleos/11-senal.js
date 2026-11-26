@@ -1,16 +1,9 @@
 // NÚCLEO 11 · La última señal — p. 49 a 51 del PDF
 import geo from '../data/geo.json';
-import { titulo, texto, svg, llamadas, url } from '../lib/ui.js';
+import { linea, punto, titulo, texto, svg, llamadas, url } from '../lib/ui.js';
 import { plano } from '../lib/plano.js';
 
-const CITA = [
-  '"A la 1:35 cometió el error que todos estábamos',
-  'esperando. Su conversación telefónica duró cerca',
-  'de cuatro minutos y por primera vez en los 7 meses',
-  'de persecución violó su seguridad personal, ese',
-  'tiempo nos permitió ubicar con exactitud el sitio',
-  'donde se encontraba"',
-];
+const CITA = "\"A la 1:35 cometió el error que todos estábamos esperando. Su conversación telefónica duró cerca de cuatro minutos y por primera vez en los 7 meses de persecución violó su seguridad personal, ese tiempo nos permitió ubicar con exactitud el sitio donde se encontraba\"";
 
 // Recorte (en % de la ilustración) de cada pieza del receptor, de arriba
 // hacia abajo, y la llamada de texto que le corresponde.
@@ -50,20 +43,21 @@ export default {
   html: () => `
     <!-- p.49 -->
     <div class="cabeza" data-g="cabeza">
-      ${titulo('La última señal', 57, 240)}
-      ${texto('bajada', 'Tal como lo esperaban, Escobar se comunicó nuevamente con su familia el 2 de diciembre, manteniendo una llamada de más de dos minutos, facilitando la localización de su ubicación.', 63, 329, 705, 'bajada')}
+      ${texto('tema-editorial', "| La última señal", 104, 185, null, 'tema')}
+      ${titulo("Ubicación exacta", 104, 235)}
+      ${texto('bajada texto-editorial', "Tal como lo esperaban, Escobar se comunicó nuevamente con su familia el 2 de diciembre, manteniendo una llamada de más de dos minutos, facilitando la localización de su ubicación.", 111, 321, 595, 'bajada')}
+      ${texto('bajada texto-editorial', "\"A la 1:35 cometió el error que todos estábamos esperando. Su conversación telefónica duró cerca de cuatro minutos y por primera vez en los 7 meses de persecución violó su seguridad personal, ese tiempo nos permitió ubicar con exactitud el sitio donde se encontraba\"", 129, 426, 595, 'bajada')}
     </div>
-    <blockquote class="abs cita cita--recta" data-g="cita-g" style="left:64px;top:430px;margin:0">
-      ${CITA.map((l, i) => `<div data-g="cita" ${i === 0 ? 'style="margin-left:-12px"' : ''}>${l}</div>`).join('')}
-    </blockquote>
+    <blockquote class="abs cita-editorial" data-g="cita" style="left:125px;top:426px;width:565px">${CITA}</blockquote>
 
-    <!-- p.50 -->
-    ${texto('titulo titulo--rojo', '<span>Ubicación exacta</span>', 107, 248, null, 'exacta')}
-    <div data-g="plano">${plano()}</div>
+    ${linea(851, 140, 415, 'tramo-fecha')}
+    ${punto(851, 415, 'punto-fecha')}
+    ${texto('fecha', '2 de diciembre de 1993', 885, 380, null, 'fecha-exacta')}
+    ${texto('sub', 'Ubicación exacta', 883, 442, null, 'exacta')}
+    <div class="plano-editorial" data-g="plano">${plano()}</div>
 
     <!-- p.51 -->
-    ${texto('titulo titulo--rojo titulo--40', '<span>La clave: el equipo de radiolocalización</span>', 61, 194, null, 'clave')}
-    ${texto('bajada', 'Gracias a la llamada de más de 2 minutos, pudieron descubir exactamente en donde se encontraba Escobar con su equipo de radiolocalización.', 63, 245, 610, 'clave-b')}
+    ${texto('titulo titulo--rojo titulo--40', '<span>La clave: el equipo de radiolocalización</span>', 104, 310, null, 'clave')}
     <div class="despiece" data-g="despiece" role="img" aria-label="Receptor radiogoniométrico en vista explotada" style="left:${R[0] + DESPLAZAMIENTO_RADIO_X}px;top:${R[1]}px;width:${R[2]}px;height:${R[3]}px">
       ${PIEZAS.map(
         ([, pol], i) =>
@@ -82,8 +76,10 @@ export default {
     k.entra('cita', 0.35, { x: -50, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.3, stagger: 0.14, ease: 'power3.out' });
 
     // p.50 · ubicación exacta: de los 12 puntos queda uno solo
-    k.sale('cabeza cita-g', 1.8, { y: -30 }, { dur: 0.25 });
-    k.entra('exacta', 2.0, { x: -60, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.35, ease: 'power3.out' });
+    k.sale('cita bajada', 4.6, { y: -30 }, { dur: 0.25 });
+    k.crece('tramo-fecha', 2, 'top', { dur: 0.3 });
+    k.entra('punto-fecha', 2.20, { scale: 0 }, { dur: 0.2 });
+    k.entra('fecha-exacta exacta', 2.0, { x: -60, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.35, ease: 'power3.out' });
     k.entra('plano', 2.05, { y: 40 }, { dur: 0.35 });
     k.origen('resto exacto onda');
     tl.to($('resto'), { scale: 0, duration: 0.18, stagger: 0.06, ease: 'back.in(2)' }, 2.75);
@@ -96,9 +92,8 @@ export default {
     );
 
     // p.51 · el despiece de la radio se va formando, pieza por pieza
-    k.sale('exacta plano', 4.6, { y: -30 }, { dur: 0.25 });
+    k.sale('fecha-exacta exacta plano tramo-fecha punto-fecha', 4.6, { y: -30 }, { dur: 0.25 });
     k.entra('clave', 4.8, { x: -60, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.35, ease: 'power3.out' });
-    k.entra('clave-b', 5.0, { y: 16 }, { dur: 0.25 });
     PIEZAS.forEach(([nombre], i) => {
       const t = 5.3 + i * 0.3;
       k.entra(`pz${i}`, t, { y: -70, x: i % 2 ? 40 : -40, scale: 1.12 }, { dur: 0.3, ease: 'power3.out' });

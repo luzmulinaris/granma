@@ -3,39 +3,49 @@ import { foto, pieza, titulo, texto, evento, paso, svg, flecha, fondos, via } fr
 
 export default {
   id: 'confrontacion',
-  nombre: 'Confrontación y terror',
+  nombre: "Violencia para frenar la extradición",
   pasos: 6.55,
 
   html: () => `
     ${evento({
-      g: 'e1', y: 380, desde: 1157,
-      fecha: 'abril de 1984', yFecha: 340,
-      sub: 'Asesinato de Rodrigo Lara Bonilla', ySub: 430,
-      ps: ['Rodrigo Lara Bonilla, el ministro de Justicia de Colombia, es asesinado el 30 de abril de 1984 en Bogotá, cuando sicarios en motocicleta dispararon contra su vehículo.'],
+      g: 'e1', x: 851, y: 500, desde: 116,
+      fecha: 'Abril de 1984', yFecha: 469,
+      sub: 'Primer crimen: Asesinato de Rodrigo Lara Bonilla', ySub: 526,
+      ps: ["Rodrigo Lara Bonilla, el ministro de Justicia de Colombia que había expuesto a Escobar, es asesinado el 30 de abril de 1984 en Bogotá, cuando sicarios en motocicleta dispararon contra su vehículo."],
     })}
-    ${foto('lara-auto', [188.2, 492, 744.3, 420], 'El automóvil de Rodrigo Lara Bonilla con los vidrios destrozados por los disparos', 'foto')}
+    ${foto('lara-auto-v02', [880, 720, 621, 351], 'El automóvil de Rodrigo Lara Bonilla con los vidrios destrozados por los disparos', 'foto')}
 
-    <div class="cabeza" data-g="cabeza">${titulo('Confrontación y terror', 57, 264)}</div>
+    <div class="cabeza" data-g="cabeza">
+      ${texto('tema-editorial', "| Antecedentes", 104, 185, null, 'tema')}
+      ${titulo("Violencia para frenar", 104, 235)}
+      ${titulo("la extradición", 104, 314)}
+      ${texto('bajada texto-editorial', "Tras quedar expuestos sus antecedentes, Escobar pasó a la clandestinidad. Aunque era perseguido por las autoridades, mantuvo el control de su organización y desde sus refugios continuó ordenando acciones violentas.", 103, 414, 585, 'bajada')}
+      ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 585, 'bajada')}
+    </div>
 
     <!-- p.11 a 13 · reconstrucción del ataque -->
     <div class="escena" data-g="escena">
       ${fondos([140, 3000, '#e9e9e3'])}
-      ${svg(`
-        ${via(660)}
-        <line data-g="rot-auto" x1="662" y1="607" x2="662" y2="746" stroke="#9a9a9a" stroke-width="1.5"/>
-        <line data-g="rot-moto" x1="1141" y1="524" x2="1141" y2="589" stroke="#fe1003" stroke-width="1.3"/>
-        ${flecha([[1040.1, 475.8], [962.2, 475.8], [884.2, 430.4], [852, 430.4]], [[834.6, 430.4], [855.8, 450.1], [855.8, 410.7]], 'f1')}
-        ${flecha([[708.2, 484.7], [647.7, 556.9], [564.7, 610.2], [540, 640]], [[526.1, 656.1], [554.9, 652.6], [524.7, 627.2]], 'f3')}
-        ${flecha([[586, 416.3], [57, 416.3]], [[39.7, 416.3], [60.9, 436], [60.9, 396.5]], 'f2')}
-      `)}
-      ${pieza('auto', [529.4, 473.1, 318.5, 136.3], 'auto')}
-      ${pieza('moto', [1047.7, 441, 165.4, 68.2], 'moto')}
-      ${pieza('estallido', [664.3, 460.5, 90.9, 86.6], 'bang')}
-      ${texto('rotulo', 'Automóvil de Lara Bonilla', 491, 765, null, 'rot-auto')}
-      ${texto('rotulo rotulo--rojo', 'Motocicleta con dos ocupantes', 960, 595, null, 'rot-moto')}
-      ${paso(1, 'La motocicleta se aproxima por el lado derecho', 1239, 442, 'p1')}
-      ${paso(2, 'La motocicleta se acerca al auto y dispara', 797, 386, 'p2')}
-      ${paso(3, 'El auto pierde el control y la moto huye de la escena', 68, 465, 'p3')}
+      ${texto('ubicacion-escena', "30 de abril · Bogotá<br>Calle 127 · Cruce y entorno de la Autopista Norte", 104, 165, 475, 'escena-lugar')}
+      ${foto('mapa-v02-lara', [104.5, 276, 518.7, 360], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
+      <div class="abs" style="left:0;top:330px;width:1684px;height:1190px">
+        ${svg(`
+          ${via(660)}
+          <line data-g="rot-auto" x1="662" y1="607" x2="662" y2="746" stroke="#9a9a9a" stroke-width="1.5"/>
+          <line data-g="rot-moto" x1="1141" y1="524" x2="1141" y2="589" stroke="#fe1003" stroke-width="1.3"/>
+          ${flecha([[1040.1, 475.8], [962.2, 475.8], [884.2, 430.4], [852, 430.4]], [[834.6, 430.4], [855.8, 450.1], [855.8, 410.7]], 'f1')}
+          ${flecha([[708.2, 484.7], [647.7, 556.9], [564.7, 610.2], [540, 640]], [[526.1, 656.1], [554.9, 652.6], [524.7, 627.2]], 'f3')}
+          ${flecha([[586, 416.3], [57, 416.3]], [[39.7, 416.3], [60.9, 436], [60.9, 396.5]], 'f2')}
+        `)}
+        ${pieza('auto', [529.4, 473.1, 318.5, 136.3], 'auto')}
+        ${pieza('moto', [1047.7, 441, 165.4, 68.2], 'moto')}
+        ${pieza('estallido', [664.3, 460.5, 90.9, 86.6], 'bang')}
+        ${texto('rotulo', 'Automóvil de Lara Bonilla', 491, 765, null, 'rot-auto')}
+        ${texto('rotulo rotulo--rojo', 'Motocicleta con dos ocupantes', 960, 595, null, 'rot-moto')}
+      </div>
+      ${paso(1, 'La motocicleta se aproxima por el lado derecho', 1215, 860, 'p1')}
+      ${paso(2, 'La motocicleta se acerca al auto y dispara', 930, 700, 'p2')}
+      ${paso(3, 'La moto huye de la escena y Lara Bonilla es llevado al hospital donde muere', 68, 805, 'p3')}
     </div>
   `,
 

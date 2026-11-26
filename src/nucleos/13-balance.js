@@ -10,11 +10,15 @@ const BARRAS = [
 
 export default {
   id: 'balance',
-  nombre: 'Balance de búsqueda',
+  nombre: "El fin de meses de búsqueda",
   pasos: 2.4,
 
   html: () => `
-    <div class="cabeza" data-g="cabeza">${titulo('Balance de búsqueda', 57, 240)}</div>
+    <div class="cabeza" data-g="cabeza">
+      ${texto('tema-editorial', "| El fin de la búsqueda", 104, 185, null, 'tema')}
+      ${titulo("El fin de meses", 104, 235)}
+      ${titulo("de búsqueda", 104, 314)}
+    </div>
     ${texto('num-grande', '15.000', 129, 561, null, 'n15')}
     ${texto('vers', 'allanamientos realizados<br>para lograr capturarlo', 129, 655, null, 'cap')}
     ${svg(EJE.map((x) => `<line data-g="eje" x1="${x}" y1="497" x2="${x}" y2="794" stroke="#dcdcd8" stroke-width="1.2"/>`).join(''))}

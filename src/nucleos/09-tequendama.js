@@ -4,7 +4,7 @@ import { foto, titulo, texto, svg, llamadas, ROJO } from '../lib/ui.js';
 
 const pisos = llamadas(geo.llamadas.torre, 'p');
 const escucha = llamadas([{
-  text: 'La policía intervenía las llamadas de la familia',
+  text: 'La policía intervino sus líneas telefónicas',
   box: [545, 766],
   dot: [1250, 806],
   line: [[840, 784], [1000, 784], [1030, 806], [1250, 806]],
@@ -14,7 +14,7 @@ const ORIGEN = 'transform-origin:1250px 520px';
 
 export default {
   id: 'tequendama',
-  nombre: 'La familia en Tequendama',
+  nombre: "La familia en el hotel Tequendama",
   pasos: 4.4,
 
   html: () => `
@@ -36,8 +36,11 @@ export default {
     </div>
 
     <div class="cabeza" data-g="cabeza">
-      ${titulo('La familia en Tequendama', 57, 240)}
-      ${texto('bajada', 'La familia fue llevada por las autoridades colombianas a las Residencias Tequendama, un complejo de apartamentos propiedad del Ejército de Colombia en Bogotá, bajo custodia y protección policial/militar. La estrategia del gobierno: La presencia de la familia en ese lugar formaba parte de una estrategia del Estado para acorralar a Pablo Escobar, ya que su esposa e hijos eran su punto más vulnerable.', 63, 329, 609, 'bajada')}
+      ${texto('tema-editorial', "| Primeras pistas", 104, 185, null, 'tema')}
+      ${titulo("La familia en el", 104, 235)}
+      ${titulo("hotel Tequendama", 104, 314)}
+      ${texto('bajada texto-editorial', "La familia quiso escapar a Alemania, pero su entrada fue prohibida. De regreso en Colombia fue llevada por las autoridades colombianas a las Residencias Tequendama, un complejo de apartamentos propiedad del Ejército de Colombia en Bogotá, que tenía custodia y protección policial/militar.", 112, 417, 595, 'bajada')}
+      ${texto('bajada texto-editorial', "La estrategia del gobierno: La presencia de la familia en ese lugar formaba parte de una estrategia del Estado para acorralar a Pablo Escobar, ya que su esposa e hijos eran su punto más vulnerable.", 113, 576, 595, 'bajada')}
     </div>
   `,
 

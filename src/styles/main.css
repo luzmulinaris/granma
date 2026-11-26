@@ -277,14 +277,14 @@ html:not(.listo) .stage {
   text-wrap: pretty;
 }
 .operativo-versiones {
-  left: 798px;
-  top: 422px;
-  width: var(--ancho-columna-texto);
+  left: 871px;
+  top: 614px;
+  width: 260px;
   display: grid;
   gap: 30px;
   padding: 0;
   list-style: none;
-  font: 400 21.42px/24.97572px var(--f-serif);
+  font: 400 16px/19px var(--f-serif);
 }
 .operativo-versiones__numero {
   color: var(--rojo);
@@ -582,4 +582,75 @@ html:not(.listo) .stage {
   .flecha-scroll {
     animation: none;
   }
+}
+
+/* Maquetación editorial de la V02 */
+.tema-editorial {
+  font: 700 36px/1.1 var(--f-titulo);
+}
+.texto-editorial {
+  font: 400 22px/1.22 var(--f-titulo);
+}
+.fondo-portada,
+.introduccion {
+  inset: 0;
+}
+.fondo-portada {
+  background: #221913;
+}
+.portada-v02 {
+  height: auto;
+  padding: 0;
+  background: transparent;
+  font-size: 90px;
+  line-height: 1.05;
+}
+.texto-portada {
+  color: #fff;
+  font-size: 25px;
+}
+.plano-editorial {
+  position: absolute;
+  inset: 0;
+}
+.plano-editorial > .capa {
+  transform: translate(365px, 225px) scale(0.8);
+  transform-origin: top left;
+}
+.cita-editorial {
+  color: var(--rojo);
+  text-align: center;
+  font: 700 22px/1.2 var(--f-titulo);
+}
+#confrontacion .fecha,
+#extraditables .fecha,
+#poder .fecha,
+#entrega .fecha,
+#acuerdo .fecha,
+#ubicacion .fecha,
+#senal .fecha,
+#operativo .fecha {
+  font-size: 40px;
+  line-height: 1.15;
+}
+#confrontacion .txt,
+#extraditables .txt {
+  width: 420px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.ubicacion-escena {
+  font: 700 22px/1.2 var(--f-titulo);
+  color: var(--negro);
+}
+.ubicacion-escena::first-line {
+  color: var(--rojo);
+}
+
+#catedral [data-g="zona-plano2-c"],
+#catedral [data-g="zona-plano3-c"] {
+  height: auto;
+  padding-block: 5px;
+  line-height: 1.1;
 }

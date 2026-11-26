@@ -4,13 +4,27 @@ import { foto, pieza, titulo, texto, caja, svg, llamadas, url, ROJO } from '../l
 
 const ruta = geo.ruta.map((p) => p.join(',')).join(' ');
 const hab = llamadas(geo.llamadas.habitacion, 'h');
-const habitacionPlano = llamadas([{
-  text: 'Habitación de Pablo Escobar',
-  box: [1110, 210],
-  dot: [790, 278],
-  line: [[1110, 228], [900, 228], [790, 278]],
-}], 'habitacion-plano');
-const CAT = geo.sprites.catedral; // [x, y, ancho, alto] del plano en la página
+const zonasPlano = [
+  {
+    text: 'Habitación de Escobar', box: [1276, 220], dot: [891, 394],
+    line: [[1276, 239], [996, 239], [891, 394]],
+  },
+  {
+    text: 'Sala común', box: [1346, 389], dot: [1097, 563],
+    line: [[1346, 407], [1201, 407], [1097, 563]],
+  },
+  {
+    text: 'Habitación de los<br>otros reclusos', box: [1428, 542], dot: [1275, 727],
+    line: [[1428, 569], [1379, 569], [1275, 727]],
+  },
+  {
+    text: 'Cancha de fútbol<br>y helipuerto', box: [266, 878], dot: [823, 903],
+    line: [[425, 903], [823, 903]],
+  },
+];
+const etiquetasPlano = llamadas(zonasPlano, 'zona-plano');
+const PLANO = [236, 285, 1397];
+
 
 const RECLUSOS = [
   ['recluso-1', 'Roberto Escobar Gaviria', 'El osito'],
@@ -28,12 +42,12 @@ const inicioFila = (1684 - anchoFila) / 2;
 
 export default {
   id: 'catedral',
-  nombre: 'La catedral',
+  nombre: 'Prisión a medida: La Catedral',
   pasos: 13.4,
 
   html: () => `
     <!-- p.35 · mapa y camino -->
-    <div class="abs" data-g="mapa-g" style="left:28px;top:42px;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.1)">
+    <div class="abs" data-g="mapa-g" style="left:66px;top:13px;width:1684px;height:1190px;transform-origin:1044.6px 855.9px;transform:scale(1.01)">
       ${foto('mapa-envigado', [719.7, 346.8, 777.4, 571.9], 'Mapa del sur del valle de Aburrá: de Envigado a La Catedral', 'mapa')}
       ${svg(`
         <polyline data-g="ruta" points="${ruta}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
@@ -49,11 +63,11 @@ export default {
     </div>
 
     <!-- p.36 y 37 · plano de la catedral -->
-    <div class="giro" data-g="plano-g" style="transform-origin:790px 300px">
-      <img class="abs" data-g="plano" src="${url('img/catedral.webp')}" alt="Plano isométrico de La Catedral: tres pabellones, cancha de fútbol y cerco perimetral" style="left:${CAT[0]}px;top:${CAT[1]}px;width:${CAT[2]}px">
-      <img class="abs" data-g="roja" src="${url('img/catedral-roja.webp')}" alt="" style="left:${CAT[0]}px;top:${CAT[1]}px;width:${CAT[2]}px">
-      ${svg(habitacionPlano.lineas)}
-      ${habitacionPlano.cajas}
+    <div class="giro" data-g="plano-g" style="transform-origin:891px 394px">
+      <img class="abs" data-g="plano" src="${url('img/catedral.webp')}" alt="Plano isométrico de La Catedral: tres pabellones, cancha de fútbol y cerco perimetral" style="left:${PLANO[0]}px;top:${PLANO[1]}px;width:${PLANO[2]}px">
+      <img class="abs" data-g="roja" src="${url('img/catedral-roja.webp')}" alt="" style="left:${PLANO[0]}px;top:${PLANO[1]}px;width:${PLANO[2]}px">
+      ${svg(etiquetasPlano.lineas)}
+      ${etiquetasPlano.cajas}
     </div>
 
     <!-- p.38 · la habitación de Escobar -->
@@ -63,10 +77,9 @@ export default {
       ${hab.cajas}
     </div>
 
-    ${texto('titulo titulo--rojo titulo--40', '<span>Los lujos de su prisión</span>', 62, 220, null, 'lujos')}
 
     <!-- p.39 · otros reclusos -->
-    ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 62, 317, null, 'otros')}
+    ${texto('titulo titulo--rojo titulo--40', '<span>Otros reclusos</span>', 104, 397, null, 'otros')}
     ${RECLUSOS.map(
       ([img, nombre, alias], i) => {
         const xNombre = inicioFila + i * (ANCHO_NOMBRE + SEPARACION_RECLUSOS);
@@ -79,9 +92,12 @@ export default {
       },
     ).join('')}
 
-    <div class="cabeza" data-g="cabeza">${titulo('La catedral', 57, 240)}</div>
+    <div class="cabeza" data-g="cabeza">${texto('tema-editorial', "| La reclusión", 104, 185, null, 'tema')}
+      ${titulo("Prisión a medida:", 104, 235)}
+      ${titulo("La Catedral", 104, 314)}</div>
     <div class="cabeza" data-g="cab2">
-      ${texto('bajada justo', 'La Catedral fue una prisión de máxima seguridad construida y diseñada por Pablo Escobar en una montaña de Envigado, Antioquia (Colombia), como parte de un acuerdo de entrega con el gobierno del presidente César Gaviria en 1991.', 63, 334, 496, 'bajada')}
+      ${texto('bajada texto-editorial', "La Catedral fue una prisión construida en las montañas de Envigado, Antioquia, para recluir a Pablo Escobar y a varios de sus hombres de confianza, como parte de su sometimiento a la justicia en 1991. Escobar intervino en las condiciones de su encarcelamiento e incluso pudo elegir a algunos de los guardianes. Aunque contaba con vigilancia del Ejército y guardias penitenciarios, dentro del recinto impuso sus propias reglas.", 104, 414, 560, 'bajada')}
+      ${texto('bajada texto-editorial', "El complejo tenía habitaciones privadas, zonas de descanso, mesas de billar y una cancha de fútbol, comodidades que contrastaban con su condición de cárcel de máxima seguridad. Durante su reclusión, Escobar recibió visitas y conservó el contacto con el exterior. Su ingreso a prisión no desarticuló al Cartel de Medellín: desde La Catedral continuó dirigiendo actividades criminales y ordenando asesinatos y secuestros", 105, 625, 560, 'bajada')}
     </div>
   `,
 
@@ -101,7 +117,7 @@ export default {
 
     // zoom sobre La Catedral para pasar a la página siguiente
     tl.to($('mapa-g'), { scale: 10, duration: 0.75, ease: 'power2.in' }, 3.6);
-    k.sale('cabeza cab2', 3.6, {}, { dur: 0.3 });
+    k.sale('cab2', 3.6, {}, { dur: 0.3 });
     k.sale('mapa-g', 4.05, {}, { dur: 0.3 });
 
     // p.36 · aparece el plano de la catedral tipo 360°
@@ -109,21 +125,22 @@ export default {
 
     // p.37 · se marca en rojo la habitación de Escobar
     k.entra('roja', 5.7, {}, { dur: 0.3, ease: 'power1.inOut' });
-    k.llamada('habitacion-plano0', 5.7);
-    k.sale('habitacion-plano0-d habitacion-plano0-l habitacion-plano0-c', 6.5, {}, { dur: 0.2 });
+    zonasPlano.forEach((_, i) => {
+      const grupo = `zona-plano${i}`;
+      k.llamada(grupo, 5.15 + i * 0.08);
+      const salida = i === 0 ? 6.5 : 5.7;
+      k.sale(`${grupo}-d ${grupo}-l ${grupo}-c`, salida, {}, { dur: 0.2 });
+    });
 
     // zoom al interior → p.38
     tl.to($('plano-g'), { scale: 4.2, duration: 0.7, ease: 'power2.in' }, 6.5);
     k.sale('plano-g', 6.9, {}, { dur: 0.3 });
     k.entra('hab-g', 6.95, { scale: 1.9 }, { dur: 0.6, ease: 'power2.out' });
-    k.barre('lujos', 7.4, 'izq', { dur: 0.35, desde: { x: -60 }, ease: 'power3.out' });
     // se van marcando de a una las características
     geo.llamadas.habitacion.forEach((_, i) => k.llamada(`h${i}`, 7.75 + i * 0.5));
 
     // p.39 · otros reclusos, de a uno
     k.sale('hab-g', 10.5, { scale: 0.92 }, { dur: 0.3 });
-    k.sale('lujos', 10.5, {}, { dur: 0.3 });
-    k.vuelve('cabeza', 10.65, {}, { dur: 0.25 });
     k.entra('otros', 10.75, { x: -60, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.35, ease: 'power3.out' });
     RECLUSOS.forEach((_, i) => {
       const t = 11.15 + i * 0.4;

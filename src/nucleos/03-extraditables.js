@@ -3,11 +3,9 @@ import geo from '../data/geo.json';
 import { foto, pieza, titulo, texto, evento, paso, svg, fondos, via, edificio, camion, miles } from '../lib/ui.js';
 
 // Los cinco hitos (p.15, 19, 23, 26 y 29) comparten la misma maqueta.
-const hito = (g, fecha, sub, ps, desde = 116) =>
-  evento({ g, y: 376, desde, fecha, yFecha: 340, sub, ySub: 406, ps });
+const hito = (g, fecha, sub, ps, desde = 140) =>
+  evento({ g, x: 851, y: 500, desde, fecha, yFecha: 469, sub, ySub: 526, ps });
 
-const VENTANAS_CH = [[205, 302, 406, 511], [314, 409, 503], 49];
-const VENTANAS_GR = [[94, 252, 422, 595], [322, 477, 632], 80];
 
 const esSicario = ([x, y]) => geo.sicarios.some(([sx, sy]) => Math.abs(sx - x) < 2 && Math.abs(sy - y) < 2);
 const multitud = geo.multitud
@@ -20,74 +18,48 @@ const multitud = geo.multitud
 
 export default {
   id: 'extraditables',
-  nombre: 'Los crímenes de los extraditables',
+  nombre: 'Violencia para frenar la extradición',
   pasos: 26,
 
   html: () => `
-    <!-- p.14 · noviembre 1986 -->
-    ${foto('extraditables', [67.6, 432, 652.2, 489.3], 'Pablo Escobar rodeado de familiares y allegados en una reunión', 'ext')}
-    ${texto('txt', '<p>Su propósito era impedir a toda costa la extradición de ciudadanos colombianos hacia los Estados Unidos, bajo el tratado bilateral existente en ese entonces.</p>', 733, 430, null, 'proposito')}
-    ${texto('cita', '"Prefiero una tumba en Colombia,', 908, 575, null, 'cita')}
-    ${texto('cita', 'que una carcel en Estados Unidos"', 920, 632, null, 'cita')}
-    ${evento({
-      g: 'e1', y: 782, desde: 1190, fecha: 'noviembre 1986', yFecha: 749,
-      ps: [
-        'Los Extraditables recurren a amenazas, secuestros y atentados para presionar al Estado y evitar su envío a Estados Unidos.',
-        'La extradición se convierte en un eje de la confrontación.',
-      ],
-      yTxt: 814, xTxt: 849,
-    })}
-
     <!-- p.15 · Guillermo Cano -->
-    ${hito('e2', 'diciembre de 1986', 'Asesinato de Guillermo Cano', [
-      'El 17 de diciembre es asesinado el director de El Espectador. El periodista había denunciado el narcotráfico y los antecedentes de Escobar.',
-      'La violencia alcanza también a quienes investigan y publican.',
-    ], 0)}
-    ${foto('cano', [67.6, 330.5, 745.9, 622.8], 'Tapa de El Espectador: «Asesinado el director de El Espectador»', 'cano')}
+    ${hito('e2', "Diciembre de 1986", "Segundo crimen: Asesinato de Guillermo Cano", ["El 17 de diciembre es asesinado el director de El Espectador. El periodista había denunciado el narcotráfico y los antecedentes de Escobar."])}
+    ${foto('cano-v02', [879, 659, 506, 422], 'Tapa de El Espectador: «Asesinado el director de El Espectador»', 'cano')}
 
     <!-- p.19 · Luis Carlos Galán -->
-    ${hito('e3', 'agosto de 1989', 'Asesinato de Luis Carlos Galán', [
-      'El 18 de agosto es asesinado en Soacha el candidato presidencial Luis Carlos Galán.',
-      'Su oposición al narcotráfico y su defensa de la extradición lo habían convertido en un objetivo.',
-    ])}
-    ${foto('galan', [43.1, 343.9, 755.5, 514.3], 'Tarima del acto de Soacha en el momento del atentado contra Galán', 'galan')}
+    ${hito('e3', "Agosto de 1989", "Tercer crimen: Asesinato de Luis Carlos Galán", ["El 18 de agosto es asesinado en Soacha el candidato presidencial Luis Carlos Galán. Su oposición al narcotráfico y su defensa de la extradición lo habían convertido en un objetivo."])}
+    ${foto('galan-v02', [878, 681, 522, 399], 'Tarima del acto de Soacha en el momento del atentado contra Galán', 'galan')}
 
     <!-- p.23 · El Espectador -->
-    ${hito('e4', 'septiembre de 1989', 'Atentado a El Espectador', [
-      'El 2 de septiembre una bomba destruye parte de las instalaciones del periódico en Bogotá.',
-      'La ofensiva busca silenciar las denuncias periodísticas',
-    ])}
-    ${foto('espectador-1', [50.8, 265.3, 748.9, 421.2], 'Instalaciones de El Espectador destruidas por la bomba', 'esp1')}
-    ${foto('espectador-2', [303.2, 576, 666.6, 457.7], 'Fachada de El Espectador entre escombros', 'esp2')}
+    ${hito('e4', "Septiembre de 1989", "Cuarto crimen: Atentado a la sede de \"El Espectador\"", ["El 2 de septiembre una bomba destruye parte de las instalaciones del periódico en Bogotá en busca de silenciar las denuncias periodísticas"])}
+    ${foto('espectador-1-v02', [878, 675, 369, 322], 'Instalaciones de El Espectador destruidas por la bomba', 'esp1')}
+    ${foto('espectador-2-v02', [1246, 674, 407, 322], 'Fachada de El Espectador entre escombros', 'esp2')}
 
     <!-- p.26 · Avianca -->
-    ${hito('e5', 'noviembre de 1989', 'El vuelo 203 de Avianca', [
-      'El 27 de noviembre una bomba destruye el avión en vuelo. Mueren las 107 personas que iban a bordo.',
-      'La violencia alcanza a pasajeros y tripulantes civiles.',
-    ])}
-    ${foto('avianca-1', [50.8, 265.3, 748.9, 454.4], 'Restos del fuselaje del vuelo 203 de Avianca', 'av1')}
-    ${foto('avianca-2', [301.5, 609.4, 665.6, 354.8], 'Rescatistas entre los restos del avión', 'av2')}
+    ${hito('e5', "Noviembre de 1989", "Quinto crimen: Atentado al vuelo 203 de Avianca", ["El 27 de noviembre una bomba destruye el avión en vuelo. Mueren las 107 personas que iban a bordo. La violencia alcanza a pasajeros y tripulantes civiles."])}
+    ${foto('avianca-1-v02', [880, 708, 564, 389], 'Restos del fuselaje del vuelo 203 de Avianca', 'av1')}
 
     <!-- p.29 · DAS -->
-    ${hito('e6', 'diciembre de 1989', 'La bomba contra el DAS', [
-      'El 6 de diciembre un carro bomba explota junto a la sede del Departamento Administrativo de Seguridad en Bogotá.',
-      'El atentado afecta también a las personas y las viviendas del entorno.',
-    ])}
-    ${foto('das-1', [50.8, 265.3, 748.9, 454.4], 'Edificio del DAS tras la explosión', 'das1')}
-    ${foto('das-2', [202.3, 562.5, 680.9, 458.8], 'Autos y edificios destruidos frente al DAS', 'das2')}
-    ${foto('das-3', [561.3, 620.8, 540.6, 526.2], 'Tapa de El Mundo: «Embestida de muerte»', 'das3')}
+    ${hito('e6', "Diciembre de 1989", "Último crimen: Atentado al edificio del DAS", ["El 6 de diciembre un carro bomba explota junto a la sede del Departamento Administrativo de Seguridad en Bogotá. El atentado afecta también a las personas y las viviendas del entorno."])}
+    ${foto('das-1-v02', [872, 719, 419, 278], 'Edificio del DAS tras la explosión', 'das1')}
+    ${foto('das-2-v02', [1276, 720, 315, 276], 'Autos y edificios destruidos frente al DAS', 'das2')}
 
-    <div class="cabeza" data-g="cabeza">${titulo('Los crímenes de los extraditables', 57, 240)}</div>
-    <div class="cabeza" data-g="cab2">
-      ${texto('bajada', 'Los Extraditables fue una organización armada y de narcoterrorismo fundada el 6 de noviembre 1986 por los principales líderes del Cártel de Medellín, encabezada por Pablo Escobar Gaviria.', 63, 334, 1180, 'bajada')}
+    <div class="cabeza" data-g="cabeza">
+      ${texto('tema-editorial', "| Antecedentes", 104, 185, null, 'tema')}
+      ${titulo("Violencia para frenar", 104, 235)}
+      ${titulo("la extradición", 104, 314)}
+      ${texto('bajada texto-editorial', "Tras quedar expuestos sus antecedentes, Escobar pasó a la clandestinidad. Aunque era perseguido por las autoridades, mantuvo el control de su organización y desde sus refugios continuó ordenando acciones violentas.", 103, 414, 590, 'bajada')}
+      ${texto('bajada texto-editorial', "La posibilidad de ser extraditado a Estados Unidos se convirtió en uno de los principales motivos de confrontación entre él y el Estado colombiano. Bajo el nombre de Los Extraditables, narcotraficantes recurrieron a amenazas, secuestros y atentados durante más de dos años para presionar al Estado contra esa medida.", 105, 546, 590, 'bajada')}
     </div>
 
     <!-- p.16 a 18 · asesinato de Cano -->
     <div class="escena" data-g="esc-cano">
       ${fondos([140, 530, '#f5f5f3'], [670, 3000, '#e9e9e3'])}
+      ${texto('ubicacion-escena', "17 de diciembre · Bogotá<br>Calle 22 · Avenida 68 · Sede de El Espectador", 104, 165, 475, 'esc-cano-lugar')}
+      ${foto('mapa-v02-cano', [104.5, 284.9, 518.7, 387.1], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
       ${svg(`
         ${via(1019)}
-        <g data-g="cano-edif">${edificio([164, 270, 442, 338], ...VENTANAS_CH)}</g>
+        <g data-g="cano-edif">${edificio([882, 272, 442, 338])}</g>
         <line data-g="cano-rot-auto" x1="646" y1="972" x2="646" y2="1080" stroke="#9a9a9a" stroke-width="1.5"/>
         <line data-g="cano-rot-moto" x1="738" y1="783" x2="804" y2="783" stroke="#fe1003" stroke-width="1.3"/>
       `)}
@@ -96,43 +68,51 @@ export default {
       ${pieza('estallido', [554.3, 826.5, 90.9, 86.6], 'cano-bang')}
       ${texto('rotulo', 'Automóvil de Guillermo Cano', 473, 1099, null, 'cano-rot-auto')}
       ${texto('rotulo rotulo--rojo', 'Motocicleta con dos sicarios', 818, 759, null, 'cano-rot-moto')}
-      ${paso(1, 'Guillermo Cano sale del edificio del diario "El Espectador"', 654, 408, 'c1')}
-      ${paso(2, 'Se sube a su auto para regresar a su casa', 828, 874, 'c2')}
-      ${paso(3, 'Aparece una moto con 2 sicarios que le disparan y lo matan', 144, 754, 'c3')}
+      ${paso(1, 'Guillermo Cano sale del edificio del diario "El Espectador"', 1020, 675, 'c1')}
+      ${paso(2, 'Se sube a su auto para regresar a su casa y realiza un giro en U', 315, 739, 'c2')}
+      ${paso(3, 'Del otro lado lo esperaba una moto con dos sicarios', 69, 1039, 'c3')}
+      ${paso(4, 'La moto se acerca por la derecha y le dispara', 952, 1060, 'c4')}
+      ${paso(5, 'Guillermo Cano pierde el control del auto y choca contra un poste', 1265, 975, 'c5')}
     </div>
 
     <!-- p.20 a 22 · asesinato de Galán -->
     <div class="escena" data-g="esc-galan">
       ${fondos([140, 3000, '#f5f5f3'])}
+      ${texto('ubicacion-escena', "18 de agosto · Cundinamarca<br>Calle 12 · Carrera 7 · Parque Alfonso López Pumarejo", 104, 165, 475, 'esc-galan-lugar')}
+      ${foto('mapa-v02-galan', [104.5, 277.1, 485.3, 394.9], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
       ${svg(`
-        <rect data-g="tarima" x="445" y="387" width="695" height="270" fill="#dfdfdc" stroke="#1b1b1b" stroke-width="2.8"/>
+        <rect data-g="tarima" x="695" y="387" width="695" height="270" fill="#dfdfdc" stroke="#1b1b1b" stroke-width="2.8"/>
         ${multitud}
       `)}
-      ${pieza('tarima-persona', [599.6, 462.5, 43.1, 84.2], 'orador')}
-      ${pieza('tarima-persona', [669.8, 457.8, 43.1, 84.2], 'orador')}
-      ${pieza('tarima-persona', [738.8, 462.5, 43.1, 84.2], 'orador')}
-      ${geo.disparos_p22.map((r) => pieza('estallido', r, 'galan-bang')).join('')}
-      ${paso(1, 'Luis Carlos Galán se encontraba en una tarima en un acto electoral', 856, 466, 'g1')}
+      ${pieza('tarima-persona', [849.6, 462.5, 43.1, 84.2], 'orador')}
+      ${pieza('tarima-persona', [919.8, 457.8, 43.1, 84.2], 'orador')}
+      ${pieza('tarima-persona', [988.8, 462.5, 43.1, 84.2], 'orador')}
+      ${geo.disparos_p22.map((r) => pieza('estallido', [r[0] + 250, ...r.slice(1)], 'galan-bang')).join('')}
+      ${paso(1, 'Luis Carlos Galán se encontraba en un acto electoral junto a sus dos escoltas', 1250, 466, 'g1')}
       ${paso(2, 'Entre la multitud se encontraban dos sicarios', 1292, 646, 'g2')}
-      ${paso(3, 'Los sicarios disparan cinco veces, matando a Galán y a sus dos acompañantes', 320, 565, 'g3')}
+      ${paso(3, 'Los sicarios disparan cinco veces, matando a Galán y a sus dos acompañantes', 645, 655, 'g3')}
     </div>
 
     <!-- p.24 y 25 · bomba en El Espectador -->
     <div class="escena" data-g="esc-esp">
       ${fondos([140, 715, '#f5f5f3'], [855, 3000, '#e9e9e3'])}
+      ${texto('ubicacion-escena', "2 de septiembre · Bogotá<br>Calle 22 · Avenida 68 · Sede de El Espectador", 104, 165, 475, 'esc-esp-lugar')}
+      ${foto('mapa-v02-espectador', [104.5, 284.9, 518.7, 387.1], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
       ${svg(`
         ${via(1025)}
-        <g data-g="esp-edif">${edificio([27, 250, 723, 552], ...VENTANAS_GR)}</g>
+        <g data-g="esp-edif">${edificio([683, 300, 723, 410])}</g>
         ${camion('esp-camion')}
       `)}
       ${pieza('estallido', [217, 696, 310, 295], 'esp-bang')}
       ${paso(1, 'Un camión con 170 kg de dinamita se posiciona frente al edificio de "El Espectador"', 730, 938, 's1')}
-      ${paso(2, 'La bomba explota a las 6:35 am, dejando 70 heridos', 778, 751, 's2')}
+      ${paso(2, 'La bomba explota a las 6:35 am, desintegrando el camión por completo y destruyendo parte del edificio', 778, 751, 's2')}
     </div>
 
     <!-- p.27 y 28 · vuelo 203 -->
     <div class="escena" data-g="esc-avi">
       ${fondos([140, 3000, '#f5f5f3'])}
+      ${texto('ubicacion-escena', "27 de noviembre · Bogotá<br>Aeropuerto El Dorado", 104, 165, 475, 'esc-avi-lugar')}
+      ${foto('mapa-v02-avianca', [104.5, 264.8, 326.3, 407.2], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
       ${pieza('montanas', [-41.3, 804.6, 1782.4, 154.3], 'montanas')}
       ${pieza('flecha-sube', [342.1, 610, 147.8, 179.2], 'sube')}
       ${pieza('avion', [514.2, 383.8, 536.7, 328.4], 'avion')}
@@ -145,29 +125,35 @@ export default {
     <!-- p.30 y 31 · bomba contra el DAS -->
     <div class="escena" data-g="esc-das">
       ${fondos([140, 715, '#f5f5f3'], [855, 3000, '#e9e9e3'])}
+      ${texto('ubicacion-escena', "6 de diciembre · Bogotá<br>Carrera 27 · Calle 18 · Departamento Administrativo de Seguridad", 104, 165, 475, 'esc-das-lugar')}
+      ${foto('mapa-v02-das', [104.5, 288, 389.3, 349.6], 'Mapa del lugar en la maqueta', null, 'foto--libre')}
       ${svg(`
         ${via(1025)}
         <g data-g="das-edif">
-          ${edificio([750, 421, 492, 382])}
-          ${edificio([27, 250, 723, 552], ...VENTANAS_GR)}
+          ${edificio([1100, 421, 492, 289])}
+          ${edificio([683, 300, 723, 410])}
         </g>
         ${camion('das-camion')}
       `)}
       ${pieza('estallido', [261, 780, 252, 240], 'das-bang')}
       ${paso(1, 'Un cochebomba se posiciona frente al edificio del DAS', 730, 946, 'd1')}
-      ${paso(2, 'El cochebomba explota dejando 60 muertos y 300 heridos', 494, 778, 'd2')}
+      ${paso(2, 'A las 7:30 am el cochebomba explota junto al edificio', 494, 778, 'd2')}
     </div>
 
     <!-- p.32 · balance de los atentados -->
     <div data-g="grafico">
-      ${texto('num-grande', '550', 159, 492, null, 'n550')}
-      ${texto('vers', 'policías asesinados<br>por escobar y el cartel', 159, 586, null, 'cap')}
-      ${texto('vers vers--der', 'civiles fallecidos', 454, 527, 400, 'rot1')}
-      ${texto('vers vers--der', 'personas lesionadas', 451, 624, 400, 'rot2')}
-      ${svg([885, 1042, 1199, 1356, 1513].map((x) => `<line data-g="eje" x1="${x}" y1="504" x2="${x}" y2="696" stroke="#dcdcd8" stroke-width="1.2"/>`).join(''))}
-      ${[0, 500, 1000, 1500, 2000].map((v, i) => texto('eje', v, 885 + i * 157, 693, null, 'eje')).join('')}
-      <div class="barra" data-g="b1" style="left:885px;top:511px;width:124px;height:60px;background:#ee2c35"><b data-g="v1">410</b></div>
-      <div class="barra" data-g="b2" style="left:885px;top:609px;width:547px;height:60px;background:#221a22"><b data-g="v2">1.710</b></div>
+      ${texto('tema-editorial', "| Consecuencias", 104, 185, null, 'datos-tema')}
+      ${texto('titulo', '<span>Los atentados en datos</span>', 104, 235, null, 'datos-titulo')}
+      ${texto('bajada texto-editorial', "Los asesinatos y atentados golpearon a funcionarios, dirigentes políticos, periodistas y civiles. Escobar y sus aliados recurrieron a la violencia para silenciar denuncias, atacar a sus adversarios y presionar al Estado contra la extradición.", 105, 321, 610, 'datos-bajada')}
+      ${texto('bajada texto-editorial', "Los siguientes gráficos reconstruyen algunos de esos crímenes, cada uno con sus responsables y circunstancias particulares.", 105, 453, 610, 'datos-bajada')}
+      ${texto('num-grande', '550', 159, 524, null, 'n550')}
+      ${texto('vers', 'policías asesinados<br>por escobar y el cartel', 159, 617, null, 'cap')}
+      ${texto('vers vers--der', 'civiles fallecidos', 454, 641, 400, 'rot1')}
+      ${texto('vers vers--der', 'personas lesionadas', 451, 738, 400, 'rot2')}
+      ${svg([885, 1042, 1199, 1356, 1513].map((x) => `<line data-g="eje" x1="${x}" y1="618" x2="${x}" y2="810" stroke="#dcdcd8" stroke-width="1.2"/>`).join(''))}
+      ${[0, 500, 1000, 1500, 2000].map((v, i) => texto('eje', v, 885 + i * 157, 807, null, 'eje')).join('')}
+      <div class="barra" data-g="b1" style="left:885px;top:625px;width:124px;height:60px;background:#ee2c35"><b data-g="v1">410</b></div>
+      <div class="barra" data-g="b2" style="left:885px;top:723px;width:547px;height:60px;background:#221a22"><b data-g="v2">1.710</b></div>
     </div>
   `,
 
@@ -179,18 +165,10 @@ export default {
       k.sale(`${g}-l ${g}-p ${g}-f ${g}-s ${g}-t`, t, {}, { dur: 0.25 });
     };
 
-    // ---------------------------------------------- p.14 · noviembre 1986
+    // Antecedentes y primer hito de este tramo
     k.cabeza();
-    k.barre('ext', 0.25, 'izq', { dur: 0.55 });
-    k.entra('proposito', 0.95, { y: 20 }, { dur: 0.3 });
-    k.entra('cita', 1.2, { x: -50, clipPath: 'inset(0% 100% 0% 0%)' }, { dur: 0.4, stagger: 0.18, ease: 'power3.out' });
-    k.evento('e1', 2.0, { origen: 'top' });
-
-    // ---------------------------------------------- p.15 · Guillermo Cano
-    k.sale('ext proposito cita cab2', 3.0, { y: -30 }, { dur: 0.25 });
-    k.saleEvento('e1', 3.0, -30);
-    k.evento('e2', 3.15, { origen: 'top' });
-    k.barre('cano', 3.55, 'arriba', { dur: 0.45 });
+    k.evento('e2', 0.7, { origen: 'top' });
+    k.barre('cano', 1.45, 'arriba', { dur: 0.45 });
 
     // p.16 · aparece la escena y se forma el primer cuadro
     hitoFuera('e2', 'cano', 4.3);
@@ -201,11 +179,13 @@ export default {
     k.entra('cano-auto', 5.4, { x: 1300 }, { dur: 0.5, ease: 'power3.out' });
     k.entra('cano-rot-auto', 5.85, { y: 10 }, { dur: 0.15 });
     k.paso('c2', 5.9);
-    // p.18 · aparece la moto que dispara y el tercer cuadro
+    // Se agregan los tres cuadros finales de la secuencia.
     k.entra('cano-moto', 6.5, { x: 1200 }, { dur: 0.45, ease: 'power3.out' });
     k.entra('cano-rot-moto', 6.9, { x: 20 }, { dur: 0.15 });
-    k.estalla('cano-bang', 6.95, 'cano-auto');
-    k.paso('c3', 7.05);
+    k.paso('c3', 6.62);
+    k.estalla('cano-bang', 7.03, 'cano-auto');
+    k.paso('c4', 7.05);
+    k.paso('c5', 7.33);
 
     // ---------------------------------------------- p.19 · Luis Carlos Galán
     k.sale('esc-cano', 7.8, {}, { dur: 0.25 });
@@ -253,10 +233,9 @@ export default {
     vuelveCabeza(16.1);
     k.evento('e5', 16.15);
     k.entra('av1', 16.55, { y: 120 }, { dur: 0.35 });
-    k.entra('av2', 16.85, { y: 160, rotation: -2 }, { dur: 0.35 });
 
     // p.27 · despega y se forma la flecha hacia arriba
-    hitoFuera('e5', 'av1 av2', 17.5);
+    hitoFuera('e5', 'av1', 17.5);
     k.entra('esc-avi', 17.65, {}, { dur: 0.3, ease: 'none' });
     k.entra('montanas', 17.7, { y: 80 }, { dur: 0.3 });
     k.entra('avion', 17.75, { x: -620, y: 330, rotation: 14, scale: 0.7 }, { dur: 0.7, ease: 'power2.out' });
@@ -275,10 +254,9 @@ export default {
     k.evento('e6', 20.25);
     k.entra('das1', 20.6, { y: 120 }, { dur: 0.3 });
     k.entra('das2', 20.82, { y: 140, rotation: -2 }, { dur: 0.3 });
-    k.entra('das3', 21.04, { y: 160, rotation: 3 }, { dur: 0.3 });
 
     // p.30 · el cochebomba
-    hitoFuera('e6', 'das1 das2 das3', 21.7);
+    hitoFuera('e6', 'das1 das2', 21.7);
     k.entra('esc-das', 21.85, {}, { dur: 0.3, ease: 'none' });
     k.entra('das-edif', 21.95, { y: 60 }, { dur: 0.25 });
     k.entra('das-camion', 22.0, { x: -1100 }, { dur: 0.55, ease: 'power3.out' });
@@ -289,6 +267,7 @@ export default {
 
     // ---------------------------------------------- p.32 · gráfico
     k.sale('esc-das', 24.0, {}, { dur: 0.25 });
+    k.entra('datos-titulo datos-tema datos-bajada', 24.15, { y: 16 }, { dur: 0.25 });
     k.entra('n550', 24.2, { y: 30 }, { dur: 0.25 });
     k.cuenta('n550', 24.2, 550, { dur: 0.5 });
     k.entra('cap', 24.4, { y: 16 }, { dur: 0.2 });
