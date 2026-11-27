@@ -169,10 +169,7 @@ const caidaAvianca = 'C 1260 545 1350 688 1510 824';
 function vueloAvianca() {
   return `
     <div class="avianca-fondo-mapa" aria-hidden="true"></div>
-    <div class="avianca-lugar">
-      <strong>27 de noviembre - Bogotá</strong>
-      <span>Municipio de Soacha</span>
-    </div>
+    <div class="avianca-lugar">Municipio de Soacha</div>
     ${pieza('mapa-avianca', [104, 265, 395, 287], null, 'vehiculo-svg')}
     <svg class="abs" width="0" height="0" aria-hidden="true">
       <path data-g="avianca-ascenso" d="${ascensoAvianca}" />
