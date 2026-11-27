@@ -64,7 +64,6 @@ visor.innerHTML = `<div class="stage"></div>
     <div class="visor-reconstruccion__recorrido" aria-hidden="true"></div>
   </div>
   <div class="visor-reconstruccion__controles">
-    <span>Hacé scroll para avanzar</span>
     <form method="dialog"><button type="submit" aria-label="Cerrar reconstrucción">×</button></form>
   </div>`;
 document.body.append(visor);
@@ -73,9 +72,22 @@ const scrollVisor = visor.querySelector('.visor-reconstruccion__scroll');
 let animacionVisor;
 let inicioVisor;
 let cierreVisor;
+let fundidoVisor;
+
+function cerrarReconstruccion() {
+  if (!visor.open || fundidoVisor) return;
+  if (reducido) {
+    visor.close();
+    return;
+  }
+  fundidoVisor = gsap.to(visor, {
+    opacity: 0, duration: 0.42, ease: 'sine.inOut',
+    onComplete: () => visor.close(),
+  });
+}
 
 function actualizarReconstruccion() {
-  if (!animacionVisor || !visor.open) return;
+  if (!animacionVisor || !visor.open || fundidoVisor) return;
   const recorrido = scrollVisor.scrollHeight - scrollVisor.clientHeight;
   const progreso = recorrido > 0 ? scrollVisor.scrollTop / recorrido : 0;
   const progresoEscena = Math.min(1, progreso / 0.86);
@@ -83,9 +95,7 @@ function actualizarReconstruccion() {
 
   clearTimeout(cierreVisor);
   if (recorrido > 0 && scrollVisor.scrollTop >= recorrido - 1) {
-    cierreVisor = setTimeout(() => {
-      if (visor.open) visor.close();
-    }, 450);
+    cierreVisor = setTimeout(cerrarReconstruccion, 450);
   }
 }
 
@@ -104,8 +114,15 @@ historia.addEventListener('click', (e) => {
   scrollVisor.scrollTop = 0;
   actualizarReconstruccion();
 });
+visor.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  cerrarReconstruccion();
+});
 visor.addEventListener('close', () => {
   clearTimeout(cierreVisor);
+  fundidoVisor?.kill();
+  fundidoVisor = null;
+  visor.style.removeProperty('opacity');
   animacionVisor?.kill();
   animacionVisor = null;
   escenaVisor.replaceChildren();

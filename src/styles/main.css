@@ -987,6 +987,9 @@ html:not(.listo) .stage {
   overflow: hidden;
   background: #d8dade;
 }
+.visor-reconstruccion::backdrop {
+  background: transparent;
+}
 .visor-reconstruccion .stage {
   top: calc(var(--oy) - 105px * var(--s));
 }
@@ -1006,14 +1009,6 @@ html:has(.visor-reconstruccion[open]) {
   position: absolute;
   top: 16px;
   right: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.visor-reconstruccion__controles span {
-  align-self: center;
-  font: 600 16px/1.2 var(--f-titulo);
 }
 .visor-reconstruccion__controles button {
   width: 44px;
