@@ -65,19 +65,28 @@ visor.innerHTML = `<div class="stage"></div>
   </div>
   <div class="visor-reconstruccion__controles">
     <span>Hacé scroll para avanzar</span>
-    <form method="dialog"><button>Cerrar</button></form>
+    <form method="dialog"><button type="submit" aria-label="Cerrar reconstrucción">×</button></form>
   </div>`;
 document.body.append(visor);
 const escenaVisor = visor.querySelector('.stage');
 const scrollVisor = visor.querySelector('.visor-reconstruccion__scroll');
 let animacionVisor;
 let inicioVisor;
+let cierreVisor;
 
 function actualizarReconstruccion() {
   if (!animacionVisor || !visor.open) return;
   const recorrido = scrollVisor.scrollHeight - scrollVisor.clientHeight;
   const progreso = recorrido > 0 ? scrollVisor.scrollTop / recorrido : 0;
-  animacionVisor.time(inicioVisor + progreso * (animacionVisor.duration() - inicioVisor));
+  const progresoEscena = Math.min(1, progreso / 0.86);
+  animacionVisor.time(inicioVisor + progresoEscena * (animacionVisor.duration() - inicioVisor));
+
+  clearTimeout(cierreVisor);
+  if (recorrido > 0 && scrollVisor.scrollTop >= recorrido - 1) {
+    cierreVisor = setTimeout(() => {
+      if (visor.open) visor.close();
+    }, 450);
+  }
 }
 
 scrollVisor.addEventListener('scroll', actualizarReconstruccion, { passive: true });
@@ -96,6 +105,7 @@ historia.addEventListener('click', (e) => {
   actualizarReconstruccion();
 });
 visor.addEventListener('close', () => {
+  clearTimeout(cierreVisor);
   animacionVisor?.kill();
   animacionVisor = null;
   escenaVisor.replaceChildren();

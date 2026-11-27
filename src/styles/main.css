@@ -1016,10 +1016,16 @@ html:has(.visor-reconstruccion[open]) {
   font: 600 16px/1.2 var(--f-titulo);
 }
 .visor-reconstruccion__controles button {
-  padding: 8px 12px;
-  border: 1px solid var(--negro);
-  background: #fff;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
   color: var(--negro);
-  font: 600 16px/1.2 var(--f-titulo);
+  font: 400 26px/1 Arial, sans-serif;
   cursor: pointer;
+}
+.visor-reconstruccion__controles button:hover {
+  background: rgb(0 0 0 / 8%);
 }
